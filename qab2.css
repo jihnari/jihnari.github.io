@@ -1,0 +1,2368 @@
+
+/*UNIVERSAL*/
+
+.relative-wrapper {
+  position: relative;
+}
+.wrapper {
+  position: relative;
+}
+.dm-container {
+  display: table;
+  margin: auto;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.clear {
+  clear: both;
+}
+/* i think maybe clear is already defined by ao3?  */
+.clearclear{
+    clear: both;
+}
+.clear2{
+  overflow: auto;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+.shift-zero{
+margin-top:0;
+}
+.shift-up{
+margin-top:-15px;
+max-width:100%;
+}
+.shift-up2{
+margin-top:-30px;
+}
+.shift-up3{
+margin-top:-45px;
+}
+.shift-down{
+margin-bottom:-15px;
+}
+.padding-left-40 {
+  padding-left: 40px;
+}
+.padding-left-20 {
+  padding-left: 20px;
+}
+.padding-top-bottom-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.padding-left-50 {
+  padding-left: 50px;
+}
+.margin-bottom-5{
+  margin-bottom:5px;
+}
+.padding-bottom-5{
+  padding-bottom:5px;
+}
+.padding-left-5{
+  padding-left:5px;
+}
+.padding-bottom-15{
+  padding-bottom:15px;
+}
+.padding-right-5{
+  padding-right:5px;
+}
+
+
+.tahoma {
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+.text-color-red {
+  color: red;
+}
+.text-color-blue {
+  color: blue;
+}
+.text-color-orange{
+  color: orange;
+}
+.text-color-gray {
+  color: #9F9FA1;
+}
+.text-color-blue{
+  color: blue;
+  text-decoration: none;
+}
+.text-color-red {
+  color: red;
+  text-decoration: none;
+}
+.text-color-gray{
+  color: #b1b1b3;
+}
+.text-color-lgray {
+  color: #b1b1b3;
+}
+
+.text-size-8{
+  font-size:0.8em;
+}
+.text-size-12{
+  font-size:1.2em;
+}
+.text-bold{
+  font-weight:bold;
+}
+
+.square-element{
+  height: 35px;
+  width: 35px;
+}
+.middle-box {
+  background: #fff;
+  padding: 0 10px;
+}
+.left-arrow {
+  border: solid black;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-left: 5px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+
+
+.floatdot{
+  margin-left:-20px;
+}
+.dot {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #D7DADD;
+  margin-bottom: -15px;
+}
+.dotbox {
+  width: 40px;
+}
+
+.thread-buffer{
+  margin-top:8px;
+  margin-left:10px;
+  padding-bottom:10px;
+}
+
+/* attempting a thing to hide the scroll bar on pc */
+.stay-block {
+  overflow: auto;
+  display: block;
+
+  scrollbar-width: none;
+}
+
+.stay-block::-webkit-scrollbar {
+  display: none;
+}
+}
+.stay{
+width:100%;
+}
+
+
+/*fade*/
+.fadeout {
+  position: relative;
+}
+.fadeout::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(255,255,255, 0), white);
+}
+.fadein {
+  position: relative;
+}
+.fadein::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to bottom, white, rgba(255,255,255, 0));
+}
+
+.text-color-gray {
+  color: #9F9FA1;
+}
+.text-size-12{
+  font-size:1.2em;
+}
+.text-bold{
+  font-weight:bold;
+}
+
+/*reddit*/
+/*
+i do not, i repeat do NOT remember making vr0-2. i mean, i remember thinking "i should fix that weird issue where sometimes things collapse instead of float", i remember sitting down, i remember thinking "what if tables" but i DO NOT remember what it does or how it works. idk if half of that even needs to be there and honestly at this point i dont care. i also remeber thinking "GOTTA NEST THOSE DIVS" which we... appparently did not do. so that's. that's cool.
+
+the last thing we might wanna do here is use the fadeout function and place the 'view all comments' button over top of it. rn im tired tho. messing w relative/ablosute is one of my least favorite things.
+*/
+.rd-font{
+  font-family:verdana, arial, helvetica, sans-serif;
+  background-color: white;
+  /*make sure this didnt break everything*/
+  color:black;
+}
+.rd-view-box {
+  background: #0079D3;
+  border-radius: 3px;
+  text-align: center;
+  color: white;
+  font-weight:bold;
+  padding: 7px;
+  margin: 0 5px -5px 5px;
+}
+.rd-signup-box {
+  background: #0079D3;
+  border-radius: 14px;
+  text-align: center;
+  color: white;
+  padding: 7px 5px 7px 5px;
+  margin: 0px 5px -5px 5px;
+  font-size:0.8em;
+}
+.rd-sortby{
+  font-size:0.8em;
+  padding-left:5px;
+}
+.rd-photo-box {
+  background: #d3dce0;
+  border-radius: 18px;
+  color: black;
+  padding: 2px 10px 2px 10px;
+}
+.rd-name{
+  text-align: center;
+  font-weight:bold;
+  font-size:1.2em;
+}
+.rd-header{
+  font-weight:bold;
+  font-size:1.1em;
+  margin:-5px 0 -5px 0;
+}
+.rd-dot { /*idx if i wanna go down this path*/
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #bbb;
+  margin-bottom: -15px;
+}
+.rd-div1{
+  border-bottom: 8px solid #EEEFF1;
+  padding-bottom:18px;
+  padding-left:8px;
+  margin-bottom: 10px;
+}
+.rd-div2{
+  border-bottom: 1.5px solid #EEEFF1;
+}
+.rd-vote{
+  height:1.8em;
+  display: inline-block;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.rd-poster{
+  font-size: .8em;
+  margin-bottom: 15px;
+}
+.rd-op{
+  color:#25A0ED;
+  font-weight:bold;
+}
+.rd-link{
+  color:#25A0ED;
+}
+.rd-down-arrow {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2.5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin: 0px 0 2px 7px;
+}
+.rd-small{
+  font-size: .8em;
+  display: inline-block;
+  padding-bottom:5px;
+}
+.rd-vr0 {
+  display: table;
+  padding: 10px 0 0px 30px;
+  border-bottom: 1px solid #EEEFF1;
+}
+.rd-vr1 {
+  display: table;
+  padding: 0px 0px 0px 10px;
+  margin: 0px 0 5px 5px;
+  border-left: 1px solid #EEEFF1;
+}
+.rd-vr2 {
+  display: table;
+  padding: 0px 0px 0px 10px;
+  margin: 0px 0px 5px 5px;
+  border-left: 1px solid #EEEFF1;
+}
+.rd-vr-not {
+  display: table;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0 5px 0;
+}
+.rd-gray-text {
+  color: #657685;
+}
+.rd-bubble{
+  color: #787C7F;
+  font-size: .8em;
+  padding: 12px 5px 3px 5px;
+  margin-bottom:5px;
+  border-radius: 16px;
+  border: 1px solid #EEEFF1;
+}
+
+.rd-arrow-text{
+  padding-top:2px;
+  mmargin-bottom:10px;
+  vertical-align:top;
+  display: inline-block;
+}
+.rd-arrow-up{
+  padding-top:0px;
+  padding-bottom:0px;
+  height:1.5em;
+}
+.rd-arrow-down{
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+    height:1.5em;
+}
+.rd-elispes{
+  float:right;
+  padding-right:10px;
+  font-size:1.0em;
+}
+
+
+/*sms*/
+.sms-box-left {
+  border-width: 1px;
+  color: black;
+  background: #f2f3f5;
+  border-radius: 18px;
+  padding: 10px 15px 8px 15px;
+  max-width: 75%;
+  float: left;
+  margin-top: 10px;
+  clear: both;
+  position: relative;
+}
+.sms-box-right {
+  border-width: 1px;
+  color: #174ea3;
+  background: #d2e4fb;
+  border-radius: 18px;
+  padding: 10px 15px 8px 15px;
+  max-width: 75%;
+  float: right;
+  margin-top: 10px;
+  clear: both;
+  position: relative;
+}
+.sms-time {
+  text-align: center;
+  color: #5f6267;
+  clear: both;
+}
+.sms-border {
+  box-shadow: 0px 8px 10px -10px #888888;
+  padding-bottom: 10px;
+  background: white;
+}
+.sms-name-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-left:10px;
+  color: #424242;
+}
+
+
+/*line*/
+/*
+todo:
+- well, the placement of the timestamp STILL bothers me but im still to dumb to fix it and i
+cried enough over it already so i'll probably just. ignore it forever?
+- could try tables again if it bugs you too much.
+- speech bubble squiggles are now the wrong size/shape (line updated)
+- link boxes are therefore off center? idk if you want to smudge it or not... probably.
+*/
+.line-container {
+  display: table;
+  padding-left: .5em;
+  padding-right: .5em;
+  margin: auto;
+  max-width: 95%;
+  min-width: 95%;
+}
+.line-date{
+  font-size: 0.8em;
+  background: #BFBDC1;
+  border-radius: 12px;
+  color: white;
+  padding: 8px 10px;
+  clear: both;
+  text-align: center;
+}
+.line-name-header{
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-left:10px;
+  color: black;
+}
+.line-border {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.line-box-left-time {
+  float: left;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  clear: both;
+  position: relative;
+}
+.line-box-left1 {
+  border-color: #d3dce0;
+  border-style: solid;
+  border-width: 1px;
+  background: #d3dce0;
+  color: black;
+  float: left;
+  margin-bottom: 10px;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.line-box-left1::after {
+  content: "";
+  position: absolute;
+  left: -.6em;
+  top: -12px;
+  width: 1em;
+  height: 1em;
+  border-color: #d3dce0;
+  border-width: 1px;
+  border-bottom: .5em solid #d3dce0;
+  border-bottom-left-radius: .8em .8em;
+}
+.line-box-left {
+  border-color: #d3dce0;
+  border-style: solid;
+  border-width: 1px;
+  background: #d3dce0;
+  color: black;
+  float: left;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.line-box-left-m {
+  border-color: #d3dce0;
+  border-style: solid;
+  border-width: 1px;
+  background: #d3dce0;
+  color: black;
+  float: left;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.line-box-left::after {
+  content: "";
+  position: absolute;
+  left: -.6em;
+  top: -12px;
+  width: 1em;
+  height: 1em;
+  border-color: #d3dce0;
+  border-width: 1px;
+  border-bottom: .5em solid #d3dce0;
+  border-bottom-left-radius: .8em .8em;
+}
+.line-img-left {
+  float: left;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  border: 1px solid #c7c7c7;
+  max-width: 50%;
+  clear: both;
+  position: relative;
+}
+.line-img-right {
+  float: right;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  border: 1px solid #c7c7c7;
+  max-width: 50%;
+  clear: both;
+  position: relative;
+}
+.line-box-right-m {
+  float: right;
+  color: black;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #9DE694;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.line-box-right {
+  float: right;
+  color: black;
+  margin: 0 0 0.5em;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #9DE694;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.line-box-right::after {
+  content: "";
+  position: absolute;
+  right: -0.5em;
+  top: -2px;
+  width: 1em;
+  height: .5em;
+  border-bottom: .5em solid #9DE694;
+  border-bottom-right-radius: 1em .8em;
+}
+.line-box-right1 {
+  float: right;
+  color: black;
+  margin-bottom: 10px;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #9DE694;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.line-box-right1-m {
+  float: right;
+  color: black;
+  margin-bottom: 10px;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background: #9DE694;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.line-box-right1::after {
+  content: "";
+  position: absolute;
+  right: -0.5em;
+  top: -2px;
+  width: 1em;
+  height: .5em;
+  border-bottom: .5em solid #9DE694;
+  border-bottom-right-radius: 1em .8em;
+}
+.line-time-right {
+  float: right;
+  text-align: right;
+  position: relative;
+  bottom: 0;
+  color: #9F9FA1;
+  font-size: 0.6em;
+  padding: 5px;
+}
+.line-time-left {
+  float: left;
+  position: relative;
+  color: #9F9FA1;
+  font-size: 0.6em;
+  padding: 5px;
+}
+.line-name-box {
+  float: left;
+  position: relative;
+  font-weight: bold;
+  font-size: .7em;
+  padding: 2px;
+  margin: .3em 0em .5em -10px;
+  clear: both;
+}
+
+.line-box-right-top{
+  width: 60%;
+  float: right;
+  border-radius: 1em 1em 0em 0em;
+  border-bottom:0px;
+  clear: both;
+  position: relative;
+  color: black;
+  text-align: right;
+  padding: 0.5em 1em;
+  background: #8DCF85;
+
+  overflow:hidden;
+}
+.line-box-right-bottom{
+  width: 60%;
+  float: right;
+  margin: 0 0 0.5em;
+  border-radius: 0em 0em 1em 1em;
+  border-top:0px;
+  clear: both;
+  position: relative;
+  color: black;
+  padding: 0.5em 1em;
+  background: #B1ED8B;
+}
+.line-box-left-top{
+  width: 60%;
+  float: left;
+  border-radius: 1em 1em 0em 0em;
+  border-bottom:0px;
+  clear: both;
+  position: relative;
+  color: black;
+  text-align: right;
+  padding: 0.5em 1em;
+  background: #bdc5c9;
+
+  overflow:hidden;
+}
+.line-box-left-bottom{
+  width: 60%;
+  float: left;
+  margin: 0 0 0.5em;
+  border-radius: 0em 0em 1em 1em;
+  border-top:0px;
+  clear: both;
+  position: relative;
+  color: black;
+  padding: 0.5em 1em;
+  background: #d3dce0;
+}
+.line-linked-img{
+  margin: -0.5em 0 -1em;
+  padding: -0.5em -1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height:140px;
+}
+.link-text-top{
+  font-weight: bold;
+  font-size: .9em;
+}
+.link-text-bottom-right{
+  color: #438642;
+  font-size: .8em;
+  text-overflow: ellipsis;
+}
+.link-text-bottom-left{
+  color: #7E7E7E;
+  font-size: .8em;
+  text-overflow: ellipsis;
+}
+.line-at{
+  color: #4582C2;
+}
+
+
+/*signal*/
+/*
+todo:
+- could be a good person, but you wont.
+- more name colors? eh
+- im tempted to rename the colors 1-6
+*/
+.signal-dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #bbb;
+  margin-bottom: -15px;
+  float:left;
+}
+.signal-name{
+  font-size:1.1em;
+  margin-top:5px;
+  float:left;
+}
+.signal-name-line{
+  padding-bottom:40px;
+  box-shadow: 0px 8px 8px -10px #888888;
+}
+.signal-name-line2{
+  border-bottom: 5px solid transparent;
+  margin-bottom:20px;
+  border-image: linear-gradient(to bottom, red 50%, #F6F6F6 50%);
+  border-image-slice: 1;
+
+  width:100%;
+  height:2px;
+  background:linear-gradient(to bottom, gray 50%,rgba(246,246,246,.3) 50%);
+}
+.signal-arrow {
+  float:left;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  height: 30px;
+  width: 30px;
+  margin:0 10px 0 10px;/*lmao this does nothing, its in a span bro*/
+  display: inline-block;
+}
+.signal-box-left1 {
+  margin-top: 10px;
+  background: #e9e9e9;
+  border-width: 1px;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  border-bottom-left-radius: 0;
+  margin-bottom: 3px;
+  color: black;
+  float: left;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-box-left2 {
+  background: #e9e9e9;
+  border-width: 1px;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-bottom: 3px;
+  color: black;
+  float: left;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-box-left3 {
+  background: #e9e9e9;
+  border-width: 1px;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  border-top-left-radius: 0;
+  margin-bottom: 10px;
+  color: black;
+  float: left;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-box-left0 {
+  background: #e9e9e9;
+  border-width: 1px;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  margin-top: 10px;
+  color: black;
+  float: left;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-box-right1 {
+  margin-top: 10px;
+  border-width: 1px;
+  color: white;
+  background: #2c6bee;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  border-bottom-right-radius: 0;
+  margin-bottom: 3px;
+  float: right;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-box-right2 {
+  border-width: 1px;
+  color: white;
+  background: #2c6bee;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 3px;
+  float: right;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-box-right3 {
+  border-width: 1px;
+  color: white;
+  background: #2c6bee;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  border-top-right-radius: 0;
+  margin-bottom: 3px;
+  float: right;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-box-right0 {
+  margin-top: 10px;
+  border-width: 1px;
+  color: white;
+  background: #2c6bee;
+  border-radius: 15px;
+  padding: 7px 14px 7px 14px;
+  margin-bottom: 3px;
+  float: right;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+.signal-time-right {
+  float: right;
+  font-size: .7em;
+  position: relative;
+  color: #8eb4fd;
+  padding: 5px 0 0 0;
+  clear: both;
+}
+.signal-time-left {
+  float: right;
+  font-size: .7em;
+  position: relative;
+  color: #979797;
+  padding: 5px 0 0 0;
+  clear: both;
+}
+.signal-img-left {
+  background: #2c6bee;
+  border-radius: 15px;
+  border:2px solid #F6F6F6;
+  border-bottom-left-radius: 5px;
+  margin-top: 10px;
+  float: left;
+  max-width: 75%;
+  max-height:500px;
+  clear: both;
+  position: relative;
+}
+.signal-img-right {
+  margin-top: 10px;
+  border:2px solid #F6F6F6;
+  border-radius: 15px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 3px;
+  float: right;
+  max-width: 75%;
+  max-height:500px;
+  clear: both;
+  position: relative;
+}
+.signal-date {
+  padding: 30px 0 5px 0;
+  color: gray;
+  font-size:.8em;
+  bbackground: white;
+  text-align:center;
+  clear: both;
+  position: relative;
+}
+.signal-call {
+  padding: 0px 0 0px 0;
+  color: gray;
+  font-size:.8em;
+  bbackground: white;
+  text-align:center;
+  clear: both;
+  position: relative;
+}
+.signal-call-icon{
+  height:2em;
+  margin-bottom:-5px;
+}
+
+/*signal group chat*/
+/*top bar is fixed in this version, legit works in this version. should fix og version also, but... probably wont.*/
+.signal-gc-arrow {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  height: 30px;
+  width: 30px;
+  margin:0px 10px 5px 10px;
+  display: inline-block;
+}
+.inline{
+  display:inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width:70%;
+}
+.signal-gc-dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom:5px;
+  background-color: #bbb;
+}
+.signal-gc-name{
+  font-size:1.1em;
+  margin-top:5px;
+  display: block;
+}
+.signal-gc-subname{
+  font-size:.9em;
+  display:block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.signal-gc-name-line{
+  padding-bottom:5px;
+  box-shadow: 0px 8px 8px -10px #888888;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sgc-name{
+  display:block;
+  font-size:0.8em;
+  font-weight:bold;
+  ppadding-bottom:-5px;
+}
+.sgc-purple{
+  color:#c13ca7;
+}
+.sgc-green1{
+  color:#4b992a;
+}
+.sgc-green2{
+  color:#34c190;
+}
+.sgc-maroon{
+  color:maroon;
+}
+.sgc-lblue{
+  color:#32a9c1;
+}
+.sgc-dblue{
+  color:#2f59b5;
+}
+.sgc-teal{
+  color:teal;
+}
+
+.signal-at-right {
+  border-radius: 5px;
+  padding: 2px 3px 3px 3px;
+  color: white !important;
+  background: #1248B2;
+  text-decoration: none !important;
+}
+
+.signal-at-left {
+  border-radius: 5px;
+  color: black !important;
+  padding: 2px 3px 3px 3px;
+  background: #C6C6C6;
+  text-decoration: none !important;
+}
+
+
+
+
+/*youtube*/
+/*
+todo:
+- why is ao3 adding a drop-box
+*/
+.yt-font > a {
+
+}
+.yt-font{
+font-family: 'Roboto', sans-serif;
+}
+.yt-red-line-50 {
+  position:absolute;
+  width:100%;
+  height:3px;
+  background:linear-gradient(to right, red 50%,rgba(246,246,246,.3) 50%);
+  bottom:6px;
+}
+.yt-red-line-30 {
+  position:absolute;
+  width:100%;
+  height:3px;
+  background:linear-gradient(to right, red 30%,rgba(246,246,246,.3) 30%);
+  bottom:6px;
+}
+.yt-red-line-70 {
+  position:absolute;
+  width:100%;
+  height:3px;
+  background:linear-gradient(to right, red 70%,rgba(246,246,246,.3) 70%);
+  bottom:6px;
+}
+.yt-border-bottom-gray  {
+  border-bottom: 1px solid #b1b1b3;
+}
+.yt-comment{
+  border-bottom: 1px solid #b1b1b3;
+  margin-top:-10px;
+  padding-bottom:10px;
+  overflow: auto;
+}
+.yt-add-comment {
+  margin-top:-8px;
+  overflow: auto;
+  display: block;
+  padding-bottom:5px;
+
+}
+.yt-border-top-bottom-gray {
+  border-bottom: 1px solid #b1b1b3;
+  border-top: 1px solid #b1b1b3;
+  padding: 5px;
+}
+.yt-border-top-gray {
+  border-top: 1px solid #b1b1b3;
+  padding: 5px;
+}
+.yt-link {
+  color: #145DBD;
+  text-decoration: none !important;
+}
+.yt-down-arrow {
+  margin-top: 10px;
+  margin-right: 5px;
+  border: 6px solid transparent;
+  border-bottom-color: #000;
+  display: inline-block;
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(180deg);
+  }
+.yt-up-arrow {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  border: 6px solid transparent;
+  border-bottom-color: #000;
+  display: inline-block;
+  float: right;
+}
+.yt-stats{
+  width: 18%;
+  text-align:center;
+  display: inline-block;
+  padding-left:10px;
+  font-size:.8em;
+}
+.yt-bg-gray{
+ background-color: #bbb;
+}
+.yt-floatdot{
+  float:left;
+  margin-left:8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #bbb;
+  margin-bottom: -15px;
+}
+.yt-sub-button{
+  float:right;
+  font-size:0.8em;
+  color: red;
+  padding-right:5px;
+  margin-top: 10px;
+}
+
+.yt-vid-img{
+  width:100%;
+  /*padding-bottom: 56.25%; /*test this*/
+}
+
+.yt-views-text{
+  font-size:0.8em;
+  font-weight: normal;
+  color: #b1b1b3;
+}
+.yt-title{
+  font-size:1.2em;
+  font-weight: bold;
+}
+.yt-title-shift{
+margin-top:-5px;
+}
+.yt-replies{
+ font-size:.9em;
+ color: #145DBD;
+}
+.yt-readmore{
+  /* font-size:.9em; */
+  color: #606060;
+  padding-left:5px;
+}
+
+
+
+
+/*twitter*/
+/*
+todo:
+ - keep an eye on that vertical line
+*/
+.tw-text-gray{
+  color: #657685;
+}
+.tw-text-blue{
+  color: #1c94dc !important;
+  text-decoration: none !important;
+}
+.tw-link{
+  color: #1c94dc !important;
+  text-decoration: none !important;
+}
+
+.tw-link:visited {
+  color: #1c94dc !important;
+  text-decoration: none !important;
+}
+.tw-link:active {
+  color: #1c94dc !important;
+  text-decoration: none !important;
+}
+
+.tw-border-top-bottom {
+  border-bottom: 1px solid #D7DADD;
+  border-top: 1px solid #D7DADD;
+  font-size: 0.8em; /*this might break things*/
+}
+.tw-border-bottom {
+  border-bottom: 1px solid #D7DADD;
+}
+/*all these grays are different now... thanks twitter......*/
+/* they changed again :') */
+.tw-border-bottom-thick {
+  /* border-bottom: 5px solid #dfe5e8; */
+  border-bottom: 1px solid #D7DADD;
+  border-top: 1px solid #D7DADD;
+  background: #E7ECF0;
+  height:5px;
+  max-width:100%;
+}
+.twt-comment-buttons{
+  max-height: 40px;
+  width: 80%;
+  max-width: 450px;
+
+  /* padding-top: 10px; */
+  /* lmao this breaks things  */
+  /* margin-bottom:-10px; */
+  display: block;
+}
+.twt-share {
+  /* why the hell is this on imgur */
+  /* that seems excessively wrong */
+  /* like. who the hell put it on imgur? it wasnt me. no one else works on this project. all my resources are on github or, if i was lazy and forgot to fix it, discord. so *who put it on imgur*. */
+  /* wait am i even USING this anywhere??? */
+  /* WHO PUT THIS HERE */
+  background-image: url("https://i.imgur.com/iwGvFJY.png");
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: -24px;
+  margin-bottom: -10px;
+}
+.tw-img{
+  float: center;
+  /*might want to,*/
+  /*display: inline-block;*/
+  /* protip i think this might be block not inline-block */
+  margin: 10px 0px 10px 10px;
+  max-width: 95%;
+  border: 1px solid #D7DADD;
+  border-radius: 10px;
+}
+.tw-line-vertical {
+  margin-left: 22px;
+  border-left: 2px solid transparent;
+  border-image: linear-gradient(to bottom, lightgray 80%, rgba(255,255,255, 0) 20%);
+  border-image-slice: 1;
+}
+.tw-body{
+  font-size: 1.4em;
+}
+.tw-footer{
+  color: #657685;
+  /* font-size: .9em;  */
+  margin-top:-10px;
+  margin-bottom:5px;
+}
+.tw-subtext{
+  color: #657685;
+  /* font-size: .9em; */
+  padding-bottom:10px;
+}
+.tw-retweets-bar{
+  /* font-size: .9em; */
+  padding:10px 0 10px 0;
+  /* idk why this is necessary, maybe smth to do with a shift up 15px somewhere */
+  margin-bottom: 15px;
+  border-bottom: 1px solid #D7DADD;
+  border-top: 1px solid #D7DADD;
+  color: #657685;
+  font-size: .8em;
+}
+
+/* this could be muuuch cleaner but got it cleaned up then hot swapped it in and everything broke?? so it gets to live like this now. */
+.tw-no-heart{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/tw-topbar.jpg") no-repeat;
+  display: inline-block;
+  height:40px;
+  width:100%;
+  background-size:100% 40px;
+  border-bottom: 1px solid #D7DADD;
+  margin-top:-15px;
+  margin-bottom:0;
+}
+
+.tw-no-heart:hover{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/tw-topbar-heart.png") no-repeat;
+  display: inline-block;
+  height:40px;
+  width:100%;
+  background-size:100% 40px;
+}
+
+
+.tw-gray-box{
+  background: #C5CFD6;
+}
+.tw-big-cirle{
+  /* might not ever use this, but just in case */
+}
+.tw-header{
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.tw-subheader{
+  color: #626E81;
+
+}
+
+
+
+/*twitter DMs*/
+/*
+todo:
+* hows 'content' work
+*/
+.tw-check { /*idk how 'content' works*/
+  color: #1Da1f3;
+  content: "✓";
+  font-weight: bold;
+}
+.tw-uncheck{
+  color: #AAB8C1;
+  content: "✓";
+  font-weight: bold;
+}
+
+.tw-box-left0 {
+  margin-top: 10px;
+  color: black;
+  background: #e7ecf0;
+  border-width: 1px;
+  border-radius: 12px;
+  padding: 10px;
+  border-bottom-left-radius: 0;
+  margin-bottom: 3px;
+  float: left;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+
+.tw-box-left1 {
+  color: black;
+  background: #e7ecf0;
+  border-width: 1px;
+  border-radius: 12px;
+  padding: 10px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin-bottom: 3px;
+  float: left;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+
+.tw-box-left-round {
+  border-color: #e7ecf0;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+  padding: 10px 40px 10px 10px;
+  margin-bottom: 3px;
+  float: left;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+
+.tw-box-right1 {
+  border-width: 1px;
+  color: white;
+  background: #1Da1f3;
+  border-radius: 12px;
+  padding: 10px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 3px;
+  float: right;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+
+.tw-box-right0 {
+  margin-top: 10px;
+  border-width: 1px;
+  color: white;
+  background: #1Da1f3;
+  border-radius: 12px;
+  padding: 10px;
+  border-bottom-right-radius: 0;
+  margin-bottom: 3px;
+  float: right;
+  max-width: 75%;
+  clear: both;
+  position: relative;
+}
+
+.tw-time-right {
+  float: right;
+  position: relative;
+  color: #667684;
+  padding: 2px;
+  clear: both;
+  font-size:0.8em;
+}
+
+.tw-time-left {
+  float: left;
+  position: relative;
+  color: #667684;
+  padding: 2px;
+  clear: both;
+  font-size:0.8em;
+}
+
+
+.tw-middle-line {
+  text-align: center;
+  border-bottom: 1px solid #CDD6DB;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+.tw-middle-box {
+  background: #fff;
+  padding: 0 15px;
+  color:#657585;
+  font-size:.8em;
+  font-weight:bold;
+}
+
+.tw-white-img{
+  /* filter/brightness not supported by ao3 */
+  /* filter: brightness(0.95); */
+  /* opacity: 0.8;
+  background-color: black; */
+}
+
+.tw-img-right0 {
+   max-height: 200px;
+   overflow:hidden;
+
+   margin-top: 10px;
+   border-width: 1px;
+   border-radius: 12px;
+   border-bottom-right-radius: 0;
+   margin-bottom: 3px;
+   float: right;
+   max-width: 75%;
+}
+.tw-img-left0 {
+  max-height: 200px;
+  overflow:hidden;
+
+  margin-top: 10px;
+  border-width: 1px;
+  border-radius: 12px;
+  border-bottom-left-radius: 0;
+  margin-bottom: 3px;
+  float: left;
+  max-width: 75%;
+}
+
+
+/*discord*/
+/*
+todo:
+* we finally centered the header text, but at what cost
+* consider going mad and replacing the hamberger w compound images
+* i fixed the spacing but broke the reply boxes. so its possible, itll just take tweaking.
+*/
+.dc-font{
+  font-family: 'Uni sans', 'Whitney', sans-serif;
+  /*line-height: 160% !important;*/
+}
+/* this breaks things */
+div.dc-font > p
+{
+  /* line-height: 160% !important;  */ /*ignore this*/
+  /* this breaks things; also, change to margin bottom and fix stuff, probably. margin top is sketch. */
+
+  /* this fixes the spacing issue, but its an ao3 specific fix. it looks bad everywhere else. */
+  margin-bottom:-12px;
+}
+.dc-middle-line-red {
+  text-align: center;
+  border-bottom: 1px solid red;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  color:red;
+  font-size:.9em;
+}
+.dc-middle-line-gray {
+  text-align: center;
+  border-bottom: 1px solid #8A8E93;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  color:#737F8C;
+  font-size:.9em;
+}
+.dc-time-stamp {
+  font-size:0.8em;
+  color: #757F8B;
+}
+.dc-border-top {
+  /*border-top: 1px solid black;*/
+  /*check this*/
+  box-shadow: 0px 8px 10px -10px #888888;
+}
+.dc-border-bottom {
+  /*border-bottom: 1px solid black;*/
+  padding-bottom:5px;
+}
+.dc-reply-square{
+  border-left: 3px solid #76808C;
+  border-top: 3px solid #76808C;
+  border-top-left-radius: 8px;
+  margin: 2px 5px 0px 5px;
+  height: 25px;
+  width: 20px;
+  display: inline-block;
+  float: left;
+}
+.dc-reply-square-short{
+  border-left: 3px solid #76808C;
+  border-top: 3px solid #76808C;
+  border-top-left-radius: 8px;
+  margin: 2px 5px 0px 5px;
+  height: 10px;
+  width: 20px;
+  display: inline-block;
+  float: left;
+}
+.dc-reply-text{
+  margin-top: -2px;
+  margin-left: 5px;
+  font-size: .8em;
+  color: #797D80;
+  display:block;
+  overflow: auto;
+  display: block;
+}
+.dc-reply-wrapper {
+  /* margin-top:-10px; */
+  margin-bottom:-15px;
+}
+.dc-blockquote{
+  padding:0px 0 0px 7px;
+  margin:12px 0 2px 0;
+  border-left: 3px solid #76808C;
+}
+.dc-hamberger { /*yes im aware this is mispelled, its too late now*/
+  height: 35px;
+  width: 50px;
+  padding-top:10px;
+  margin-bottom:-11px;
+}
+.dc-header-buffer{
+  margin-top:10px;
+  margin-left:10px;
+
+  overflow: auto;
+}
+.dc-header{
+  /* font-size:35px; */
+  font-size: 1.3em;
+  font-weight:bold;
+  mmargin-top:10px;
+  margin-left:5px; /* this was 0 before*/
+  ppadding-bottom:-10px;
+  ppadding-bottom:0;
+  mmargin-bottom:-15px;
+
+  overflow: auto;
+}
+.dc-emotebox {
+  border-radius: 4px;
+  background: #F6F6F6;
+  color: #C2C5C9;
+  border:1.5px solid #F6F6F6;
+  padding: 2px;
+  padding: 2px 5px 2px 3px;
+}
+.dc-myemotebox {
+  border-radius: 6px;
+  border:1.5px solid #5865F2;
+  background: #E7E9FD;
+  color: #5865F2;
+  padding: 2px 5px 2px 3px;
+}
+.dc-img-box {
+  border-color: #f2f4f4;
+  color: #595959;
+  background: #F6F6F6;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 3px 3px 10px 3px;
+  margin-top:-10px;
+}
+.dc-green-line-50 {
+  border-bottom: 3px solid transparent;
+  padding-left: 5px;
+  padding: 3px;
+  border-image: linear-gradient(to right, #78bf9f 50%, #F6F6F6 50%);
+  border-image-slice: 1;
+}
+.dc-green-line-20 {
+  border-bottom: 3px solid transparent;
+  padding-left: 5px;
+  padding: 3px;
+  border-image: linear-gradient(to right, #78bf9f 20%, #F6F6F6 70%);
+  border-image-slice: 1;
+}
+.dc-green-line-85 {
+  border-bottom: 3px solid transparent;
+  padding-left: 5px;
+  padding: 3px;
+  border-image: linear-gradient(to right, #78bf9f 85%, #F6F6F6 15%);
+  border-image-slice: 1;
+}
+/*christ, why did i do this. why didn't i just do "dc-name" and then a separate variable for color, what is wrong with me*/
+.dc-name-red{
+  color:red;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-yellow{
+  color:#FFC72C;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-orange{
+  color:orange;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-blue{
+  color:blue;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-lblue{
+  color:#add8e6;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-pink{
+  color:pink;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-lpink{
+  color:#FEC9CD;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-purple{
+  color:purple;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-green{
+  color:#78bf9f;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-forest{
+  color:#228b22;
+  font-weight:bold;
+  font-size:1.1em;
+}
+.dc-name-default{
+  color:#060607;
+  font-weight:bold;
+  font-size:1.1em;
+}
+
+.dc-just-emote{ /*dont forget to shift the below element up*/
+  font-size:2.5em;
+  margin-top:-5px;
+  margin-bottom:0px;
+}
+.dc-welcome{
+  font-size:2em;
+  font-weight:bold;
+  margin-bottom:-15px;
+}
+.dc-link {
+  border-radius: 1px;
+  color: #5865EF !important;
+  background: #E7EAFD;
+  text-decoration: none !important;
+}
+
+ .dc-spoiler {
+  color: #B9BBBE;
+  background-color: #B9BBBE;
+  border-radius: 3px;
+}
+.dc-spoiler:hover {
+  color: black;
+  background-color: #E5E5E5;
+}
+
+.dc_bot {
+  background:#5865F2;
+  color:white;
+  font-size:.5em;
+  padding: 2px 4px 2px 4px;
+  border-radius:3px;
+}
+.dc_code {
+  background:#f9f9f9;
+  color:#4F555D;
+  padding:1.5px;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+
+.dc_image{
+  max-width: 95%;
+  max-height: 350px;
+  height: auto;
+
+  display:table;
+  border: 1px solid #DDDEDF;
+  border-radius: 6px;
+  line-height: 1.4em;
+
+}
+
+
+/*discord, embedded*/
+.dc-link-blue{
+  color: #0C63CC !important;
+  text-decoration: none !important;
+}
+.dc-yt-box{
+  width:95%;
+  max-width:500px;
+  /* why was this a table */
+  /* display:table; */
+  background-color:#F2F3F5;
+  border: 1px solid #DDDEDF;
+  border-left: 4px solid #FE0000;
+  border-radius: 6px;
+  padding:3px 7px 3px 7px;
+  line-height:1.4em;
+  /* align:left !important; */
+  margin-left: 0px;
+}
+.dc-yt-img{
+  width:100%;
+  border: 1px;
+  border-radius: 6px;
+  margin-top:10px;
+}
+.dc-yt-text{
+  font-size:.7em;
+  color:gray;
+}
+
+/*discord, but integrated*/
+/*deals with the p tags ao3 littered everywhere*/
+div.dc-msg-container p
+{
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.dc-msg-container {
+    display: table;
+    width: 100%;
+    position:relative;
+}
+.dc-msg-wrapper{
+    display: table;
+    position:relative;
+    width: 100%;
+}
+.dc-arrow-wrapper{
+  vertical-align: middle;
+  width:25px;/*fudge this number*/
+  display: table-cell;
+}
+.dc-arrow{
+  width:25px;
+  margin-left: 0;
+  margin-right:5px;
+}
+
+.dc-msg-box{
+  display: table-cell;
+  background:#ECEDEF;
+  border-width: 1px;
+  border-radius: 20px;
+  padding: 7px 10px 7px 12px;
+  color: black;
+}
+.dc-msg-text{
+    display: table-cell;
+    width:85%;
+}
+.dc-emote-wrapper{
+  display: table-cell;
+  vertical-align: middle;
+}
+.dc-emote-button{
+  width:1.5em;
+  height:1.5em;
+  float:right;
+}
+
+.dc-send-wrapper{
+  display: table-cell;
+  width:3.5em;
+  vertical-align: middle;
+}
+.dc-send{
+  background-color:#5765f2;
+  width:2.5em;
+  height:2.5em;
+  float:right;
+}
+
+.dc-empty{
+  color:#757F8B;
+}
+
+.dc-cursor{
+  height:1.5em;
+  width:1em;
+  position: absolute;
+  margin-left:-6px;
+  margin-top:2px;
+  /* for all non ao3 platforms */
+  /*margin-left:-8px;
+  margin-top:-1px;
+  */
+}
+
+.dc-new-msg-bar{
+  background:#5865F2;
+  color:white;
+  padding: 8px 10px 8px 15px;
+  font-weight:bold;
+  /* this value feels wrong but looks correct in atom */
+  margin-top:20px;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.dc-blue-x{
+  float:right;
+  padding-right:3px;
+  /* margin-top:-3px; */
+  vertical-align: middle;
+  height:1.4em;
+}
+.dc-typing{
+  background: #F9F9F9;
+  color:#35363A;
+  font-size: .8em;
+  margin-bottom:5px;
+  /* for ao3 spacing */
+  /* margin-bottom:0px; */
+  margin-top: 15px;
+  padding-left: 5px;
+}
+.dc-typing-dot{
+  height:1em;
+  margin-top:2px;
+}
+
+/*phone screen/notifications/time*/
+.phone-div {
+  border-top: 1px solid #b1b1b3;
+  max-width:412px;
+}
+.phone-short-line {
+  border-bottom: 4px solid #bbb;
+  border-radius: 4px;
+  padding-bottom: 10px;
+  width: 30%;
+  max-width:123px;
+  text-align: center;
+}
+ .phone-date {
+  font-size: 1.2em;
+}
+
+.phone-time {
+  font-size: 4em;
+}
+.phone-notif-top{
+  border-color: #d3dce0;
+  border-style: solid;
+  margin: 0;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  color: #9F9FA1;
+}
+
+.phone-notif-bottom {
+  border-color: #d3dce0;
+  border-style: solid;
+  margin-bottom: 25px;
+  margin-top: 0;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.phone-caller{
+  font-size:2em;
+}
+.phone-incoming{
+  font-size:.8em;
+  color: #9F9FA1;
+}
+.phone-number{
+  color: #9F9FA1;
+  font-size:.8em;
+  margin:-20px 0 0 0;
+}
+
+.phone-send-message{
+  font-size:.8em;
+  color: #9F9FA1;
+  text-align:center;
+  margin-top:-10px;
+}
+
+.phone-answer{
+  width:90%;
+/*   this might get you into trouble */
+  margin:250px 0 10px 0;
+  max-width:412px;
+}
+
+
+/*news*/
+.news-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 1px solid #b1b1b3;
+  padding-bottom:5px;
+}
+.news-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.news-date {
+  color: #9F9FA1;
+}
+.news-border {
+  border-bottom: 1px solid #b1b1b3;
+}
+.news-read-more-button {
+  position: absolute;
+  bottom: 0;
+  background: gray;
+  border-radius: 6px;
+  color: white;
+  padding: 5px;
+  margin: auto;
+  text-align: center;
+  left: 50%;
+  margin-left: -50px;
+}
+
+
+/*blog*/
+.blog-header {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: -10px;
+}
+.blog-date {
+  font-size: .9em;
+  color: gray;
+}
+.blog-more {
+  text-decoration:underline;
+}
+.blog-block{
+text-align: justify;
+}
+
+
+
+/*article*/
+.art-author{
+  font-family:verdana;
+  font-size:.8em;
+  margin-top:10px;
+
+}
+.art-line{
+  border: 2px solid black;
+  width:80%;
+}
+.art-font{
+  font-family: 'Roboto', sans-serif;
+}
+.art-title1{
+  font-weight: bold;
+  font-size:2em;
+}
+.art-title2{
+  color:gray;
+  font-size:1.8em;
+}
+.art-red{
+  font-size:.7em;
+  font-family:verdana;
+  color: red;
+  margin: -40px 0 -10px 0;
+}
+
+.art-header{
+  font-size:4em;
+  font-weight:bold;
+  font-family:serat;
+}
+.art-read-more {
+  position: absolute;
+  bottom: 0;
+  background: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: #3399cc;
+  padding: 5px 20px 5px 20px;
+  margin: auto;
+  text-align: center;
+  left: 45%;
+  margin-left: -50px;
+}
+.art-content{
+  text-align: justify;
+}
+
+
+
+/* gmail */
+/* todo:
+- that freaking td space, what the hell
+*/
+
+p.gmail-up-arrow-gimmick:hover ~ div.gmail-info-box {
+display: none;
+}
+p.gmail-up-arrow-gimmick:hover .gmail-up-arrow{
+  border: solid #5F6266;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 2px;
+  margin-left:2px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+p.gmail-down-arrow-gimmick:hover ~ div.hidden-gmail-info-box {
+  display:block;
+  margin-bottom: 20px;
+}
+p.gmail-down-arrow-gimmick:hover .gmail-down-arrow {
+  border: solid #5F6266;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 2px;
+  margin-left:2px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+span.gmail-arrow-box:hover ~ div > div.gmail-info-box {
+display: none;
+}
+
+div.gmail-font > a
+{
+  color: #2372DB;
+  text-decoration: none !important;
+}
+
+.gmail-down-arrow-gimmick{
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.gmail-up-arrow-gimmick{
+  white-space: nowrap;
+}
+
+/* lmao idk */
+.gmail-reply-button{
+  height: 30px;
+  display: inline-block;
+  margin-right: -5px;
+  float: right;
+  overflow: hidden;
+}
+
+.gmail-font{
+  font-family: 'Roboto', sans-serif;
+}
+.gmail-weak-text{
+color:#5F6266;
+}
+.gmail-tail{
+color:#878787;
+}
+.gmail-info-left{
+color:#5F6266;
+padding-right: 10px;
+}
+.gmail-sender{
+font-weight:bold;
+font-size:1.1em;
+}
+.gmail-reciever{
+font-size:.8em;
+color:#5F6266;
+}
+.gmail-send-time{
+color:#5F6266;
+font-size:.7em;
+padding-left:7px;
+
+}
+.gmail-indent{
+padding-left:50px;
+}
+.gmail-tag{
+  border-radius: 4px;
+  background: #EEEEEE;
+  color: #363636;
+  padding: 4px;
+  font-size:.8em;
+}
+.gmail-info-box{
+  border-color: #DBDCDF;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: .8em;
+  margin-bottom: 10px;
+  /* line-height: 1.5em; */
+}
+.hidden-gmail-info-box{
+  border-color: #DBDCDF;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: .8em;
+  margin-bottom: 10px;
+  display:none;
+}
+
+.gmail-subject-buffer {
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+.gmail-subject {
+  font-size: 1.5em;
+
+}
+
+.gmail-hr{
+  border-bottom: 1px solid #EDEEEF;
+}
+.gmail-body{
+
+}
+.gmail-up-arrow{
+  border: solid #5F6266;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 2px;
+  margin-left:2px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.gmail-down-arrow{
+  border: solid #5F6266;
+  border-width: 0 1.5px 1.5px 0;
+  display: inline-block;
+  padding: 2px;
+  margin-left:2px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.gmail-link{
+  color: #2372DB;
+  text-decoration: none;
+}
+.gmail-quoted-text{
+  color: #2372DB;
+  text-decoration: none;
+  font-size:.8em;
+}
+.gmail-dot{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 15px;
+  background-color: #EDEEEF;
+  margin-bottom: -15px;
+  float: left;
+}
+
+.gmail-red{
+  color:red;
+  font-size:1.4em;
+}
+.gmail-secret{
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.red-top{
+  border-top: 2.5px solid #CF3F3D;
+  /* the offset is off, its fine, i give up */
+  /* margin-right: -1px; */
+}
+.blue-top{
+  border-top: 2.5px solid #5281D8;
+  /* margin-left: -3px; */
+}
+.yellow-top{
+  border-top: 2.5px solid #EDC151;
+}
+
+
+/*chrome history*/
+
+/* this didnt help */
+div.no-p p{
+/* margin:0; */
+}
+div.ch-table p
+{
+  margin:0;
+}
+
+.ch-header{
+  font-family: 'Uni sans', 'Whitney', sans-serif; /*different*/
+  border-bottom: 1px solid #E0E0E0;
+  margin-bottom:20px;
+}
+.ch-title{
+  font-size:1.4em;
+}
+.ch-search-icon{
+  float:right;
+  width:70px;
+  clear:both; /*this clear might not work in ao3*/
+}
+
+.ch-sub-header{
+  color: #1A72E8;
+  font-size:.9em;
+  /* font-weight:bold; */
+  margin: auto !important;
+  margin-top:25px;
+}
+
+.ch-date{
+  color: #5f6267;
+  font-size:0.8em;
+}
+
+.ch-table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+/*     position:relative; */
+}
+
+.ch-row{
+  display: table-row;
+  height:3em;
+  /* border: 1px solid gray; */
+  margin: 10px 0 10px 0;
+}
+
+.ch-dot-cell{
+  display: table-cell;
+  width:40px;
+  vertical-align: middle;
+}
+.ch-dot{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #F2F3F5;
+}
+.ch-site-cell{
+  display: table-cell;
+  padding-right:15px;
+}
+.ch-page-name{
+  font-size:0.9em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  margin-top:10px;
+}
+.ch-page-link{
+  font-size: 0.7em;
+  color: #5f6267;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 3px;
+}
+.ch-x-cell{
+  width:30px;
+  display:table-cell;
+  vertical-align: middle;
+}
+
+/* .ch-x-cell{
+  background-size: contain;
+  width:10px;
+  margin:0 10px 0 10px;
+  display:table-cell;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-image: url("https://github.com/jihnari/QAB/raw/main/img/ch-x.png");
+} */
+
+.ch-x{
+  margin:0 10px 0 10px;
+  width:20px;
+}
+
+
+
+/* (formal) interview */
+.interview-table {
+  display: table;
+  margin: auto;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.interview-name {
+  vertical-align:top;
+  width: 10%;
+  font-weight:normal;
+  font-family:Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.interview-text {
+  width: 88%;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom: 5px;
+  font-weight:normal;
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+  text-align: justify;
+  text-justify: inter-word;
+}
