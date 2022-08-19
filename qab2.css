@@ -39,6 +39,9 @@ margin-top:0;
 margin-top:-15px;
 max-width:100%;
 }
+.shift-right{
+margin-left:15px;
+}
 .shift-up2{
 margin-top:-30px;
 }
@@ -187,7 +190,7 @@ margin-bottom:-15px;
 .stay-block::-webkit-scrollbar {
   display: none;
 }
-}
+
 .stay{
 width:100%;
 }
@@ -306,9 +309,11 @@ the last thing we might wanna do here is use the fadeout function and place the 
 .rd-op{
   color:#25A0ED;
   font-weight:bold;
+  cursor: pointer;
 }
 .rd-link{
   color:#25A0ED;
+  cursor: pointer;
 }
 .rd-down-arrow {
   border: solid black;
@@ -459,6 +464,7 @@ cried enough over it already so i'll probably just. ignore it forever?
 .line-border {
   border-bottom: 1px solid black;
   padding-bottom: 10px;
+  background-color: white;
 }
 .line-box-left-time {
   float: left;
@@ -702,6 +708,7 @@ cried enough over it already so i'll probably just. ignore it forever?
   margin-right: auto;
   height:140px;
 }
+/* are these supposed to be "line" */
 .link-text-top{
   font-weight: bold;
   font-size: .9em;
@@ -718,6 +725,7 @@ cried enough over it already so i'll probably just. ignore it forever?
 }
 .line-at{
   color: #4582C2;
+  cursor: pointer;
 }
 
 
@@ -765,6 +773,7 @@ todo:
   margin-right: 10px;
   background-color: #bbb;
   margin-bottom: -15px;
+  margin-bottom: 10px;
   float:left;
 }
 .signal-name{
@@ -973,7 +982,7 @@ todo:
 }
 .signal-subheader {
   /* padding: 5px 0 5px 0; */
-  margin-top:-10px;
+  margin-top:-15px;
   font-size:.8em;
   text-align:center;
   position: relative;
@@ -986,15 +995,16 @@ todo:
   /* left: 50%;
   transform: translate(-50%); */
   /* nvm, the above works on everything but ao3. ao3 demands just left. */
-  left: 50%;
+  /* left: 50%; */
+  /* NVM?? THE BEHAVIOR HAS CHANGED AGAIN?? IT JUST CENTERS ALL BY ITSELF NOW??? */
 
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   background-color: #bbb;
 }
 .signal-misc-space{
-  height:50px;
+  height:30px;
 }
 
 /*signal group chat*/
@@ -1077,6 +1087,7 @@ todo:
   color: white !important;
   background: #1248B2;
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 .signal-at-left {
@@ -1085,6 +1096,7 @@ todo:
   padding: 2px 3px 3px 3px;
   background: #C6C6C6;
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 
@@ -1150,6 +1162,7 @@ font-family: 'Roboto', sans-serif;
 .yt-link {
   color: #145DBD;
   text-decoration: none !important;
+  cursor: pointer;
 }
 .yt-down-arrow {
   margin-top: 10px;
@@ -1232,6 +1245,31 @@ margin-top:-5px;
 todo:
  - keep an eye on that vertical line
 */
+.tw-dot-thread{
+  float:left;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #D7DADD;
+  box-shadow: 0px 0px 0px 3px white;
+  mmargin-bottom: -15px;
+  margin-top:0px;
+  margin-left:-21px;
+
+}
+.tw-dot{
+  float:left;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #D7DADD;
+  margin-bottom: -15px;
+
+}
 .tw-text-gray{
   color: #657685;
 }
@@ -1242,6 +1280,7 @@ todo:
 .tw-link{
   color: #1c94dc !important;
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 .tw-link:visited {
@@ -1260,6 +1299,12 @@ todo:
 }
 .tw-border-bottom {
   border-bottom: 1px solid #D7DADD;
+}
+.tw-border-bottom2 {
+  border-bottom: 1px solid #D7DADD;
+
+  /* ao3 nonsense */
+  margin-top:-30px;
 }
 /*all these grays are different now... thanks twitter......*/
 /* they changed again :') */
@@ -1281,6 +1326,31 @@ todo:
   /* margin-bottom:-10px; */
   display: block;
 }
+.twt-comment-buttons2{
+  max-width: 500px;
+
+  /* background: url("https://github.com/jihnari/QAB/raw/main/img/tw-topbar.jpg") no-repeat; */
+
+  background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008111410984783923/Screenshot_20220813-133439_Twitter.jpg") no-repeat;
+  display: inline-block;
+  height:30px;
+  width:100%;
+  background-size:80% 30px;
+  margin-bottom:0;
+}
+
+/* remove */
+.tw-no-heart{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/tw-topbar.jpg") no-repeat;
+  display: inline-block;
+  height:40px;
+  width:100%;
+  background-size:100% 40px;
+  border-bottom: 1px solid #D7DADD;
+  margin-top:-15px;
+  margin-bottom:0;
+}
+
 .twt-share {
   /* why the hell is this on imgur */
   /* that seems excessively wrong */
@@ -1315,8 +1385,8 @@ todo:
   margin-left: 22px;
   border-left: 2px solid transparent;
   border-color: lightgray;
-  /* border-image: linear-gradient(to bottom, lightgray 80%, rgba(255,255,255, 0) 20%); */
-  /* border-image-slice: 1; */
+  border-image: linear-gradient(to bottom, lightgray 95%, rgba(255,255,255, 0) 5%);
+  border-image-slice: 1;
 }
 .tw-body{
   font-size: 1.4em;
@@ -1330,7 +1400,7 @@ todo:
 .tw-subtext{
   color: #657685;
   /* font-size: .9em; */
-  padding-bottom:10px;
+  /* padding-bottom:10px; */
 }
 .tw-retweets-bar{
   /* font-size: .9em; */
@@ -1366,9 +1436,20 @@ todo:
 
 .tw-gray-box{
   background: #C5CFD6;
+  width:100%;
+  height:120px;
 }
 .tw-big-cirle{
   /* might not ever use this, but just in case */
+  /* border: solid 2px #C5CFD6;
+  margin-left: 10px; */
+/*
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  background-color: #F8FAFB; */
 }
 .tw-header{
   font-size: 1.2em;
@@ -1376,15 +1457,15 @@ todo:
 }
 .tw-subheader{
   color: #626E81;
-
 }
 
 .tw-verified-icon{
   background: url("https://github.com/jihnari/QAB/raw/main/img/tw-verified.png");
   height: 20px;
   width: 20px;
+  background-size: 20px 20px;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: sub;
 }
 
 
@@ -1542,6 +1623,138 @@ todo:
   max-width: 75%;
 }
 
+
+/* new twitter stuff, should delete/clean a bunch of it  */
+
+  .tw-back-icon{
+    height: 27px;
+    width: 27px;
+    vertical-align:bottom;
+
+    background: url("https://github.com/jihnari/QAB/raw/main/img/tw-arrow.png") no-repeat;
+    background-size:contain;
+    display: inline-block;
+
+    margin-right:15px;
+    margin-left:3px;
+  }
+  .tw-header-text{
+    font-size: 12px;
+  }
+
+
+
+  .tw-small-icon-buffer{
+    height:30px;
+  }
+  .tw-small-icon-table{
+    display: table;
+    position:absolute;
+    left:0;
+    max-width:500px;
+
+    width: 100%;
+    margin-right:20px;
+    /* for ao3's nonsense */
+    mmargin-top: -65px;
+    /* alternatively, we just make a wrapper for twitter and kill the p margins */
+  }
+
+  .tw-small-icon-cell-init{
+    display: table-cell;
+    /* was 65; oh yeah 65 for the search output version of this, i think */
+    width:40px;
+
+    height:30px;
+  }
+  .tw-small-icon-cell-bubble{
+    display: table-cell;
+    height: 30px;
+    min-width: 30px;
+
+    text-align: left;
+    font-size: .8em;
+    padding-left:5px;
+    color:gray;
+  }
+  .tw-small-icon-cell-bubble::before{
+    content: '';
+    display: inline-flex;
+    height:30px;
+    width:30px;
+    background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246431674531850/unknown.png") no-repeat;
+    background-size:30px 30px;
+
+    vertical-align: -70%;
+    padding-right:15px;
+    /* margin-left:37px; */
+  }
+
+  .tw-small-icon-cell-heart{
+    display: table-cell;
+    height: 30px;
+    min-width: 30px;
+
+    text-align: left;
+    font-size: .8em;
+    padding-left:5px;
+    color:gray;
+  }
+  .tw-small-icon-cell-heart::before{
+    content: '';
+    display: inline-flex;
+    height:30px;
+    width:30px;
+    background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246683404075068/unknown.png") no-repeat;
+    background-size:30px 30px;
+
+    vertical-align: -70%;
+    padding-right:15px;
+  }
+
+  .tw-small-icon-cell-retweet{
+    display: table-cell;
+    height: 30px;
+    min-width: 30px;
+
+    text-align: left;
+    font-size: .8em;
+    padding-left:5px;
+    color:gray;
+  }
+  .tw-small-icon-cell-retweet::before{
+    content: '';
+    display: inline-flex;
+    height:30px;
+    width:30px;
+    background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246555788189756/unknown.png") no-repeat;
+    background-size:30px 30px;
+
+    vertical-align: -70%;
+    padding-right:15px;
+  }
+
+  .tw-small-icon-cell-link{
+    display: table-cell;
+    height: 30px;
+    min-width: 30px;
+
+    text-align: left;
+    font-size: .8em;
+    padding-left:5px;
+    color:gray;
+  }
+  .tw-small-icon-cell-link::before{
+    content: '';
+    display: inline-flex;
+    height:30px;
+    width:30px;
+    background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246780347031572/unknown.png") no-repeat;
+    background-size:30px 30px;
+
+    vertical-align: -70%;
+    padding-right:15px;
+  }
 
 /*discord*/
 /*
@@ -2419,6 +2632,7 @@ padding-left:50px;
 .gmail-link{
   color: #2372DB;
   text-decoration: none;
+  cursor: pointer;
 }
 .gmail-quoted-text{
   color: #2372DB;
