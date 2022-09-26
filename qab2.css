@@ -10,7 +10,7 @@
 .dm-container {
   display: table;
   margin: auto;
-  max-width: 100%;
+  max-width: 95%;
   /* this used to be 100 and for what?? to make me cry?? idk but we're gonna see if changing it breaks everything */
   min-width: 95%;
 }
@@ -38,6 +38,9 @@ margin-top:0;
 .shift-up{
 margin-top:-15px;
 max-width:100%;
+}
+.shift-up5{
+margin-top:-5px;
 }
 .shift-right{
 margin-left:15px;
@@ -1276,6 +1279,7 @@ todo:
 .tw-text-blue{
   color: #1c94dc !important;
   text-decoration: none !important;
+  cursor: pointer;
 }
 .tw-link{
   color: #1c94dc !important;
@@ -1304,7 +1308,7 @@ todo:
   border-bottom: 1px solid #D7DADD;
 
   /* ao3 nonsense */
-  margin-top:-30px;
+  margin-top:-5px;
 }
 /*all these grays are different now... thanks twitter......*/
 /* they changed again :') */
@@ -1340,7 +1344,7 @@ todo:
 }
 
 /* remove */
-.tw-no-heart{
+/* .tw-no-heart{
   background: url("https://github.com/jihnari/QAB/raw/main/img/tw-topbar.jpg") no-repeat;
   display: inline-block;
   height:40px;
@@ -1349,7 +1353,7 @@ todo:
   border-bottom: 1px solid #D7DADD;
   margin-top:-15px;
   margin-bottom:0;
-}
+} */
 
 .twt-share {
   /* why the hell is this on imgur */
@@ -1643,101 +1647,41 @@ todo:
   }
 
 
+/* all the nonsense for the viewable impression count twitter icons  */
 
-  .tw-small-icon-buffer{
-    height:30px;
-  }
-  .tw-small-icon-table{
-    display: table;
-    position:absolute;
-    left:0;
-    max-width:500px;
+/* hey... do you need both of these
+what is the function of this, was it an ao3 specific fix */
+p.tw-small-icon-buffer{
+  height:30px;
+}
+.tw-small-icon-buffer{
+  height:30px;
+}
 
-    width: 100%;
-    margin-right:20px;
-    /* for ao3's nonsense */
-    mmargin-top: -65px;
-    /* alternatively, we just make a wrapper for twitter and kill the p margins */
-  }
+.tw-small-icon-table{
+  display: table;
 
-  .tw-small-icon-cell-init{
-    display: table-cell;
-    /* was 65; oh yeah 65 for the search output version of this, i think */
-    width:40px;
+  position:absolute;
+  left:0;
+  max-width:500px;
 
-    height:30px;
-  }
-  .tw-small-icon-cell-bubble{
-    display: table-cell;
-    height: 30px;
-    min-width: 30px;
+  width: 100%;
+  margin-right:20px;
+  /* for ao3's nonsense */
+  mmargin-top: -65px;
+  /* alternatively, we just make a wrapper for twitter and kill the p margins */
+}
 
-    text-align: left;
-    font-size: .8em;
-    padding-left:5px;
-    color:gray;
-  }
-  .tw-small-icon-cell-bubble::before{
-    content: '';
-    display: inline-flex;
-    height:30px;
-    width:30px;
-    background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246431674531850/unknown.png") no-repeat;
-    background-size:30px 30px;
 
-    vertical-align: -70%;
-    padding-right:15px;
-    /* margin-left:37px; */
-  }
-
-  .tw-small-icon-cell-heart{
-    display: table-cell;
-    height: 30px;
-    min-width: 30px;
-
-    text-align: left;
-    font-size: .8em;
-    padding-left:5px;
-    color:gray;
-  }
-  .tw-small-icon-cell-heart::before{
-    content: '';
-    display: inline-flex;
-    height:30px;
-    width:30px;
-    background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246683404075068/unknown.png") no-repeat;
-    background-size:30px 30px;
-
-    vertical-align: -70%;
-    padding-right:15px;
-  }
-
-  .tw-small-icon-cell-retweet{
-    display: table-cell;
-    height: 30px;
-    min-width: 30px;
-
-    text-align: left;
-    font-size: .8em;
-    padding-left:5px;
-    color:gray;
-  }
-  .tw-small-icon-cell-retweet::before{
-    content: '';
-    display: inline-flex;
-    height:30px;
-    width:30px;
-    background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246555788189756/unknown.png") no-repeat;
-    background-size:30px 30px;
-
-    vertical-align: -70%;
-    padding-right:15px;
-  }
+/* try this later? was it to fix smth on ao3? probably */
+p.ttw-small-icon-table{
+  margin:0;
+}
 
   .tw-small-icon-cell-link{
     display: table-cell;
     height: 30px;
-    min-width: 30px;
+    min-width: 70px;
 
     text-align: left;
     font-size: .8em;
@@ -1755,6 +1699,81 @@ todo:
     vertical-align: -70%;
     padding-right:15px;
   }
+  .tw-test{
+    margin-left:30px;
+    margin-top:-25px;
+}
+
+
+.tw-small-icon-cell-bubble{
+  display: table-cell;
+  height: 30px;
+  min-width:100px;
+
+  text-align: left;
+  font-size: .8em;
+  padding-left:5px;
+  color:gray;
+}
+.tw-small-icon-cell-bubble::before{
+  content: '';
+  display: inline-flex;
+  height:30px;
+  width:30px;
+  background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246431674531850/unknown.png") no-repeat;
+  background-size:30px 30px;
+
+  vertical-align: -70%;
+  padding-right:15px;
+
+  /* this value has to change depending on if its a main tweet or tweet thread, i think */
+  margin-left:37px;
+}
+
+.tw-small-icon-cell-heart{
+  display: table-cell;
+  height: 30px;
+  min-width:70px;
+
+  text-align: left;
+  font-size: .8em;
+  padding-left:5px;
+  color:gray;
+}
+.tw-small-icon-cell-heart::before{
+  content: '';
+  display: inline-flex;
+  height:30px;
+  width:30px;
+  background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246683404075068/unknown.png") no-repeat;
+  background-size:30px 30px;
+
+  vertical-align: -70%;
+  padding-right:15px;
+}
+
+.tw-small-icon-cell-retweet{
+  display: table-cell;
+  height: 30px;
+  min-width: 70px;
+
+  text-align: left;
+  font-size: .8em;
+  padding-left:5px;
+  color:gray;
+}
+.tw-small-icon-cell-retweet::before{
+  content: '';
+  display: inline-flex;
+  height:30px;
+  width:30px;
+  background: url("https://cdn.discordapp.com/attachments/387318898174984195/1008246555788189756/unknown.png") no-repeat;
+  background-size:30px 30px;
+
+  vertical-align: -70%;
+  padding-right:15px;
+}
+
 
 /*discord*/
 /*
@@ -1902,6 +1921,13 @@ div.dc-font > p
   width: 50px;
   padding-top:10px;
   margin-bottom:-11px;
+
+
+/* check this later, no internet now  */
+  /* background-size:50px 35px;
+  background: url("https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg") no-repeat;
+  display: inline-block;
+  background-color: pink; */
 }
 .dc-header-buffer{
   margin-top:10px;
@@ -2146,6 +2172,28 @@ border:1.5px solid #BCBCBC;
 
 }
 
+/* discord emotes */
+.custom_emote{
+  width:1.2em;
+  height:1.2em;
+  display:inline-block;
+  vertical-align:sub;
+}
+
+/* update link */
+.thonk{
+  background: url("https://i.kym-cdn.com/photos/images/original/001/250/498/dd3.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+
+/* add:
+pensive cowboy
+orly
+power
+thonk
+cb thumbsup
+*/
+
 
 /*discord, embedded*/
 .dc-link-blue{
@@ -2189,6 +2237,13 @@ padding-left:7px;
 
 .dc-orange-bg:hover{
 background:#FEEED1;
+}
+
+.dc-custom_emote{
+  width:1.2em;
+  height:1.2em;
+  display:inline-block;
+  vertical-align:sub;
 }
 
 /*discord, but integrated*/
