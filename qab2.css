@@ -450,6 +450,7 @@ cried enough over it already so i'll probably just. ignore it forever?
   min-width: 95%;
 }
 .line-date{
+  /* i think this might be more like .5 (now? might have changed) */
   font-size: 0.8em;
   background: #BFBDC1;
   border-radius: 12px;
@@ -457,6 +458,32 @@ cried enough over it already so i'll probably just. ignore it forever?
   padding: 8px 10px;
   clear: both;
   text-align: center;
+}
+.line-unread{
+  margin: auto;
+  width:95%;
+
+  font-size: 0.8em;
+  background: #BFBDC1;
+  border-radius: 12px;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  margin-bottom:10px;
+  margin-top:10px;
+
+  /* idk how content works except that it never does  */
+  content: "Unread messages below";
+}
+.line-unread-icon{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/line-unread-icon.png") no-repeat;
+  height:12px;
+  width:16px;
+  background-size:16px 12px;
+  display: inline-block;
+
+  float:left;
+  margin-top: 0px;
 }
 .line-name-header{
   font-size: 1.2em;
@@ -2176,15 +2203,47 @@ border:1.5px solid #BCBCBC;
 .custom_emote{
   width:1.2em;
   height:1.2em;
+  margin:2px;
   display:inline-block;
   vertical-align:sub;
 }
 
 /* update link */
 .thonk{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/thonk.png") no-repeat;
   background: url("https://i.kym-cdn.com/photos/images/original/001/250/498/dd3.png") no-repeat;
   background-size:1.2em 1.2em;
 }
+
+.fcb{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/fcb.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+.cowboy_will_remember_that{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/cowboy_will_remember_that.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+.finter{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/finter.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+.happy_cb{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/happy_cb.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+.oof_cowboy{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/oof_cowboy.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+.pensive_cowboy{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/pensive_cowboy.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+.yeehowdy{
+  background: url("https://github.com/jihnari/QAB/raw/main/img/emotes/yeehowdy.png") no-repeat;
+  background-size:1.2em 1.2em;
+}
+
 
 /* add:
 pensive cowboy
