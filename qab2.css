@@ -1689,10 +1689,8 @@ todo:
 /* hey... do you need both of these
 what is the function of this, was it an ao3 specific fix */
 p.tw-small-icon-buffer{
-  height:30px;
-}
-.tw-small-icon-buffer{
-  height:30px;
+  height:15px;
+  margin-bottom:-10px;
 }
 
 .tw-small-icon-table{
@@ -1705,14 +1703,8 @@ p.tw-small-icon-buffer{
   width: 100%;
   margin-right:20px;
   /* for ao3's nonsense */
-  mmargin-top: -65px;
+  margin-top: -20px;
   /* alternatively, we just make a wrapper for twitter and kill the p margins */
-}
-
-
-/* try this later? was it to fix smth on ao3? probably */
-p.ttw-small-icon-table{
-  margin:0;
 }
 
   .tw-small-icon-cell-link{
@@ -1744,6 +1736,7 @@ p.ttw-small-icon-table{
 .tw-small-icon-cell-reply-buffer{
   /* ao3 wants this to exist, but for there to be no poperties in it. yeah. */
   /* width:20px; */
+  width:0px;
 }
 
 .tw-small-icon-cell-bubble{
@@ -1777,6 +1770,7 @@ p.ttw-small-icon-table{
   min-width:70px;
 
   text-align: left;
+  vertical-align: middle;
   font-size: .8em;
   padding-left:5px;
   color:gray;
@@ -1860,29 +1854,6 @@ p.ttw-small-icon-table{
       display: table-cell;
       width:85%;
   }
-
-  .tw-down-arrow{
-    /*change color*/
-    border: solid #5F6266;
-    border-width: 0 1.5px 1.5px 0;
-    display: inline-block;
-    padding: 4px;
-    margin-right:10px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    float:right;
-  }
-
-/* gotta make this no wrap somehow, think we've done it somewhere else; replies? */
-  .tw-big-dot {
-    float: left;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-    background-color: #D7DADD;
-  }
   .tw-back-icon2{
     width:3.5em;
     height:27px;
@@ -1906,10 +1877,35 @@ p.ttw-small-icon-table{
     display: table-cell;
     vertical-align: middle;
   }
+
+  .tw-down-arrow{
+    /*change color*/
+    border: solid #5F6266;
+    border-width: 0 1.5px 1.5px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-right:10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    float:right;
+  }
+
+/* gotta make this no wrap somehow, think we've done it somewhere else; replies? */
+  .tw-big-dot {
+    float: left;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #D7DADD;
+  }
+
   /* should i use a regular table? yes. do i remember how? 😶 */
   .tw-tabs{
     width:100%;
     white-space: nowrap;
+    padding-bottom:17px;
   }
   .tw-tab-name{
     width: 19%;
