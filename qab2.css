@@ -6,6 +6,25 @@ figure {
   margin-right: 0px;
   margin-left: 0px;
 }
+p {
+margin: 1.286em auto;
+padding: 0;
+line-height: 1.5;
+word-wrap: break-word;
+}
+
+body {
+font: 100%/1.125 'Lucida Grande','Lucida Sans Unicode','GNU Unifont',Verdana,Helvetica,sans-serif;
+}
+
+body {
+background: #fff;
+color: #2a2a2a;
+font: 100%/1.125 'Lucida Grande','Lucida Sans Unicode','GNU Unifont',Verdana,Helvetica,sans-serif;
+margin: 0;
+padding: 0;
+}
+
 
 .relative-wrapper {
 position: relative;
@@ -1487,7 +1506,21 @@ float: center;
 /*might want to,*/
 /*display: inline-block;*/
 /* protip i think this might be block not inline-block */
-margin: 10px 0px 10px 10px;
+/* margin: 10px 0px 10px 10px; */
+margin: 10px 0px 0px 0px; 
+max-width: 95%;
+/* check on this height  */
+max-height:400px;
+border: 1px solid #D7DADD;
+border-radius: 10px;
+}
+.tw-qrt-img{
+float: center;
+/*might want to,*/
+/*display: inline-block;*/
+/* protip i think this might be block not inline-block */
+/* margin: 10px 0px 10px 10px; */
+margin: 10px 0px 0px 0px; 
 max-width: 95%;
 /* check on this height  */
 max-height:400px;
@@ -1913,6 +1946,7 @@ white-space: nowrap;
   width:30px;
   background: url("https://github.com/jihnari/QAB/raw/main/img/tw-icon-link.png") no-repeat;
   background-size:30px 30px;
+  cursor: pointer;
 
   vertical-align: -70%;
   padding-right:15px;
@@ -1946,6 +1980,7 @@ height:30px;
 width:30px;
 background: url("https://github.com/jihnari/QAB/raw/main/img/tw-icon-bubble.png") no-repeat;
 background-size:30px 30px;
+cursor: pointer;
 
 vertical-align: -70%;
 padding-right:15px;
@@ -1973,6 +2008,7 @@ height:30px;
 width:30px;
 background: url("https://github.com/jihnari/QAB/raw/main/img/tw-icon-heart.png") no-repeat;
 background-size:30px 30px;
+cursor: pointer;
 
 vertical-align: -70%;
 padding-right:15px;
@@ -2004,6 +2040,7 @@ height:30px;
 width:30px;
 background: url("https://github.com/jihnari/QAB/raw/main/img/tw-icon-retweet.png") no-repeat;
 background-size:30px 30px;
+cursor: pointer;
 
 vertical-align: -70%;
 padding-right:15px;
@@ -2083,6 +2120,7 @@ div.tw-search-container p
   float:right;
   white-space: nowrap;
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* gotta make this no wrap somehow, think we've done it somewhere else; replies? */
@@ -2106,6 +2144,7 @@ div.tw-search-container p
   width: 19%;
   display: inline-block;
   text-align : center;
+  cursor:pointer;
 }
 .tw-tab-name-focus{
   color:#18A0FB;
