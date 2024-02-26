@@ -1,0 +1,131 @@
+<style>
+
+/* .box-container{
+  position:relative;
+  width:100%;
+  height:100%;
+  background-size:100% auto;
+} */
+
+/* outline 1  */
+/* color: white;
+  background-color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+
+/* outline 2 */
+/* font: 800 40px Arial;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px; */
+
+  .box-text{
+
+          /* for the text */
+      padding-left:20px;
+      padding-right:20px;
+      /* margin:10px; */
+
+    text-align:center;
+
+font: 800 25px Verdana;
+color:white;
+
+  }
+
+  .box2{
+    display:block;
+    /* position:relative; */
+    background-color:pink;
+
+    
+  /* box */
+    width:100%;
+max-width:400px;
+/* height:100%; */
+
+  background: url("https://cdn.discordapp.com/attachments/387318898174984195/1189839822521651271/boss-window-middle.png") no-repeat;
+  background-size:100% auto;
+  margin: 0px auto;
+  }
+
+  .box2::before{
+    background-color:blue;
+
+    /* margin:0; */
+    content:'';
+    display:block;
+    width:100%;
+max-width:400px;
+/* height:100%; */
+height:150px;
+
+/* max-height:100%; */
+  background: url("https://cdn.discordapp.com/attachments/387318898174984195/1189839822173507634/boss-window-top.png") no-repeat;
+  background-size:100% auto;
+  }
+  .box2::after{
+    background-color:orange;
+
+    content:'';
+    display:block;
+    width:100%;
+max-width:400px;
+/* height:100%; */
+height:100px;
+
+/* max-height:100%; */
+background: url("https://cdn.discordapp.com/attachments/387318898174984195/1189839822819426375/boss-window-bottom.png") no-repeat;
+/* background-size: contain; */
+  background-size:100% auto;
+  /* padding:0px; */
+  }
+
+
+
+.red-box{
+  /* for the text */
+  padding-top:25%;
+  padding-right:10%;
+  padding-left:10%;
+  text-align:center;
+
+  font: 800 25px Verdana;
+  color:white;
+
+  /* for the box */
+/* 734 547 */
+width:100%;
+max-width:400px;
+height:100%;
+  background: url("https://cdn.discordapp.com/attachments/939283501814013962/1189529612322091039/boss-window.png") no-repeat;
+  background-size:100% auto;
+  margin: 5px auto;
+}
+
+/* this doesnt work like i wanted it to */
+/* .red-box::after{
+  content:"";
+width:100%;
+max-width:400px;
+height:100%;
+  background: url("https://cdn.discordapp.com/attachments/939283501814013962/1189529612322091039/boss-window.png") no-repeat;
+  background-size:100% auto;
+  margin: 5px auto;
+  display:block;
+} */
+
+
+</style>
+
+
+
+<body>
+
+  test
+  <p>&nbsp;</p>
+  <div class="box2"><p class="box-text">test test lots of text lets see how it wraps and the answer is not well. </p></div>
+
+  <p>test test test </p>
+  <p>&nbsp;</p>
+<!-- <p class="red-box">test test lots of text lets see how it wraps and the answer is not well. </p> -->
+
+</body>

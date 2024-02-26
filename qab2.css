@@ -29,6 +29,7 @@ padding: 0;
 .relative-wrapper {
 position: relative;
 }
+/* might be able to delete? only shows up on out of date youtube template?  */
 .wrapper {
 position: relative;
 }
@@ -57,7 +58,7 @@ float: left;
 float: right;
 }
 .center{
-text-align: center;
+text-align: center !important;
 }
 .shift-zero{
 margin-top:0;
@@ -145,9 +146,8 @@ padding-bottom:10px;
 
 /* attempting a thing to hide the scroll bar on pc */
 .stay-block {
-overflow: auto;
+overflow: hidden;
 display: block;
-
 scrollbar-width: none;
 }
 .stay-block::-webkit-scrollbar {
@@ -195,8 +195,8 @@ the last thing we might wanna do here is use the fadeout function and place the 
 .rd-font{
 font-family:verdana, arial, helvetica, sans-serif;
 background-color: white;
-/*make sure this didnt break everything*/
 color:black;
+padding:10px;
 }
 .rd-view-box {
 background: #0079D3;
@@ -236,15 +236,6 @@ font-weight:bold;
 font-size:1.1em;
 margin:-5px 0 -5px 0;
 }
-.rd-dot { /*idx if i wanna go down this path*/
-height: 20px;
-width: 20px;
-border-radius: 50%;
-display: inline-block;
-margin-right: 10px;
-background-color: #bbb;
-margin-bottom: -15px;
-}
 .rd-div1{
 border-bottom: 8px solid #EEEFF1;
 padding-bottom:18px;
@@ -259,19 +250,14 @@ height:1.8em;
 display: inline-block;
 padding-top:5px;
 padding-bottom:5px;
+cursor: pointer;
 }
-.rd-poster{
-font-size: .8em;
-margin-bottom: 15px;
+.rd-link, .rd-op{
+color:#25A0ED;
+cursor: pointer;
 }
 .rd-op{
-color:#25A0ED;
 font-weight:bold;
-cursor: pointer;
-}
-.rd-link{
-color:#25A0ED;
-cursor: pointer;
 }
 .rd-down-arrow {
 border: solid black;
@@ -287,21 +273,10 @@ font-size: .8em;
 display: inline-block;
 padding-bottom:5px;
 }
-.rd-vr0 {
-display: table;
-padding: 10px 0 0px 30px;
-border-bottom: 1px solid #EEEFF1;
-}
 .rd-vr1 {
 display: table;
 padding: 0px 0px 0px 10px;
 margin: 0px 0 5px 5px;
-border-left: 1px solid #EEEFF1;
-}
-.rd-vr2 {
-display: table;
-padding: 0px 0px 0px 10px;
-margin: 0px 0px 5px 5px;
 border-left: 1px solid #EEEFF1;
 }
 .rd-gray-text {
@@ -315,7 +290,17 @@ margin-bottom:5px;
 border-radius: 16px;
 border: 1px solid #EEEFF1;
 cursor: pointer;
-
+}
+.rd-answered {
+background: #2d4351;
+border-radius: 2px;
+font-size: 0.8em;
+color: white;
+padding: 1px 5px;
+/* margin-bottom:-5px; */
+/* padding: 1px;
+padding-right: 5px;
+padding-left: 5px; */
 }
 .rd-arrow-text{
 padding-top:2px;
@@ -343,7 +328,6 @@ color:black;
 vertical-align:super;
 display: inline-block;
 padding: 12px 8px;
-
 }
 
 
@@ -644,6 +628,7 @@ margin-right: auto;
 height:140px;
 }
 /* are these supposed to be "line" */
+/* they are not (its for embeds) */
 .link-text-top{
 font-weight: bold;
 font-size: .9em;
@@ -661,14 +646,6 @@ text-overflow: ellipsis;
 .line-at{
 color: #4582C2;
 cursor: pointer;
-}
-.lbox2 {
-background: #BFBDC1;
-border-radius: 10px;
-color: white;
-padding: 5px 13px;
-clear: both;
-text-align: center;
 }
 .line-notif-container {
 float: left;
@@ -824,7 +801,7 @@ border-top-right-radius: 5px;
 margin-bottom: 3px;
 float: right;
 max-width: 75%;
-max-height:500px;
+max-height:400px;
 clear: both;
 position: relative;
 }
@@ -2340,7 +2317,6 @@ margin-top:2px;
 margin-top:-1px;
 */
 }
-
 .dc-new-msg-bar{
 background:#5865F2;
 color:white;
@@ -2351,6 +2327,7 @@ margin-top:20px;
 border-radius: 10px;
 border-top-right-radius: 0;
 border-top-left-radius: 0;
+/* width: 90%; */
 
 /* doesnt quite fix the issue but comes close */
 white-space: nowrap;
@@ -2358,8 +2335,9 @@ text-overflow: ellipsis;
 overflow: hidden;
 }
 .dc-blue-x{
-float:right;
-padding-right:3px;
+position: absolute;
+right:0;
+margin-right:12px;
 /* margin-top:-3px; */
 vertical-align: middle;
 height:1.4em;
@@ -2522,6 +2500,11 @@ color: #9F9FA1;
 .blog-cmt-reply{
 margin:0 0 30px 30px;
 }
+.fake-link{
+color: blue;
+text-decoration: underline;
+cursor: pointer;
+}
 
 /*article*/
 .art-author{
@@ -2625,7 +2608,8 @@ white-space: nowrap;
 .gmail-reply-button{
 height: 30px;
 display: inline-block;
-margin-right: -5px;
+/* REMEMBER THE SIDEWAYS SCROLL YOU COULD NEVER FIND?? THIS HAS BEEN THE PROBLEM THE ENTIRE TIME I THINK.  and for what? for why?? why is it here?? why didnt overflow hidden work???? honestly i dont know how overflow works so nvm that tracks but god was this the problem the entire time, its been. its been years. this bug has been in prod for YEARS. */
+/* margin-right: -5px; */
 float: right;
 overflow: hidden;
 }
@@ -2713,8 +2697,8 @@ cursor: pointer;
 }
 .gmail-quoted-text{
 color: #2372DB;
-text-decoration: none;
 font-size:.8em;
+cursor: pointer;
 }
 .gmail-dot{
 height: 40px;
