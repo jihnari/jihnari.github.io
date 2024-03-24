@@ -1571,11 +1571,13 @@ vertical-align: -70%;
 padding-right:15px;
 }
 /* this is broken  */
+/* delete it?  */
 .tw-small-icon-cell-heart::before:hover{
 display: inline-flex;
 height:30px;
 width:30px;
-background: url("https://cdn.discordapp.com/attachments/387318898174984195/1026327601024860250/unknown.png") no-repeat;
+/* this is currently the same image as above bc discord nuked the old image and i dont have it on hand  */
+background: url("https://github.com/jihnari/QAB/raw/main/img/tw-icon-heart.png") no-repeat;
 background-size:30px 30px;
 }
 .tw-small-icon-cell-retweet{
@@ -2563,7 +2565,9 @@ text-align: justify;
 /* todo:
 - that freaking td space, what the hell
 */
-p.gmail-up-arrow-gimmick:hover ~ div.gmail-info-box {
+
+/* cut from here */
+/* p.gmail-up-arrow-gimmick:hover ~ div.gmail-info-box {
 display: none;
 }
 p.gmail-up-arrow-gimmick:hover .gmail-up-arrow{
@@ -2591,18 +2595,89 @@ transform: rotate(-135deg);
 span.gmail-arrow-box:hover ~ div > div.gmail-info-box {
 display: none;
 }
-div.gmail-font > a
-{
-color: #2372DB;
-text-decoration: none !important;
-}
 .gmail-down-arrow-gimmick{
 margin-bottom: 20px;
 white-space: nowrap;
 }
 .gmail-up-arrow-gimmick{
 white-space: nowrap;
+} */
+
+
+/* .gmail-body{
+
 }
+.gmail-up-arrow{
+border: solid #5F6266;
+border-width: 0 1.5px 1.5px 0;
+display: inline-block;
+padding: 2px;
+margin-left:2px;
+transform: rotate(-135deg);
+-webkit-transform: rotate(-135deg);
+}
+.gmail-down-arrow{
+border: solid #5F6266;
+border-width: 0 1.5px 1.5px 0;
+display: inline-block;
+padding: 2px;
+margin-left:2px;
+transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+} 
+
+.gmail-info-box, .hidden-gmail-info-box{
+border: 1px solid #DBDCDF;
+border-radius: 10px;
+padding: 10px;
+font-size: .8em;
+margin-bottom: 10px;
+}
+.hidden-gmail-info-box{
+display:none;
+}
+
+*/
+
+/* to here */
+
+
+
+
+div.gmail-font > a
+{
+color: #2372DB;
+text-decoration: none !important;
+}
+
+/* replacement of the hover hack  */
+/* is no classes a mistake? probably  */
+details summary::after { 
+content:""; 
+vertical-align:middle;
+top:-5px;
+border: solid #5F6266;
+border-width: 0 1.5px 1.5px 0;
+display: inline-block;
+padding: 2px;
+margin-left:2px;
+transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+}
+details[open] summary::after { 
+content:"";
+transform: rotate(-135deg);
+-webkit-transform: rotate(-135deg);
+}
+summary {
+list-style: none; 
+white-space: nowrap;
+margin-bottom:10px;
+cursor:pointer;
+}
+summary::-webkit-details-marker {display: none; }
+
+
 
 /* lmao idk */
 .gmail-reply-button{
@@ -2649,15 +2724,13 @@ color: #363636;
 padding: 4px;
 font-size:.8em;
 }
-.gmail-info-box, .hidden-gmail-info-box{
+.gmail-info-box{
 border: 1px solid #DBDCDF;
 border-radius: 10px;
 padding: 10px;
 font-size: .8em;
 margin-bottom: 10px;
-}
-.hidden-gmail-info-box{
-display:none;
+width:100%;
 }
 .gmail-subject-buffer {
 margin-bottom: 20px;
@@ -2668,27 +2741,6 @@ font-size: 1.5em;
 }
 .gmail-hr{
 border-bottom: 1px solid #EDEEEF;
-}
-.gmail-body{
-
-}
-.gmail-up-arrow{
-border: solid #5F6266;
-border-width: 0 1.5px 1.5px 0;
-display: inline-block;
-padding: 2px;
-margin-left:2px;
-transform: rotate(-135deg);
--webkit-transform: rotate(-135deg);
-}
-.gmail-down-arrow{
-border: solid #5F6266;
-border-width: 0 1.5px 1.5px 0;
-display: inline-block;
-padding: 2px;
-margin-left:2px;
-transform: rotate(45deg);
--webkit-transform: rotate(45deg);
 }
 .gmail-link{
 color: #2372DB;
@@ -3227,7 +3279,7 @@ width:35px;
 height:20px;
 margin-top: 10px;
 margin-right:10px;
-background: url("https://cdn.discordapp.com/attachments/453388093559537664/1150887862510825594/image.png") no-repeat;
+background: url("https://github.com/jihnari/QAB/raw/main/img/tblr-menu.png") no-repeat;
 background-size:35px 20px;
 background-color: purple;
 cursor:pointer;
@@ -3261,7 +3313,8 @@ position:relative;
 content: "";
 width:170px;
 height:35px;
-background: url("https://cdn.discordapp.com/attachments/453388093559537664/1150885428740751420/image.png") no-repeat;
+/* idk what this image was **** */
+background: url("https://github.com/jihnari/QAB/raw/main/img/tblr-buttons.png") no-repeat;
 background-size:170px 35px;
 margin-right: 5px;
 text-align:right;
