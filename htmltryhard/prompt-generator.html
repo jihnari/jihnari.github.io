@@ -1,7 +1,12 @@
-<style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="MarkdownViewer++" />
+  <title>html tryhard prompt generator</title>
+  <style type="text/css">
 
   button{
-    border: solid #008CBA 2px;
+    border: solid #DFDFDF 2px;
+    background-color:white;
   color: black;
   padding: 10px 15px;
   text-align: center;
@@ -16,7 +21,7 @@
 
   }
   button:hover{
-    background-color:#008CBA;
+    background-color:#970000;
     color:white;
 
   }
@@ -30,24 +35,25 @@
     font-weight:100;
   }
   tr, th {
-    border-bottom: 1px solid gray;
-    border-right:1px solid gray;
+    border-bottom: 1px solid #DFDFDF;
+    border-right:1px solid #DFDFDF;
   }
 
   tr:first-of-type{
     font-size:1.3em;
     font-style:bold;
     /* border: 1px solid black; */
-    border-bottom: 1px solid #008CBA;
+    border-bottom: 1px solid #970000;
   }
   th:first-of-type{
-    color:gray;
+    color:black;
     /* border-right: 1px solid #008CBA; */
   }
 
   table {
     border-radius:8px;
-    border: solid #008CBA 2px;
+    border: solid #970000 2px;
+    background:#EEEEEE;
     /* border-collapse:separate; */
   }
   th{
@@ -60,13 +66,15 @@
   /* this works but isnt doing the th i think */
   /* it might be obeying the table style already, but it doesnt have th at all somehow? unsure what js is doing over there */
   .testtest {
-    border: 1px solid black;
+    border: 1px solid #DFDFDF;
     border-radius:8px;
     padding: 5px;
   }
 
 
   </style>
+
+</head>
 
 <script>
   const technical = ["reddit", "texting", "review website ", "social media", "personal blog ", "emails ", "CYOA", "newspaper articles"];
