@@ -1,6 +1,30 @@
 <!-- <link rel="stylesheet" href="alarm.html"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- todo: 
+- throw skin in css
+- rearrange project (new repo? or just new folder?)
+- upload plant pics 
+- discord sections 
+- yikyak sections 
+- timestamps 
+- change out weather 
+- fill [] gaps 
+- make phone screen a bit bigger 
+
+on ao3:
+- fix X 
+- fix snooze
+
+
+future todo: 
+- fix signal skin
+- consider swapping to whatsapp skin 
+- fix sms skin lol 
+- ??
+ -->
+
+
 <style>
 
   /* universal */
@@ -445,9 +469,9 @@
   .phone-container {
     /* border-top: 1px solid #b1b1b3;
     border-bottom: 1px solid #b1b1b3; */
-    max-width:412px;
+    max-width:400px;
     width:100%;
-    height:500px;
+    height:600px;
     max-height:100%;
     display:flex;
     /* justify-content:center; */
@@ -633,7 +657,461 @@
     border-image: linear-gradient(to right, #0481FF 50%, #DADBDC 50%);
     border-image-slice: 1;
   }
+
+
+
+  /* yikyak */
   
+  /* man maybe just make a full container view */
+  .yak-container-container{
+    display:flex;
+    justify-content:center;
+  }
+  .yak-container{
+    width:100%;
+    max-width:400px;
+  }
+
+  .yak-topbar{
+    /* what if we just stole that image actually  */
+    /* too late */
+    width:100%;
+    height:70px;
+
+    /* text-align:center; */
+
+    background-color:#0CD5B1;
+    /* margin-bottom:-15px; */
+    /* yeah just make a full container view */
+    padding-left:10px;
+    font-size:1.5em;
+    font-family: sans-serif;
+
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    color:white;
+  }
+  .yak-center{
+    text-align:center;
+    padding-top:15px;
+  }
+  .yak-center-box{
+    border: 1px solid white;
+    border-radius:6px;
+    display:inline-block;
+  }
+
+  .yak-toggle-box{
+    display:flex;
+    justify-content:space-around;
+  }
+
+  .yak-toggle-new, .yak-toggle-hot{
+    color:white;
+    display:inline-block;
+    font-size:1.2rem;
+    padding: 10px 35px;
+
+    border: 1px solid white;
+    border-radius:6px;
+  }
+  .yak-toggle-hot{
+    border-left:none;
+    border-top-left-radius:0;
+    border-bottom-left-radius:0;
+  }
+  .yak-toggle-new{
+    border-right:none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .yak-toggle-active{
+    color:#0CD5B1;
+    background-color:white;
+  }
+
+
+  .yak-bottombar{
+    font-family: sans-serif;
+
+    background-color:#E2EBFE;
+    border-top:2px solid #C6CDD5;
+
+    color:#0CD5B1;
+    font-size:2em;
+
+    padding:10px;
+    width:100%;
+  }
+  
+  
+  .yak{
+    border-bottom:1px solid #E0E0E0;
+    width:95%;
+
+    /* should be in the underlayers but ugh  */
+    /* could make an overarching view */
+    padding-left:10px;
+  
+    font-family: sans-serif;
+    font-size:1.5em;
+    /* background-color:pink; */
+  }
+
+  .yak-tags{
+    color:#0CD5B1;
+    font-weight:bold;
+    margin-bottom:0px;
+  }
+  .yak-text{
+    margin:7px 5px 7px 0px;
+  }
+  .yak-footer{
+    color:#B9B9B9;
+    font-size:0.9em;
+    display: flex;
+  justify-content: space-between;
+
+  margin:0px 10px 5px 5px;
+  }
+  .yak-time{
+    /* color:#AFAFAF; */
+  }
+
+  .yak-vote{
+    color:#ACACAC;
+    position:relative;
+  }
+  .yak-vote::before, .yak-vote::after{
+    content:"";
+    border-bottom-color: #757575;
+    border: solid #ACACAC;
+    border-width: 0 2px 2px 0;
+    padding: 6px;
+    display: inline-block;
+    cursor:pointer;
+  }  
+  /* up arrow(left) */
+  .yak-vote::before{
+    margin:0px 25px -5px 10px;
+    /* left:-35px;
+    bottom:-2px; */
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  /* down arrow(right) */
+  .yak-vote::after{
+    margin:0px 10px 3px 25px;
+    /* right:-35px;
+    bottom:6px; */
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  
+  .yak-details{
+    font-size:2rem;
+    margin:0 10px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+  }
+  .yak-details-text{
+    flex-grow:9;
+  }
+
+  .yak-topbar-details{
+    height:70px;
+
+    text-align:center;
+
+    background-color:#0CD5B1;
+    margin-bottom:-15px;
+    /* yeah just make a full container view */
+    padding-left:10px;
+    font-size:1.5rem;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+  }
+  .yak-topbar-details::before{
+    content:"";
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 8px;
+    transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+
+    position:absolute;
+    left:35;
+    cursor:pointer;
+  }
+
+  .yak-details-header{
+    font-size:1.6rem;
+    font-weight:bold;
+  }
+
+  .yak-details-time{
+    color:#B9B9B9;
+    font-size:1.3rem;
+    /* font-weight:bold; */
+    margin:10px;
+  }
+  .yak-details-location{
+    color:#B9B9B9;
+    font-size:1.3rem;
+    margin:10px;
+  }
+  .yak-details-comment-header{
+    background-color:#FAFAFA;
+    color:#AAAAAA;
+    padding:10px;
+    font-size:1.3rem;
+    font-weight:bold;
+
+  }
+  
+  /* for scores of zero */
+  .yak-null{
+    color:#E4E4E4;
+  }
+
+  .yak-details-score{
+    /* except if the value is 0, then the text is gray. address somehow. */
+    color:#0CD5B1;
+    position:relative;
+
+    flex-grow:1;
+    font-size:25px;
+    font-weight:bold;
+
+    margin-top:35px;
+
+    /* mebe */
+    text-align:center;
+  }
+  .yak-details-score::before, .yak-details-score::after{
+    content:"";
+    /* border-bottom-color: #757575; */
+    border: solid #E4E4E4;
+    border-width: 0 6px 6px 0;
+    padding: 12px;
+    display: inline-block;
+    border-radius:3px;
+    /* margin:10px 0; */
+
+  }  
+  /* up arrow */
+  .yak-details-score::before{
+    /* i think this is if YOU have upvoted it */
+    /* border-color:#0CD5B1; */
+
+    position:absolute;
+
+    /* margin:10px -28px 15px 10px; */
+    margin-top:-20px;
+    left:-7px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+
+    /* transform: skewX(-10deg)  rotate(-135deg); */
+
+  }
+  /* down arrow */
+  .yak-details-score::after{
+    /* margin:10px 0px 0px 12px; */
+    position:absolute;
+    margin-top:20px;
+    left:-5px;
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+
+  .yak-details-comment{
+    display:flex;
+
+    justify-content:space-around;
+    /* align-items:center; */
+    
+  }
+  
+  .yak-details-comment-text{
+    font-size:1.2rem;
+    flex-grow:9;
+    /* margin-top:-10px; */
+    /* display:inline-block; */
+    /* top:0; */
+    /* margin-top:-30px; */
+    margin-left:50px;
+    margin-top:10px;
+  }
+  .yak-details-comment-text::before{
+    content:"";
+    height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  /* display: inline-block; */
+  display:flex;
+    align-items: center;
+    justify-content: center;
+
+
+  background-color: #bbb;
+  position:absolute;
+  
+  margin: 5px 10px 0px 0;
+  left:20px;
+  font-size:2em;
+
+  }
+  /* cant figure out how to center, could drop letters */
+  .yak-op::before{
+    /* display:flex;
+    align-items: center;
+    justify-content: center; */
+    font-size:1em;
+
+    content:"OP";
+    color:white;
+    font-weight:bold;
+    background-color: #0CD5B1;
+  }
+  .pink::before{
+    background-color: pink; 
+    color:maroon;
+    content:"◇"; 
+
+}
+  .blue::before{
+    background-color: lightblue;
+    content:"◉";
+    color:darkblue;
+  
+  }
+  .yellow::before{
+    background-color: yellow;
+    content:"◬";
+    color:brown;
+  }
+  /* pot.: 
+  △
+  ☆
+  ☎
+  ☏
+  ☘
+  ☮
+  ♖
+  ♡
+  ♬
+  ⚐
+  ⚠
+  ⚅
+  ⛈
+
+   */
+
+  .yak-line{
+    border-bottom:1px solid #E0E0E0;
+  }
+  
+
+
+
+
+  .yak-score-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    float:right;
+    margin-right:20px;
+  }
+  .yak-score-number{
+    color:#0CD5B1;
+    font-weight:bold;
+  }
+
+  /* .yak-score-number::before, .yak-score-number::after{ */
+    .up, .down{
+    /* content:"";
+    border-bottom-color: #757575;
+    border: solid #E4E4E4;
+    border-width: 0 6px 6px 0;
+    padding: 12px;
+    display: inline-block;
+    border-radius:3px; */
+    width:50px;
+  height:30px;
+
+  background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow.png") no-repeat;
+  background-size:50px 30px;
+  cursor:pointer;
+
+  }  
+
+  .yak-details-score2{
+    color:#0CD5B1;
+    position:relative;
+
+    /* flex-grow:1; */
+    font-size:25px;
+    font-weight:bold;
+    text-align:center;
+  }
+  /* arrows */
+  .yak-details-score2::before, .yak-details-score2::after{ 
+    display:flex;
+    content:"";
+    width:50px;
+  height:30px;
+
+  background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow.png") no-repeat;
+  background-size:50px 30px;
+  cursor:pointer;
+
+  }
+  /* up arrow */
+  .yak-details-score2::before{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+  }
+  .yak-details-score2:hover::before{
+    /* change out for green image */
+    background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow-voted.png") no-repeat;
+  background-size:50px 30px;
+
+    /* opacity:40%; */
+
+  }
+
+  /* voted */
+  /* has to be wrapped INSIDE the voted class */
+  .voted > .yak-details-score2::before{
+    background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow-voted.png") no-repeat;
+    background-size:50px 30px;
+  }
+
+
+  .up{
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  }
+
+
+  .yak-op{
+    color:#0CD5B1;
+  }
+
+
+
+
   
   </style>
   
@@ -697,6 +1175,7 @@
   
   
   <!-- 1:12 PM -->
+  <p>
   <span class="signal-box-right">
     Alhaitham is at a restaurant with some random person and Kaveh doesn't know about it 
   <br/><span class="signal-time-right">1:12 ✓✓
@@ -1089,7 +1568,7 @@
   <!-- phone notifs -->
   <div class="phone-container-container">
     <div class="phone-container phone-on">
-      <p class="phone-time">[9:22]</p>
+      <p class="phone-time">4:30</p>
       <p class="phone-date">[Tue, Jan 14]</p>
     
       <!-- weather notif -->
@@ -1124,9 +1603,73 @@
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
+  <!-- yikyak _1 -->
   
-  yikyak
-  red menace stuff 
+
+
+
+
+
+
+<div class="yak-container-container">
+  <div class="yak-container" >
+  <div class="yak-topbar">
+    <div></div>
+    <div class="yak-toggle-box"><div class="yak-toggle-new yak-toggle-active">New</div> <div class="yak-toggle-hot">Hot</div></div>
+    <div>...</div>  
+  </div>
+  
+  
+  <div class="yak">
+    <p class="yak-text">
+  Day 33 of sitting behind the most beautiful man on campus
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span>2 replies</span>
+    <span class="yak-vote">5</span>
+  </p>
+  
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      Do you think if I sacrificed my lab partner the red menace would let me live 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      Found a rishbo cub out on the quad. Who do I need to message about dorm pets?
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+
+  <div class="yak">
+    <p class="yak-text">
+      anyone wanna hang out 
+    </p>
+  <p class="yak-footer"> 
+    <span>10m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak-bottombar" align="center">
+    Yakarma Score: 0
+  </div>
+  </div>
+</div>
+
+
+
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -1153,8 +1696,67 @@
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   
-  yikyak
-  red menace stuff 
+  <!-- //yikyak_2  -->
+  
+<div class="yak-container-container">
+  <div class="yak-container" >
+  <div class="yak-topbar">
+    <div></div>
+    <div class="yak-toggle-box"><div class="yak-toggle-new yak-toggle-active">New</div> <div class="yak-toggle-hot">Hot</div></div>
+    <div>...</div>  
+  </div>
+  
+  
+  <div class="yak">
+    <p class="yak-text">
+      Prof rearranged the seats today and now I'm next to the red menace
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span>2 replies</span>
+    <span class="yak-vote">5</span>
+  </p>
+  
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      Is it winter yet 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      ok but like are you vahumana history or vahumana stem? 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+
+  <div class="yak">
+    <p class="yak-text">
+      Is the wifi being really fucky for anyone else rn? 
+    </p>
+  <p class="yak-footer"> 
+    <span>10m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak-bottombar" align="center">
+    Yakarma Score: 0
+  </div>
+  </div>
+</div>
+
+
+
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -1167,7 +1769,7 @@
   <!-- top bar -->
   <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Collei</span></p>
   
-  <p class="sms-time">_friday_, _jul_16_ &bull; 1:08 PM</p>
+  <p class="sms-time">_friday_, _jul_16_ &bull; 6:15 PM</p>
   <p>
   
   <span class="sms-box-right">
@@ -1262,7 +1864,68 @@
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   
-  yikyak
+  <!-- //yikyak_3 -->
+
+  
+<div class="yak-container-container">
+  <div class="yak-container" >
+  <div class="yak-topbar">
+    <div></div>
+    <div class="yak-toggle-box"><div class="yak-toggle-new yak-toggle-active">New</div> <div class="yak-toggle-hot">Hot</div></div>
+    <div>...</div>  
+  </div>
+  
+  
+  <div class="yak">
+    <p class="yak-text">
+      Why is the TA for Haravatat never in his office
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span>2 replies</span>
+    <span class="yak-vote">5</span>
+  </p>
+  
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      any parties tn??
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      holy shit the red menace brought vodka to the cafeteria 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+
+  <div class="yak">
+    <p class="yak-text">
+      Day 35 I am not strong enough. He smells like strawberries.
+    </p>
+  <p class="yak-footer"> 
+    <span>10m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak-bottombar" align="center">
+    Yakarma Score: 0
+  </div>
+  </div>
+</div>
+
+
+
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -1368,7 +2031,68 @@
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   
-  yikyak? 
+  <!-- //yikyak_4 -->
+
+  
+<div class="yak-container-container">
+  <div class="yak-container" >
+  <div class="yak-topbar">
+    <div></div>
+    <div class="yak-toggle-box"><div class="yak-toggle-new yak-toggle-active">New</div> <div class="yak-toggle-hot">Hot</div></div>
+    <div>...</div>  
+  </div>
+  
+  
+  <div class="yak">
+    <p class="yak-text">
+      If I go to the bimarstan how many questions do they ask the stuff I've stuck up my butt 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span>2 replies</span>
+    <span class="yak-vote">5</span>
+  </p>
+  
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      What's for lunch 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      2 mahamata with the red menace, what'd he do now?
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+
+  <div class="yak">
+    <p class="yak-text">
+      Anyone wanna go birdwatching with me at the gulch this Saturday?
+    </p>
+  <p class="yak-footer"> 
+    <span>10m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak-bottombar" align="center">
+    Yakarma Score: 0
+  </div>
+  </div>
+</div>
+
+
+
   
   
   <p>&nbsp;</p><p>&nbsp;</p>
@@ -1402,7 +2126,7 @@
   <!-- top bar -->
   <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Cyno</span></p>
   
-  <p class="sms-time">_friday_, _jul_16_ &bull; _time_</p>
+  <p class="sms-time">_friday_, _jul_16_ &bull; 08:08 AM</p>
   <p>
   
   
@@ -1492,8 +2216,76 @@
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   
-  yikyak, possible extortion 
+  <!-- //yikyak_5 -->
+
+
   
+<div class="yak-container-container">
+  <div class="yak-container" >
+  <div class="yak-topbar">
+    <div></div>
+    <div class="yak-toggle-box"><div class="yak-toggle-new yak-toggle-active">New</div> <div class="yak-toggle-hot">Hot</div></div>
+    <div>...</div>  
+  </div>
+  
+  
+  <div class="yak">
+    <p class="yak-text">
+      Is the wifi being really fucky for anyone else rn? 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span>2 replies</span>
+    <span class="yak-vote">5</span>
+  </p>
+  
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      Day 37 of sitting behind a literal angel probably, how can he be this pretty 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      all spantamad students leave the academy and become mad hermit geniuses or pigs, there is no in between
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+
+  <div class="yak">
+    <p class="yak-text">
+      the red menace is extorting seniors now, can nothing stop this man 
+    </p>
+  <p class="yak-footer"> 
+    <span>10m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak-bottombar" align="center">
+    Yakarma Score: 0
+  </div>
+  </div>
+</div>
+
+
+
+  
+  <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
+  <p>&nbsp;</p><p>&nbsp;</p>
+
+  yikyak, details on extortion
+
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
@@ -1765,7 +2557,70 @@
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   
-  yikyak, weapon on campus 
+  <!-- //yikyak, weapon on campus_6 -->
+
+  
+<div class="yak-container-container">
+  <div class="yak-container" >
+  <div class="yak-topbar">
+    <div></div>
+    <div class="yak-toggle-box"><div class="yak-toggle-new yak-toggle-active">New</div> <div class="yak-toggle-hot">Hot</div></div>
+    <div>...</div>  
+  </div>
+  
+  
+  <div class="yak">
+    <p class="yak-text">
+      he has a fucking hunting bow what the fuck 
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span>2 replies</span>
+    <span class="yak-vote">5</span>
+  </p>
+  
+  </div>
+  
+  
+  <div class="yak">
+    <p class="yak-text">
+      i bring one shroom to class and the mahamata are all over me but the red menace shooting birds? that's fine 
+    </p>
+    <p class="yak-footer"> 
+      <span>10m ago</span> 
+      <span class="yak-vote">5</span>
+    </p>
+  </div>
+  
+  <div class="yak">
+    <p class="yak-text">
+      stay away from the razen garden the red menace brought a weapon
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+
+
+  <div class="yak">
+    <p class="yak-text">
+      girls what's your bra size  
+    </p>
+  <p class="yak-footer"> 
+    <span>5m ago</span> 
+    <span class="yak-vote">5</span>
+  </p>
+  </div>
+  
+  <div class="yak-bottombar" align="center">
+    Yakarma Score: 0
+  </div>
+  </div>
+</div>
+
+
+
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -1992,7 +2847,7 @@
     <!-- i think its fine without this but im scared -->
     <p class="clear"></p>
     
-  
+  <p>
   
     <span class="signal-box-right">
       I talked to Alhaitham 
