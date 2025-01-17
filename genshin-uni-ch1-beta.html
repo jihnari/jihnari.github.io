@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" href="alarm.html"> -->
+<link rel="stylesheet" href="genshin-uni.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- todo: 
@@ -21,1101 +21,20 @@ future todo:
 - fix signal skin
 - consider swapping to whatsapp skin 
 - fix sms skin lol 
+- overflow to ... on phone notifs 
+- phone bg pictures? 
 - ??
  -->
 
 
 <style>
 
-  /* universal */
-  .dm-container {
-    display: table;
-    margin: auto;
-    /* i actually think this would be fine as 100 now? iirc the issue was line and the speech bubble danglies */
-    max-width: 95%;
-    /* this used to be 100 and for what?? to make me cry?? idk but we're gonna see if changing it breaks everything */
-    min-width: 95%;
-  }
-    
-    
-  /*sms*/
-  .sms-box-left, .sms-box-right{
-    border-width: 1px;
-    border-radius: 18px;
-    padding: 10px 15px 8px 15px;
-    max-width: 75%;
-    margin-top: 10px;
-    clear: both;
-    position: relative;
-  }
-  .sms-box-left {
-    color: black;
-    background: #f2f3f5;
-    float: left;
-  }
-  .sms-box-right {
-    color: #174ea3;
-    background: #d2e4fb;
-    float: right;
-  }
-  .sms-time {
-    text-align: center;
-    color: #5f6267;
-    clear: both;
-    padding-top: 10px;
-    margin-bottom: -10px;
-  }
-  .sms-border {
-    box-shadow: 0px 8px 10px -10px #888888;
-    padding-bottom: 10px;
-    background: white;
-  }
-  .sms-name-header {
-    font-size: 1.2em;
-    font-weight: bold;
-    padding-left:10px;
-    color: #424242;
-  }
-  .sms-not-delivered-text{
-    color:red;
-    font-size: .8em;
-  
-    float: right;
-    margin-top: 5px;
-    clear: both;
-    position: relative;
-  }
-  .sms-view-all{
-    padding-top: 10px;
-    border-top: #5f6267 solid 1px;
-  }
-  .sms-block-container{
-    text-align: center;
-    margin-top:30px;
-    margin-bottom: 20px;
-  }
-  .sms-block{
-    color:black;
-    font-size: 1em;
-    border:#000 solid 1px;
-    background-color: white;
-    border-radius: 15px;
-    padding: 5px 14px;
-  }
-  .zero-out{
-    margin:0;
-  }
-  
-  
-  
-  
-  
-  /*signal*/
-  /*
-  todo:
-  - could be a good person, but you wont.
-  - more name colors? eh
-  - im tempted to rename the colors 1-6
-  */
-  .signal-dot {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-    background-color: #bbb;
-  }
-  /* the ellipse collapse here only works if you wrap it in the "inline" class first, inexpliclably. fortunately, the updates dont break previous instances, they just also dont wrap. */
-  .signal-name{
-    font-size:1.1em;
-    margin-bottom: 2px;
-    
-    display: inline-block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width:100%;
-  }
-  .signal-name-line{
-    padding-bottom:5px;
-    box-shadow: 0px 8px 8px -10px #888888;
-    white-space: nowrap;
-  }
-  .signal-arrow {
-    display: inline-block;
-    /* has this grayscale EVER done anything */
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    height: 30px;
-    width: 30px;
-    margin:0 10px 0 10px;
-  }
-  .signal-box-left0, .signal-box-left1, .signal-box-left2, .signal-box-left3 {
-    background: #e9e9e9;
-    border-width: 1px;
-    border-radius: 15px;
-    padding: 7px 14px 7px 14px;
-    color: black;
-    float: left;
-    max-width: 75%;
-    clear: both;
-    position: relative;
-  }
-  .signal-box-left1 {
-    margin-top: 10px;
-    border-bottom-left-radius: 0;
-    margin-bottom: 3px;
-  }
-  .signal-box-left2 {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    margin-bottom: 3px;
-  }
-  .signal-box-left3 {
-    border-top-left-radius: 0;
-    margin-bottom: 10px;
-  }
-  .signal-box-left0{
-    margin-top: 10px;
-  }
-  
-  .signal-box-right0, .signal-box-right1, .signal-box-right2,.signal-box-right3 {
-    border-width: 1px;
-    color: white;
-    background: #2c6bee;
-    border-radius: 15px;
-    padding: 7px 14px 7px 14px;
-    margin-bottom: 3px;
-    float: right;
-    max-width: 75%;
-    clear: both;
-    position: relative;
-  }
-  .signal-box-right1 {
-    margin-top: 10px;
-    border-bottom-right-radius: 0;
-    margin-bottom: 3px;
-  }
-  .signal-box-right2 {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    margin-bottom: 3px;
-  }
-  .signal-box-right3 {
-    border-top-right-radius: 0;
-    margin-bottom: 3px;
-  }
-  .signal-box-right0 {
-    margin-top: 10px;
-  }
-  
-  
-  
-  
-  /* testing */
-  .signal-box-right {
-    border-width: 1px;
-    color: white;
-    background: #2c6bee;
-    border-radius: 15px;
-    padding: 7px 14px 7px 14px;
-    margin-bottom: 3px;
-    float: right;
-    max-width: 75%;
-    clear: both;
-    position: relative;
-    
-    margin-top: 10px;
-    border-bottom-right-radius: 0;
-    margin-bottom: 3px;
-  }
-  
-  /* .signal-box-right ~ .signal-box-right{
-    margin-top: 10px;
-    border-bottom-right-radius: 0;
-    margin-bottom: 3px;
-    background:pink;
-  } */
-  
-  /* sibling selector your way to success...? */
-  .signal-box-right + .signal-box-right{
-    margin-top:0;
-    border-top-right-radius: 0;
-    /* border-bottom-right-radius: 15px; */
-    margin-bottom: 3px;
-  }
-  /* this could work for future attempts but not the current structure */
-  /* .signal-box-right:first-of-type{
-    background:green;
-  } */
-  
-  
-  .signal-box-left {
-    background: #e9e9e9;
-    border-width: 1px;
-    border-radius: 15px;
-    padding: 7px 14px 7px 14px;
-    color: black;
-    float: left;
-    max-width: 75%;
-    clear: both;
-    position: relative;
-    margin-top: 10px;
-    border-bottom-left-radius: 0;
-    margin-bottom: 3px;
-  }
-  .signal-box-left + .signal-box-left{
-    margin-top:0;
-    /* border-bottom-left-radius: 15px; */
-    border-top-left-radius: 0;
-    /* margin-bottom: 10px; */
-  }
-  
-  /* tmp */
-  .signal-emote{ 
-    font-size:2.5em;
-    /* margin-top:-5px; */
-    /* margin-bottom:0px; */
-  }
-  .emote{
-    font-size:2.5em;
-    background:none;
-  }
-  
-  
-  
-  .signal-time-right, .signal-time-left {
-    float: right;
-    font-size: .7em;
-    position: relative;
-    color: #8eb4fd;
-    padding: 5px 0 0 0;
-    clear: both;
-  }
-  .signal-time-left {
-    color: #979797;
-  }
-  
-  .signal-img-left {
-    /* background: #2c6bee; */
-    border-radius: 15px;
-    border:2px solid #F6F6F6;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    /* margin-top: 10px; */
-    float: left;
-    max-width: 75%;
-    max-height:400px;
-    clear: both;
-    position: relative;
-  }
-  .signal-img-right {
-    /* margin-top: 10px; */
-    border:2px solid #F6F6F6;
-    border-radius: 15px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    margin-bottom: 3px;
-    float: right;
-    max-width: 75%;
-    max-height:400px;
-    clear: both;
-    position: relative;
-  }
-  .signal-date {
-    padding: 30px 0 5px 0;
-    color: gray;
-    font-size:.8em;
-    text-align:center;
-    clear: both;
-    position: relative;
-  }
-  .signal-call {
-    padding: 0 0 0 0;
-    color: gray;
-    font-size:.8em;
-    text-align:center;
-    clear: both;
-    position: relative;
-  }
-  .signal-call-icon{
-    height:2em;
-    margin-bottom:-5px;
-  }
-  .signal-header {
-    /* padding: 2px 0 5px 0; */
-    margin-top:-5px;
-    font-size: 1.5em;
-    text-align:center;
-    position: relative;
-  }
-  .signal-subheader {
-    /* padding: 5px 0 5px 0; */
-    margin-top:-15px;
-    font-size:.8em;
-    text-align:center;
-    position: relative;
-  }
-  .signal-big-dot {
-    margin-top: 30px;
-    position: relative;
-    /* actual irl black magic */
-    /* left: 50%;
-    transform: translate(-50%); */
-    /* nvm, the above works on everything but ao3. ao3 demands just left. */
-    /* left: 50%; */
-    /* NVM?? THE BEHAVIOR HAS CHANGED AGAIN?? IT JUST CENTERS ALL BY ITSELF NOW??? */
-  
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    background-color: #bbb;
-  }
-  .signal-misc-space{
-    height:30px;
-  }
-  .signal-unread{
-    border-top: #404040 solid 1px;
-    font-size: .8em;
-    text-align: center;
-    padding-top: 5px;
-    margin-top: 20px;
-    margin-bottom:20px;
-  }
-  
-  /*signal group chat*/
-  /*top bar is fixed in this version, legit works in this version. should fix og version also, but... probably wont.*/
-  /* hotfixed og version and i should just convert it to all use the same classes but thats too much work */
-  .signal-gc-arrow {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    height: 30px;
-    width: 30px;
-    margin:0px 10px 5px 10px;
-    display: inline-block;
-  }
-  .inline{
-    display:inline-block;
-    max-width:70%;
-  }
-  .signal-gc-dot {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom:5px;
-    background-color: #bbb;
-  }
-  .signal-gc-name{
-    font-size:1.1em;
-    margin-top:5px;
-    display: block;
-  }
-  .signal-gc-subname{
-    font-size:.9em;
-    display:block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  .signal-gc-name-line{
-    padding-bottom:5px;
-    box-shadow: 0px 8px 8px -10px #888888;
-    white-space: nowrap;
-    /* text-overflow: ellipsis; */
-    overflow: hidden;
-  }
-  .sgc-name{
-    display:block;
-    font-size:0.8em;
-    font-weight:bold;
-  }
-  .sgc-cyno{
-    color:#9A82BA;
-  }
-  .sgc-collei{
-    color:#787B38;
-  }
-  .sgc-tighnari{
-    color:#2A385B;
-  }
-  
-  .signal-at-right {
-    border-radius: 5px;
-    padding: 0px 5px 0px 2px;
-    color: white !important;
-    background: #1248B2;
-    text-decoration: none !important;
-    cursor: pointer;
-  }
-  .signal-at-left {
-    border-radius: 5px;
-    color: black !important;
-    padding: 0px 5px 0px 2px;
-    background: #C6C6C6;
-    text-decoration: none !important;
-    cursor: pointer;
-  }
-  
-  
-  
-  /* phone screen; notifs, alarms */
-  
-  .phone-container-container{
-    display:flex;
-    justify-content:center;
-  }
-  .phone-container {
-    /* border-top: 1px solid #b1b1b3;
-    border-bottom: 1px solid #b1b1b3; */
-    max-width:400px;
-    width:100%;
-    height:600px;
-    max-height:100%;
-    display:flex;
-    /* justify-content:center; */
-    align-items:center;
-    flex-direction:column;
-    /* background-color:#bbb; */
-    background: linear-gradient(gray, #bbb);
-    color:white;
-  }
-  .phone-off{
-    background: linear-gradient(gray, #bbb);
-  
-  }
-  .phone-on{
-    background: linear-gradient(#e5e5e5, #e5e5e5);
-    color:black;
-  }
-  
-  /* change this lots, center it also */
-  .phone-alarm-x{
-    /* content:""; */
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color:white;
-    color:black;
-    text-align:center;
-    font-size:35px;
-    margin-top:auto;
-    margin: auto 0 50px 0;
-  }
-  .phone-alarm-x:hover{
-    background-color:#bbb;
-    transition:1s;
-  
-  }
-  .phone-snooze{
-    background-color:rgb(203, 201, 201);
-    border-radius:15px;
-    padding:4px 15px;
-    margin-bottom:30px;
-  }
-  .phone-snooze:hover{
-    background-color:gray;
-  }
-  
-  .phone-time {
-    font-size: 4rem;
-    margin:0;
-  }
-  .phone-date {
-    font-size: 0.8rem;
-  }
-  .phone-alarm-name {
-    font-size: 0.8rem;
-    margin-top:-10px;
-  }
-  
-  .phone-notif{
-    max-width:390px;
-  
-    width:80%;
-    background-color:white;
-    border-radius:15px;
-    color:black;
-    padding:10px 20px;
-    padding-left:40px;
-    margin:5px;
-  }
-  .phone-notif{
-  
-  }
-  
-  /* overflow none, ... out */
-  .phone-notif-header{
-    font-weight:bold;
-    overflow:hidden;
-  }
-  .phone-notif-header::before{
-    content:"";
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color:gray;
-  
-    display:inline-block;
-    position:absolute;
-    /* margin-top:1px; */
-    margin-left:-35px;
-  }
-  .phone-notif-subheader{
-    color:lightgray;
-    font-size:.8rem;
-    font-weight:normal;
-    margin-left:5px;
-    /* overflow behavior  */
-  }
-  
-  .phone-notif-time{
-    color:lightgray;
-    font-size:.8rem;
-    font-weight:normal;
-    margin-left:5px;
-  }
-  .phone-notif-header-email{
-    font-size:.8rem;
-  }
-  /* hack fix */
-  .phone-notif p{
-    margin:5px;
-    /* display:flex; */
-    /* justify-content:space-around; */
-  }
-  .phone-notif p span{
-    /* justify-content:space-around; */
-  }
-  .phone-weather-icons{
-    justify-content:space-between;
-    display:flex;
-  }
-  
-  .phone-notif-podcast-info::before{
-    content:"";
-    height: 35px;
-    width: 35px;
-    border-radius: 20%;
-    background-color:gray;
-  
-    display:inline-block;
-    position:absolute;
-    /* margin-top:1px; */
-    margin-left:-45px;
-  }
-  .phone-notif-podcast-info{
-    /* float:left; */
-    margin-left:15px;
-  }
-  .phone-notif-podcast-info::after{
-    content:"⏮	▶	⏭";
-    font-size:2rem;
-    overflow:hidden;
-    /* display:inline-block; */
-    /* position:absolute; */
-    /* margin-left:auto; */
-  
-    /* justify-content:right; */
-    float:right;
-    /* top:0; */
-    /* position:absolute; */
-    /* margin-left:auto; */
-    /* margin-bottom:auto; */
-    /* margin-top:auto; */
-    /* align-self:flex-start; */
-    /* display:flex; */
-    /* top:0; */
-  }
-  
-  .phone-notif-podcast-buttons{
-    font-size:2rem;
-    /* float:right; */
-    /* align-self:flex-end; */
-    /* margin-left:auto; */
-    /* display:inline-flex; */
-    position:absolute;
-    display:block;
-    /* margin-right:10px; */
-    /* margin-right:auto; */
-  }
-  
-  
-  
-  /* .dc-green-line-50, .dc-green-line-20, .dc-green-line-85{
-  } */
-  .phone-update-progress-50 {
-    border-bottom: 3px solid transparent;
-    /* padding-left: 5px; */
-    padding-top: 5px;
-    /* padding-bottom:10px; */
-    margin-bottom:10px;
-    margin-left:5px;
-  
-  
-    border-image: linear-gradient(to right, #0481FF 50%, #DADBDC 50%);
-    border-image-slice: 1;
-  }
-
-
-
-  /* yikyak */
-  
-  /* man maybe just make a full container view */
-  .yak-container-container{
-    display:flex;
-    justify-content:center;
-  }
-  .yak-container{
-    width:100%;
-    max-width:400px;
-  }
-
-  .yak-topbar{
-    /* what if we just stole that image actually  */
-    /* too late */
-    width:100%;
-    height:70px;
-
-    /* text-align:center; */
-
-    background-color:#0CD5B1;
-    /* margin-bottom:-15px; */
-    /* yeah just make a full container view */
-    padding-left:10px;
-    font-size:1.5em;
-    font-family: sans-serif;
-
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    color:white;
-  }
-  .yak-center{
-    text-align:center;
-    padding-top:15px;
-  }
-  .yak-center-box{
-    border: 1px solid white;
-    border-radius:6px;
-    display:inline-block;
-  }
-
-  .yak-toggle-box{
-    display:flex;
-    justify-content:space-around;
-  }
-
-  .yak-toggle-new, .yak-toggle-hot{
-    color:white;
-    display:inline-block;
-    font-size:1.2rem;
-    padding: 10px 35px;
-
-    border: 1px solid white;
-    border-radius:6px;
-  }
-  .yak-toggle-hot{
-    border-left:none;
-    border-top-left-radius:0;
-    border-bottom-left-radius:0;
-  }
-  .yak-toggle-new{
-    border-right:none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  .yak-toggle-active{
-    color:#0CD5B1;
-    background-color:white;
-  }
-
-
-  .yak-bottombar{
-    font-family: sans-serif;
-
-    background-color:#E2EBFE;
-    border-top:2px solid #C6CDD5;
-
-    color:#0CD5B1;
-    font-size:2em;
-
-    padding:10px;
-    width:100%;
-  }
-  
-  
-  .yak{
-    border-bottom:1px solid #E0E0E0;
-    width:95%;
-
-    /* should be in the underlayers but ugh  */
-    /* could make an overarching view */
-    padding-left:10px;
-  
-    font-family: sans-serif;
-    font-size:1.5em;
-    /* background-color:pink; */
-  }
-
-  .yak-tags{
-    color:#0CD5B1;
-    font-weight:bold;
-    margin-bottom:0px;
-  }
-  .yak-text{
-    margin:7px 5px 7px 0px;
-  }
-  .yak-footer{
-    color:#B9B9B9;
-    font-size:0.9em;
-    display: flex;
-  justify-content: space-between;
-
-  margin:0px 10px 5px 5px;
-  }
-  .yak-time{
-    /* color:#AFAFAF; */
-  }
-
-  .yak-vote{
-    color:#ACACAC;
-    position:relative;
-  }
-  .yak-vote::before, .yak-vote::after{
-    content:"";
-    border-bottom-color: #757575;
-    border: solid #ACACAC;
-    border-width: 0 2px 2px 0;
-    padding: 6px;
-    display: inline-block;
-    cursor:pointer;
-  }  
-  /* up arrow(left) */
-  .yak-vote::before{
-    margin:0px 25px -5px 10px;
-    /* left:-35px;
-    bottom:-2px; */
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-  }
-  /* down arrow(right) */
-  .yak-vote::after{
-    margin:0px 10px 3px 25px;
-    /* right:-35px;
-    bottom:6px; */
-
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-
-  
-  .yak-details{
-    font-size:2rem;
-    margin:0 10px;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-  }
-  .yak-details-text{
-    flex-grow:9;
-  }
-
-  .yak-topbar-details{
-    height:70px;
-
-    text-align:center;
-
-    background-color:#0CD5B1;
-    margin-bottom:-15px;
-    /* yeah just make a full container view */
-    padding-left:10px;
-    font-size:1.5rem;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-  }
-  .yak-topbar-details::before{
-    content:"";
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    padding: 8px;
-    transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-
-    position:absolute;
-    left:35;
-    cursor:pointer;
-  }
-
-  .yak-details-header{
-    font-size:1.6rem;
-    font-weight:bold;
-  }
-
-  .yak-details-time{
-    color:#B9B9B9;
-    font-size:1.3rem;
-    /* font-weight:bold; */
-    margin:10px;
-  }
-  .yak-details-location{
-    color:#B9B9B9;
-    font-size:1.3rem;
-    margin:10px;
-  }
-  .yak-details-comment-header{
-    background-color:#FAFAFA;
-    color:#AAAAAA;
-    padding:10px;
-    font-size:1.3rem;
-    font-weight:bold;
-
-  }
-  
-  /* for scores of zero */
-  .yak-null{
-    color:#E4E4E4;
-  }
-
-  .yak-details-score{
-    /* except if the value is 0, then the text is gray. address somehow. */
-    color:#0CD5B1;
-    position:relative;
-
-    flex-grow:1;
-    font-size:25px;
-    font-weight:bold;
-
-    margin-top:35px;
-
-    /* mebe */
-    text-align:center;
-  }
-  .yak-details-score::before, .yak-details-score::after{
-    content:"";
-    /* border-bottom-color: #757575; */
-    border: solid #E4E4E4;
-    border-width: 0 6px 6px 0;
-    padding: 12px;
-    display: inline-block;
-    border-radius:3px;
-    /* margin:10px 0; */
-
-  }  
-  /* up arrow */
-  .yak-details-score::before{
-    /* i think this is if YOU have upvoted it */
-    /* border-color:#0CD5B1; */
-
-    position:absolute;
-
-    /* margin:10px -28px 15px 10px; */
-    margin-top:-20px;
-    left:-7px;
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-
-    /* transform: skewX(-10deg)  rotate(-135deg); */
-
-  }
-  /* down arrow */
-  .yak-details-score::after{
-    /* margin:10px 0px 0px 12px; */
-    position:absolute;
-    margin-top:20px;
-    left:-5px;
-
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-
-
-  .yak-details-comment{
-    display:flex;
-
-    justify-content:space-around;
-    /* align-items:center; */
-    
-  }
-  
-  .yak-details-comment-text{
-    font-size:1.2rem;
-    flex-grow:9;
-    /* margin-top:-10px; */
-    /* display:inline-block; */
-    /* top:0; */
-    /* margin-top:-30px; */
-    margin-left:50px;
-    margin-top:10px;
-  }
-  .yak-details-comment-text::before{
-    content:"";
-    height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  /* display: inline-block; */
-  display:flex;
-    align-items: center;
-    justify-content: center;
-
-
-  background-color: #bbb;
-  position:absolute;
-  
-  margin: 5px 10px 0px 0;
-  left:20px;
-  font-size:2em;
-
-  }
-  /* cant figure out how to center, could drop letters */
-  .yak-op::before{
-    /* display:flex;
-    align-items: center;
-    justify-content: center; */
-    font-size:1em;
-
-    content:"OP";
-    color:white;
-    font-weight:bold;
-    background-color: #0CD5B1;
-  }
-  .pink::before{
-    background-color: pink; 
-    color:maroon;
-    content:"◇"; 
-
-}
-  .blue::before{
-    background-color: lightblue;
-    content:"◉";
-    color:darkblue;
-  
-  }
-  .yellow::before{
-    background-color: yellow;
-    content:"◬";
-    color:brown;
-  }
-  /* pot.: 
-  △
-  ☆
-  ☎
-  ☏
-  ☘
-  ☮
-  ♖
-  ♡
-  ♬
-  ⚐
-  ⚠
-  ⚅
-  ⛈
-
-   */
-
-  .yak-line{
-    border-bottom:1px solid #E0E0E0;
-  }
-  
-
-
-
-
-  .yak-score-container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    float:right;
-    margin-right:20px;
-  }
-  .yak-score-number{
-    color:#0CD5B1;
-    font-weight:bold;
-  }
-
-  /* .yak-score-number::before, .yak-score-number::after{ */
-    .up, .down{
-    /* content:"";
-    border-bottom-color: #757575;
-    border: solid #E4E4E4;
-    border-width: 0 6px 6px 0;
-    padding: 12px;
-    display: inline-block;
-    border-radius:3px; */
-    width:50px;
-  height:30px;
-
-  background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow.png") no-repeat;
-  background-size:50px 30px;
-  cursor:pointer;
-
-  }  
-
-  .yak-details-score2{
-    color:#0CD5B1;
-    position:relative;
-
-    /* flex-grow:1; */
-    font-size:25px;
-    font-weight:bold;
-    text-align:center;
-  }
-  /* arrows */
-  .yak-details-score2::before, .yak-details-score2::after{ 
-    display:flex;
-    content:"";
-    width:50px;
-  height:30px;
-
-  background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow.png") no-repeat;
-  background-size:50px 30px;
-  cursor:pointer;
-
-  }
-  /* up arrow */
-  .yak-details-score2::before{
-    transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-  }
-  .yak-details-score2:hover::before{
-    /* change out for green image */
-    background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow-voted.png") no-repeat;
-  background-size:50px 30px;
-
-    /* opacity:40%; */
-
-  }
-
-  /* voted */
-  /* has to be wrapped INSIDE the voted class */
-  .voted > .yak-details-score2::before{
-    background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow-voted.png") no-repeat;
-    background-size:50px 30px;
-  }
-
-
-  .up{
-  transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  }
-
-
-  .yak-op{
-    color:#0CD5B1;
-  }
-
-
-
-
   
   </style>
 
   <h1 align="center">Monday</h1>
+  <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   <p>&nbsp;</p><p>&nbsp;</p>
   
@@ -1126,7 +45,7 @@ future todo:
   <!-- top bar -->
   <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Kaveh</span></p>
   
-  <p class="sms-time">_friday_, _jul_16_ &bull; 1:08 PM</p>
+  <p class="sms-time">1:08 PM</p>
   <p>
   
   <span class="sms-box-right">
@@ -1310,7 +229,7 @@ future todo:
     <div class="phone-container phone-off">
       <p>&nbsp;</p>
       <p class="phone-time">1:45</p>
-      <p class="phone-date">[Tue, Jan 14]</p>
+      <p class="phone-date">Mon, [Jan 14]</p>
     <p class="phone-alarm-name">FOR450</p>
   
     
@@ -1323,11 +242,65 @@ future todo:
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
-  _
+<!-- //discord_1 -->
+
+<div class="dc-font">
+
+  <!-- top bar; remember @ or # -->
+  <p><img class="dc-hamberger" src="https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg"> <span class="dc-header"><span class="text-color-gray">#</span> dont-poison-yourself</span></p>
+  <p class="dc-border-top"></p>
   
-  //discord 
+  <!-- since youve been gone, messages -->
+  <p class="dc-new-msg-bar">2 new messages since 3:05 PM<img class="dc-blue-x" src="https://github.com/jihnari/QAB/raw/main/img/dc-blue-x.png" /></p>
   
-  _
+
+  <p><span class="dc-name color-yellow">Makhfi</span> <span class="dc-time-stamp">Today at 10:44 AM</span><br /> 
+    Is this one okay? 
+    > starshroom 
+    <br/>   
+    <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+    </p>
+    
+    <p class="dc-reply-text2"><span class="dc-name color-yellow">Makhfi</span> Is this one okay? </p>
+    <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+      yes. you'll want to cook it first but do so on a very low heat or it'll become hard and inedible 
+      <br/>
+      *leather levels toughness hard to eat, not poisonous 
+    </p>
+
+
+  <p><span class="dc-name color-yellow">Makhfi</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+Thanks!! 
+<br/><span class="dc-emotebox">👍 1</span>
+  </p>
+
+  <p class="dc-middle-line-red"><span class="middle-box">NEW MESSAGES </span></p>
+  
+<p><span class="dc-name color-yellow">Golshan</span> <span class="dc-time-stamp">Today at 3:05 PM</span><br /> 
+  Is this safe? 
+  > sweetflower    
+  <br/>   
+  <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+  </p>
+  
+  
+  <p class="dc-reply-text2"><span class="dc-name color-yellow">Golshan</span> <em>Tap to see attachment</em> </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    that's a sweetflower 
+  </p>
+  
+
+  <p><span class="dc-name color-yellow">Golshan</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+But is it safe? 
+  </p>
+
+<tigh> 
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    it's literally the main ingredient in sugar. yes, it's safe 
+  </p>
+
+</div>
+
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -1540,7 +513,7 @@ future todo:
   </span>
   
   <span class="sms-box-right">
-    gossip is <for small minded people with nothing better to do>
+    gossip is for small minded people with nothing better to do
   </span>
   
   <span class="sms-box-left">
@@ -1571,7 +544,7 @@ future todo:
   <!-- phone notifs -->
   <div class="phone-container-container">
     <div class="phone-container phone-on">
-      <p class="phone-time">4:30</p>
+      <p class="phone-time">4:31</p>
       <p class="phone-date">[Tue, Jan 14]</p>
     
       <!-- weather notif -->
@@ -1693,7 +666,46 @@ future todo:
     <div class="phone-snooze">Snooze 15 mins</div>
   </div>
   </div>
+
+    
+  <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
+  <p>&nbsp;</p><p>&nbsp;</p>
+
+<!-- phone notifs -->
+<div class="phone-container-container">
+  <div class="phone-container phone-on">
+    <p class="phone-time">6:03</p>
+    <p class="phone-date">[Tue, Jan 14]</p>
   
+    <!-- weather notif -->
+    <div class="phone-notif">
+      <p>28° — Sumeru City </p>
+      <p class="phone-weather-icons"><span>Feels like: 34°</span> <span>30°/38°</span></p>
+      <!-- <div class="phone-weather-icons"><div>☴ 8 mph</div><div>🜄 60%</div><div>☀ ☼ 0??</div><div>🜁 21</div></div> -->
+      <p class="phone-weather-icons"><span>☴ 8 mph</span><span>🜄 60%</span><span>☼ 3</span><span>🜁 21</span></p>
+    </div>
+
+    <!-- text notif -->
+    <div class="phone-notif">
+      <p class="phone-notif-header">Collei <span class="phone-notif-time">10:10</span></p>
+      <p>the app is kinda weird sorry in advance,,, lemme know if there's any words you don't know</p>
+    </div>
+
+    <!-- calendar notif -->
+    <!-- <div class="phone-notif">
+      <p class="phone-notif-header">Forestry Hike </p>
+      <p>Today 1:00 PM</p>
+    </div> -->
+
+    <!-- email notif -->
+    <div class="phone-notif">
+      <p class="phone-notif-header">Naphis <span class="phone-notif-subheader">tighnari27@u-sumeru.edu</span><span class="phone-notif-time">10:10</span></p>
+      <p>Re: Concerning the Undergraduates </p>
+    </div>
+
+  </div>
+</div>
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -1843,12 +855,68 @@ future todo:
       
     </p></div>
     
+
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <hr/>
+    <p>&nbsp;</p><p>&nbsp;</p>
+
+    <!-- //discord_2 -->
+
+
+
+    <div class="dc-font">
+
+      <!-- top bar; remember @ or # -->
+      <p><img class="dc-hamberger" src="https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg"> <span class="dc-header"><span class="text-color-gray">#</span> dont-poison-yourself</span></p>
+      <p class="dc-border-top"></p>
+      
+      <!-- since youve been gone, messages -->
+      <p class="dc-new-msg-bar">4 new messages since 08:12 <img class="dc-blue-x" src="https://github.com/jihnari/QAB/raw/main/img/dc-blue-x.png" /></p>
+      
+  
+
+
+    <p><span class="dc-name color-yellow">Dana</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    Is this one okay to eat? I know there's a specific rule but I can't remember it right now 
+    > blue spiral 
+          <br/>   
+      <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+      </p>
+    
+
+    <p><span class="dc-name color-yellow">Makhfi</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    I think this is edible but I just wanted to make sure 
+    > lotus 
+          <br/>   
+      <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+      </p>
+
+      <p class="dc-reply-text2"><span class="dc-name color-yellow">Dana</span> <em>Tap to see attachment</em> </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    that one's fine, it's the red ones you can't eat 
+  </p>
+
+      <p class="dc-reply-text2"><span class="dc-name color-yellow">Makhfi</span> I think this is edible but I just wanted to make sure </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    the middle yellow bit is but leave the rest, you'll damage the whole plant irreparably if you tear out the blue petals. and besides, it's very bitter
+  </p>
+
+
+
+  <p><span class="dc-name color-yellow">Dana</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+      <span class="dc-just-emote"> 👍</span>
+    </p>
+      
+      
+      </div>
     
     <p>&nbsp;</p><p>&nbsp;</p>
     <hr/>
     <p>&nbsp;</p><p>&nbsp;</p>
 
   <h1 align="center">Tuesday</h1>
+  <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   <p>&nbsp;</p><p>&nbsp;</p>
 
@@ -1991,8 +1059,55 @@ future todo:
     </span>
       
     </p></div>
+
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <hr/>
+    <p>&nbsp;</p><p>&nbsp;</p>
   
+  <!-- //discord_3 -->
+
+
+  <div class="dc-font">
+
+    <!-- top bar; remember @ or # -->
+    <p><img class="dc-hamberger" src="https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg"> <span class="dc-header"><span class="text-color-gray">#</span> dont-poison-yourself</span></p>
+    <p class="dc-border-top"></p>
+    
+
+    
+    <p><span class="dc-name color-yellow">Farabi</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+      is this ok to eat? 
+      > ice flower 
+    <br/>   
+    <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+    </p>
+    
+    
   
+      <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+        good fucking luck 
+    </p>
+  
+    <p><span class="dc-name color-yellow">Farabi</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+  but is it ok? <br/>
+  ? 
+    </p>
+  
+      <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+        you let me know and report back
+    </p>
+  
+    <p><span class="dc-name color-yellow">Farabi</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+  ok...?
+    </p>
+
+  <p><span class="dc-name color-yellow">Farabi</span> <span class="dc-time-stamp">Today at _time_//5min later</span><br /> 
+  oh i see. 
+  </p>
+  
+      <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+        <span class="dc-just-emote"> 😐</span>
+    </p>
   
     
   <p>&nbsp;</p><p>&nbsp;</p>
@@ -2003,7 +1118,7 @@ future todo:
   <div class="phone-container-container">
     <div class="phone-container phone-on">
       <p class="phone-time">12:13</p>
-      <p class="phone-date">[Tue, Jan 14]</p>
+      <p class="phone-date">Tue, [Jan 14]</p>
     
       <!-- weather notif -->
       <div class="phone-notif">
@@ -2105,6 +1220,8 @@ future todo:
 
   <h1 align="center">Wednesday</h1>
   <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
+  <p>&nbsp;</p><p>&nbsp;</p>
   <p>&nbsp;</p><p>&nbsp;</p>
   
   <!-- phone:alarm -->
@@ -2112,7 +1229,7 @@ future todo:
     <div class="phone-container phone-off">
       <p>&nbsp;</p>
       <p class="phone-time">07:20 </p>
-      <p class="phone-date">[Tue, Jan 14+ day]</p>
+      <p class="phone-date">Wed, [Jan 14+ day]</p>
     <p class="phone-alarm-name">class</p>
   
   
@@ -2134,7 +1251,7 @@ future todo:
   <!-- top bar -->
   <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Cyno</span></p>
   
-  <p class="sms-time">_friday_, _jul_16_ &bull; 08:08 AM</p>
+  <p class="sms-time">08:08 AM</p>
   <p>
   
   
@@ -2218,7 +1335,72 @@ future todo:
   </span>
   
   </p></div>
+
+  <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
+  <p>&nbsp;</p><p>&nbsp;</p>
+
+  <!-- //discord_4 -->
   
+<div class="dc-font">
+
+  <!-- top bar; remember @ or # -->
+  <p><img class="dc-hamberger" src="https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg"> <span class="dc-header"><span class="text-color-gray">#</span> dont-poison-yourself</span></p>
+  <p class="dc-border-top"></p>
+  
+  <!-- since youve been gone, messages -->
+  <p class="dc-new-msg-bar">2 new messages since 08:12 <img class="dc-blue-x" src="https://github.com/jihnari/QAB/raw/main/img/dc-blue-x.png" /></p>
+
+  <p><span class="dc-name color-yellow">Paz</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+        can i eat this 
+        > blue flower 
+  <br/>   
+  <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+  </p>
+  
+  <p class="dc-reply-text2"><span class="dc-name color-yellow">_re_name_</span> <em>Tap to see attachment</em> </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    that's a flower 
+  </p>
+  
+    <p><span class="dc-name color-yellow">Paz</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+  but it looks like a fruit 
+    </p>
+  
+    <p><span class="dc-name color-yellow">Paz</span> <span class="dc-time-stamp">Today at _time_//five min later </span><br /> 
+  <span class="dc-link">@Tighnari</span> can i eat 
+    </p>
+  
+  <p class="dc-reply-text2"><span class="dc-name color-yellow">_re_name_</span> _og_comment_ </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    😐
+    <br/>
+    knock yourself out 
+  </p>
+
+  <p class="dc-middle-line-red"><span class="middle-box">NEW MESSAGES </span></p>
+
+      <p><span class="dc-name color-yellow">Dana</span> <span class="dc-time-stamp">Today at _time_ //later (now)</span><br /> 
+  
+        Is this the poisonous one? 
+        > spotted red 
+  <br/>   
+  <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+  </p>
+  
+  <p class="dc-reply-text2"><span class="dc-name color-yellow">Dana</span> Is this the poisonous one? </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    yes
+    <br/>
+    in general red in the wild is not a color you want to consume
+    <br/>
+    don't eat it, in case that was unclear 
+    <br/>
+    I don't care what the seniors might have told you. do. not. eat. it. 
+    <br/>
+    don't SMOKE it either unless you want a one way trip to the ER 
+  </p>
+</div>
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -2305,7 +1487,7 @@ future todo:
 <!-- top bar -->
 <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Cyno</span></p>
 
-<p class="sms-time">_friday_, _jul_16_ &bull; _time_</p>
+<p class="sms-time">12:16 PM</p>
 <p>
   
 <span class="sms-box-right">
@@ -2360,14 +1542,59 @@ future todo:
 <hr/>
 <p>&nbsp;</p><p>&nbsp;</p>
 
-discord
+  <!-- //discord_5 -->
+
+  
+<div class="dc-font">
+
+  <!-- top bar; remember @ or # -->
+  <p><img class="dc-hamberger" src="https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg"> <span class="dc-header"><span class="text-color-gray">#</span> dont-poison-yourself</span></p>
+  <p class="dc-border-top"></p>
+  
+  <!-- since youve been gone, messages -->
+  <p class="dc-new-msg-bar">1 new message since 4:55 PM<img class="dc-blue-x" src="https://github.com/jihnari/QAB/raw/main/img/dc-blue-x.png" /></p>
+  
+  
+  <p><span class="dc-name color-yellow">Idhari</span> <span class="dc-time-stamp">Today at 4:55 PM</span><br /> 
+    ?
+    > purple
+  <br/>   
+  <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+  </p>
+  
+  <p class="dc-reply-text2"><span class="dc-name color-yellow">Idhari</span> ? </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at 4:58 PM</span><br /> 
+    don't fucking eat that don't even go near that 
+  <br/>
+    can you not smell the toxic fumes you fuckwad 
+  <br/>
+    get the fuck away from there 
+  <br/>
+    and then go to the hospital
+  </p>
+  
+  
+  </div>
+
 
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   
-  phone screen or alarm or smth
-  //could be telling him to text kaveh 
+  
+<!-- phone:alarm -->
+<div class="phone-container-container">
+  <div class="phone-container phone-off">
+    <p>&nbsp;</p>
+    <p class="phone-time">6:20</p>
+    <p class="phone-date">Wed, [Jan 14]</p>
+    <p class="phone-alarm-name">text Kaveh</p>
+  
+    <div class=phone-alarm-x>🞨</div>
+    
+    <div class="phone-snooze">Snooze 10 mins</div>
+  </div>
+  </div>
   
   
   <p>&nbsp;</p><p>&nbsp;</p>
@@ -2380,7 +1607,7 @@ discord
 <!-- top bar -->
 <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Kaveh</span></p>
 
-<p class="sms-time">_friday_, _jul_16_ &bull; _time_//evening</p>
+<p class="sms-time">6:20 PM</p>
 <p>
   
 <span class="sms-box-right">
@@ -2499,6 +1726,8 @@ discord
 
   <h1 align="center">Thursday</h1>
   <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
+  <p>&nbsp;</p><p>&nbsp;</p>
   <p>&nbsp;</p><p>&nbsp;</p>
   
   <!-- phone:alarm -->
@@ -2506,7 +1735,7 @@ discord
     <div class="phone-container phone-off">
       <p>&nbsp;</p>
       <p class="phone-time">07:20 </p>
-      <p class="phone-date">[Tue, Jan 14+ day]</p>
+      <p class="phone-date">Thu, [Jan 14+ day]</p>
     <p class="phone-alarm-name">class</p>
   
   
@@ -2516,6 +1745,54 @@ discord
   </div>
   </div>
   
+  <p>&nbsp;</p><p>&nbsp;</p>
+  <hr/>
+  <p>&nbsp;</p><p>&nbsp;</p>
+
+  <!-- //this one's weak
+  //discord_6 -->
+
+  
+<div class="dc-font">
+
+  <!-- top bar; remember @ or # -->
+  <p><img class="dc-hamberger" src="https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg"> <span class="dc-header"><span class="text-color-gray">#</span> dont-poison-yourself</span></p>
+  <p class="dc-border-top"></p>
+  
+  <!-- since youve been gone, messages -->
+  <p class="dc-new-msg-bar">1 new message since 08:12 <img class="dc-blue-x" src="https://github.com/jihnari/QAB/raw/main/img/dc-blue-x.png" /></p>
+
+  
+  <p><span class="dc-name color-yellow">Paz</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    can i eat this
+  > leaf
+    <br/>   
+    <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+    </p>
+    
+
+  
+<p class="dc-reply-text2"><span class="dc-name color-yellow">Paz</span> can i eat this </p>
+<p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+  that's a leaf  <br/>
+  it has no nutritional value <br/>
+  it will taste like wax  <br/>
+  or worse
+</p>
+
+re:
+<p class="dc-reply-text2"><span class="dc-name color-forest">Tighnari</span> that's a leaf</p>
+<p><span class="dc-name color-yellow">Paz</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+but can i eat it 
+</p>
+ 
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    I hope you choke on it, actually 
+  </p>
+
+</div>
+
+
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
@@ -2560,7 +1837,7 @@ discord
   </div>
   
   
-  
+  <p>&nbsp;</p><p>&nbsp;</p>
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
@@ -2643,7 +1920,7 @@ discord
   <!-- top bar -->
   <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Collei</span></p>
   
-  <p class="sms-time">_friday_, _jul_16_ &bull; 4:24 PM</p>
+  <p class="sms-time">4:24 PM</p>
   <p>
   
   
@@ -2732,7 +2009,7 @@ discord
   <!-- top bar -->
   <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Alhaitham</span></p>
   
-  <p class="sms-time">_friday_, _jul_16_ &bull; 4:24 PM</p>
+  <p class="sms-time">4:24 PM</p>
   <p>
   
   
@@ -2789,7 +2066,7 @@ discord
   <!-- top bar -->
   <p class="sms-border"><i class="left-arrow"></i><span class="sms-name-header">&nbsp;&nbsp;Kaveh</span></p>
   
-  <p class="sms-time">_friday_, _jul_16_ &bull; 4:24 PM</p>
+  <p class="sms-time">4:24 PM</p>
   <p>
   
   <span class="sms-box-right">
@@ -2840,7 +2117,36 @@ discord
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
   
-  //phone display, sms from collei asking how it went? text me if he kills you?
+
+<!-- phone notifs -->
+<div class="phone-container-container">
+  <div class="phone-container phone-on">
+    <p class="phone-time">[9:22]</p>
+    <p class="phone-date">Thu, [Jan 14]</p>
+  
+    <!-- weather notif -->
+    <div class="phone-notif">
+      <p>28° — Sumeru City </p>
+      <p class="phone-weather-icons"><span>Feels like: 34°</span> <span>30°/38°</span></p>
+      <!-- <div class="phone-weather-icons"><div>☴ 8 mph</div><div>🜄 60%</div><div>☀ ☼ 0??</div><div>🜁 21</div></div> -->
+      <p class="phone-weather-icons"><span>☴ 8 mph</span><span>🜄 60%</span><span>☼ 3</span><span>🜁 21</span></p>
+    </div>
+
+    <!-- text notif -->
+    <div class="phone-notif">
+      <p class="phone-notif-header">Collei <span class="phone-notif-time">10:10</span></p>
+      <p>text me if the red menace is there and he kills u </p>
+    </div>
+
+    <!-- text notif -->
+    <div class="phone-notif">
+      <p class="phone-notif-header">Cyno <span class="phone-notif-time">10:10</span></p>
+      <p>Where are you? </p>
+    </div>
+
+  </div>
+</div>
+
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
@@ -2987,9 +2293,42 @@ discord
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
   <p>&nbsp;</p><p>&nbsp;</p>
+  <!-- //one last discord _7 -->
   
-  //one last discord section? 
   
+<div class="dc-font">
+
+  <!-- top bar; remember @ or # -->
+  <p><img class="dc-hamberger" src="https://github.com/jihnari/QAB/raw/main/img/dc-hamburger.jpg"> <span class="dc-header"><span class="text-color-gray">#</span> dont-poison-yourself</span></p>
+  <p class="dc-border-top"></p>
+  
+  <!-- since youve been gone, messages -->
+  <p class="dc-new-msg-bar">3 new messages since 08:12 <img class="dc-blue-x" src="https://github.com/jihnari/QAB/raw/main/img/dc-blue-x.png" /></p>
+  
+  
+  <p><span class="dc-name color-yellow">Paz</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    can i eat this 
+  <br/>   
+  <image class="dc_image_landscape" src="http://funcurve.com/wp-content/uploads/jojo-sc12-720x405.jpg"/>
+  </p>
+ 
+    <p class="dc-reply-text2"><span class="dc-name color-yellow">Paz</span> <em>Tap to see attachment</em> </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    that's a fucking fungus
+  </p>
+
+  <p class="dc-reply-text2"><span class="dc-name color-forest">Tighnari</span> that's a fucking fungus </p>
+  <p><span class="dc-name color-yellow">Paz</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    yes but mushrooms are also a type of fungus 
+  </p>
+
+
+  <p class="dc-reply-text2"><span class="dc-name color-yellow">Paz</span> yes but mushrooms are also a type of fungus  </p>
+  <p><span class="dc-name color-forest">Tighnari</span> <span class="dc-time-stamp">Today at _time_</span><br /> 
+    i will ban you 
+  </p>
+
+</div>
   
   <p>&nbsp;</p><p>&nbsp;</p>
   <hr/>
