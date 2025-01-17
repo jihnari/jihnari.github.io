@@ -630,39 +630,44 @@
   }
 
 
-
-  /* yikyak */
-  
-  /* man maybe just make a full container view */
+  /* centers the full view */
   .yak-container-container{
     display:flex;
     justify-content:center;
   }
+  /* container for the full view */
   .yak-container{
     width:100%;
-    max-width:400px;
+    max-width:500px;
+    font-family: sans-serif;
+    /* background-color:teal; */
   }
 
+  /* container for a single post */
+  .yak{
+    border-bottom:1px solid #E0E0E0;
+    width:95%;
+    margin-left:10px;
+    font-family: sans-serif;
+    font-size:1.5em;
+  }
+
+
+  /* top bar for main view */
   .yak-topbar{
-    /* what if we just stole that image actually  */
-    /* too late */
     width:100%;
     height:70px;
 
-    /* text-align:center; */
-
     background-color:#0CD5B1;
-    /* margin-bottom:-15px; */
-    /* yeah just make a full container view */
-    padding-left:10px;
+    /* padding-left:10px; */
     font-size:1.5em;
-    font-family: sans-serif;
 
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items:center;
     color:white;
   }
+  /* code to make the [new | hot] box in the main view topbar */
   .yak-center{
     text-align:center;
     padding-top:15px;
@@ -672,12 +677,10 @@
     border-radius:6px;
     display:inline-block;
   }
-
   .yak-toggle-box{
     display:flex;
     justify-content:space-around;
   }
-
   .yak-toggle-new, .yak-toggle-hot{
     color:white;
     display:inline-block;
@@ -697,48 +700,34 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-
   .yak-toggle-active{
     color:#0CD5B1;
     background-color:white;
   }
 
 
+  /* main view bottom bar (yakarma) */
   .yak-bottombar{
     font-family: sans-serif;
-
     background-color:#E2EBFE;
     border-top:2px solid #C6CDD5;
-
     color:#0CD5B1;
     font-size:2em;
-
-    padding:10px;
+    padding:10px 0px;
     width:100%;
   }
-  
-  
-  .yak{
-    border-bottom:1px solid #E0E0E0;
-    width:95%;
 
-    /* should be in the underlayers but ugh  */
-    /* could make an overarching view */
-    padding-left:10px;
-  
-    font-family: sans-serif;
-    font-size:1.5em;
-    /* background-color:pink; */
-  }
-
+  /* tag for main view post (largely unused? phased out later?) */
   .yak-tags{
     color:#0CD5B1;
     font-weight:bold;
     margin-bottom:0px;
   }
+  /* text for main view post */
   .yak-text{
     margin:7px 5px 7px 0px;
   }
+  /* post footer, containing time, replies, and votes */
   .yak-footer{
     color:#B9B9B9;
     font-size:0.9em;
@@ -747,10 +736,12 @@
 
   margin:0px 10px 5px 5px;
   }
+  /* unused class for time */
   .yak-time{
     /* color:#AFAFAF; */
   }
 
+  /* vote on mainscreen post */
   .yak-vote{
     color:#ACACAC;
     position:relative;
@@ -782,7 +773,7 @@
     -webkit-transform: rotate(45deg);
   }
 
-  
+  /* code for details view */
   .yak-details{
     font-size:2rem;
     margin:0 10px;
@@ -794,160 +785,99 @@
     flex-grow:9;
   }
 
-  .yak-topbar-details{
-    height:70px;
-
-    text-align:center;
-
-    background-color:#0CD5B1;
-    margin-bottom:-15px;
-    /* yeah just make a full container view */
-    padding-left:10px;
-    font-size:1.5rem;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-  }
-  .yak-topbar-details::before{
-    content:"";
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    padding: 8px;
-    transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-
-    position:absolute;
-    left:35;
-    cursor:pointer;
-  }
-
+  /* details view topbar text */
   .yak-details-header{
     font-size:1.6rem;
     font-weight:bold;
   }
+  /* details view topbar back button */
+  .yak-back-button{
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 8px;
+    transform: rotate(135deg);
+   -webkit-transform: rotate(135deg);
+    margin-left:-15px;
+    cursor:pointer;
+  }
 
-  .yak-details-time{
+  /* details view time stamp for all posts (larger than main screen) */
+  p.yak-details-time{
     color:#B9B9B9;
     font-size:1.3rem;
-    /* font-weight:bold; */
     margin:10px;
   }
+  .yak-line{
+    border-bottom:1px solid #E0E0E0;
+  }
+  /* seeing if i can replace yak-line */
+  div.yak-details-time{
+    color:#B9B9B9;
+    font-size:1.3rem;
+    /* margin:0; */
+    padding:0 0 10px 10px;
+    border-bottom:1px solid #E0E0E0;
+  }
+  /* details view location text (same as time class tbh) */
   .yak-details-location{
     color:#B9B9B9;
     font-size:1.3rem;
     margin:10px;
   }
+  /* details view, under the main post, comments count box */
   .yak-details-comment-header{
     background-color:#FAFAFA;
     color:#AAAAAA;
     padding:10px;
     font-size:1.3rem;
     font-weight:bold;
-
   }
   
-  /* for scores of zero */
+  /* for scores of zero (grayed out, not green) */
   .yak-null{
     color:#E4E4E4;
   }
 
-  .yak-details-score{
-    /* except if the value is 0, then the text is gray. address somehow. */
-    color:#0CD5B1;
-    position:relative;
-
-    flex-grow:1;
-    font-size:25px;
-    font-weight:bold;
-
-    margin-top:35px;
-
-    /* mebe */
-    text-align:center;
-  }
-  .yak-details-score::before, .yak-details-score::after{
-    content:"";
-    /* border-bottom-color: #757575; */
-    border: solid #E4E4E4;
-    border-width: 0 6px 6px 0;
-    padding: 12px;
-    display: inline-block;
-    border-radius:3px;
-    /* margin:10px 0; */
-
-  }  
-  /* up arrow */
-  .yak-details-score::before{
-    /* i think this is if YOU have upvoted it */
-    /* border-color:#0CD5B1; */
-
-    position:absolute;
-
-    /* margin:10px -28px 15px 10px; */
-    margin-top:-20px;
-    left:-7px;
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-
-    /* transform: skewX(-10deg)  rotate(-135deg); */
-
-  }
-  /* down arrow */
-  .yak-details-score::after{
-    /* margin:10px 0px 0px 12px; */
-    position:absolute;
-    margin-top:20px;
-    left:-5px;
-
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
 
 
+  /* details view, formats the layout for comments under the main post  */
   .yak-details-comment{
     display:flex;
-
     justify-content:space-around;
-    /* align-items:center; */
-    
   }
   
+  /* details view, comments text */
   .yak-details-comment-text{
     font-size:1.2rem;
     flex-grow:9;
-    /* margin-top:-10px; */
-    /* display:inline-block; */
-    /* top:0; */
-    /* margin-top:-30px; */
     margin-left:50px;
     margin-top:10px;
   }
+  /* user pfp, base class */
   .yak-details-comment-text::before{
     content:"";
     height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  /* display: inline-block; */
-  display:flex;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #bbb;
+    font-size:2em;
+
+    /* this only centers the icon text, faking a pfp */
+    display:flex;
     align-items: center;
     justify-content: center;
+    
 
+    /* hardcode align pfp to the left of the comment text */
+    position:absolute;
+    
+    margin: 0px 10px 0px -50px;
+    /* margin: 5px 10px 0px 0px; */
 
-  background-color: #bbb;
-  position:absolute;
-  
-  margin: 5px 10px 0px 0;
-  left:20px;
-  font-size:2em;
-
+    /* left:20px; */
   }
-  /* cant figure out how to center, could drop letters */
+  /* OP for main post, affects pfp only */
   .yak-op::before{
-    /* display:flex;
-    align-items: center;
-    justify-content: center; */
     font-size:1em;
 
     content:"OP";
@@ -955,19 +885,19 @@
     font-weight:bold;
     background-color: #0CD5B1;
   }
-  .pink::before{
+  /* other pfps  */
+  .yak-pink::before{
     background-color: pink; 
     color:maroon;
     content:"◇"; 
-
-}
-  .blue::before{
+  }
+  .yak-blue::before{
     background-color: lightblue;
     content:"◉";
     color:darkblue;
   
   }
-  .yellow::before{
+  .yak-yellow::before{
     background-color: yellow;
     content:"◬";
     color:brown;
@@ -989,12 +919,7 @@
 
    */
 
-  .yak-line{
-    border-bottom:1px solid #E0E0E0;
-  }
   
-
-
 
 
   .yak-score-container{
@@ -1021,13 +946,13 @@
     width:50px;
   height:30px;
 
-  background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow.png") no-repeat;
+  background: url("https://raw.githubusercontent.com/jihnari/misc/main/_reusable/yikyak/img/yak-down-arrow.png") no-repeat;
   background-size:50px 30px;
   cursor:pointer;
 
   }  
 
-  .yak-details-score2{
+  .yak-details-score{
     color:#0CD5B1;
     position:relative;
 
@@ -1035,27 +960,28 @@
     font-size:25px;
     font-weight:bold;
     text-align:center;
+    margin-left:10px;
   }
   /* arrows */
-  .yak-details-score2::before, .yak-details-score2::after{ 
+  .yak-details-score::before, .yak-details-score::after{ 
     display:flex;
     content:"";
     width:50px;
-  height:30px;
+    height:30px;
 
-  background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow.png") no-repeat;
-  background-size:50px 30px;
-  cursor:pointer;
+    background: url("https://raw.githubusercontent.com/jihnari/misc/main/_reusable/yikyak/img/yak-down-arrow.png") no-repeat;
+    background-size:50px 30px;
+    cursor:pointer;
 
   }
   /* up arrow */
-  .yak-details-score2::before{
+  .yak-details-score::before{
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
   }
-  .yak-details-score2:hover::before{
+  .yak-details-score:hover::before{
     /* change out for green image */
-    background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow-voted.png") no-repeat;
+    background: url("https://raw.githubusercontent.com/jihnari/misc/main/_reusable/yikyak/img/yak-down-arrow-voted.png") no-repeat;
   background-size:50px 30px;
 
     /* opacity:40%; */
@@ -1064,12 +990,13 @@
 
   /* voted */
   /* has to be wrapped INSIDE the voted class */
-  .voted > .yak-details-score2::before{
-    background: url("https://raw.githubusercontent.com/jihnari/misc/main/yikyak/img/yak-down-arrow-voted.png") no-repeat;
+  .voted > .yak-details-score::before{
+    background: url("https://raw.githubusercontent.com/jihnari/misc/main/_reusable/yikyak/img/yak-down-arrow-voted.png") no-repeat;
     background-size:50px 30px;
   }
 
 
+  /* i dont think this is in use */
   .up{
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
@@ -1079,6 +1006,10 @@
   .yak-op{
     color:#0CD5B1;
   }
+
+
+
+
 
 
   
@@ -1414,30 +1345,18 @@ border:1.5px solid #BCBCBC;
   max-width: 95%;
 }
 
-/* portrait */
-.dc_image{
+.dc_image_landscape{
   max-width:95%;
-  /* max-width: 350px; */
-  /* width: 350px; */
-  /* width: 95%; */
-  max-height: 350px;
-  /* height: auto; */
-  /* object-fit: contain; */
-
+  width: 400px;
+  height: auto;
   display:table;
   border: 1px solid #DDDEDF;
   border-radius: 6px;
   line-height: 1.4em;
 }
-
-.dc_image_landscape{
-  max-width:95%;
-  width: 400px;
-  /* width: 350px; */
-  /* width: 95%; */
-  /* max-height: 350px; */
-  height: auto;
-  /* object-fit: contain; */
+.dc_image_portrait{
+  max-width:90%;
+  max-height: 350px;
   display:table;
   border: 1px solid #DDDEDF;
   border-radius: 6px;
