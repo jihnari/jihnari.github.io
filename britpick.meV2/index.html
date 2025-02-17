@@ -11,9 +11,7 @@
   <script src="bootstrap.min.js"></script>
     <style type="text/css">
       body {
-        /* padding-top: 60px;
-        padding-bottom: 40px; */
-        padding: 0 20px;
+        padding: 60px 20px 40px 20px;
       }
 
       /* Navbar logo left margin (JEB) */
@@ -51,7 +49,7 @@
   <!-- My JavaScript -->
   <script type="text/javascript" src="britpick.js"></script>
   <script type="text/javascript" src="load.js"></script>
-  <script type="text/javascript" src="embiggen.js"></script>
+  <!-- <script type="text/javascript" src="embiggen.js"></script> -->
 
   <!-- Google Analytics -->
   <!-- <script type="text/javascript">
@@ -70,7 +68,7 @@
 </head>
 <body>
   <!-- ill fix this later maybe  -->
-<!--   
+  
   <div class="container">
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -80,8 +78,9 @@
             <li class="active" id="back to start"><a href="#" onClick="recreateIndex();">Start</a></li>
             <li class="divider-vertical"></li>
             <li id="check"><a href="#blank_check" onClick="createBlankCheck(false);">Check</a></li>
-            <li class="divider-vertical"></li>
-            <li id="customize"><a href="#customize" onClick="createCustomize();">Customize</a></li>
+
+            <!-- <li class="divider-vertical"></li>
+            <li id="customize"><a href="#customize" onClick="createCustomize();">Customize</a></li> -->
           </ul>
           <div class="btn-group pull-right">
                 <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">Sources
@@ -100,7 +99,156 @@
       </div>
       </div>
     </div>
+  </div>
+
+	<div id="main" class="container-narrow">
+    <div>
+	    <h1>Britpick.me</h1>
+      <p>Auto britpicker 2.0</p>
+    </div>
+
+    <div id="form">
+      <form id="target">
+        <legend>Paste fic in the box:</legend>
+        <!-- <span class="help-block">You can paste plain text, rich text, or HTML in the box. For more on how the Britpicker works, see the <a href="newfaq.html">FAQ</a>.</span> -->
+
+        <!-- <div class="alert" id="nb">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <span id="NBmore"><strong>NB:</strong> click for more info/warnings.</span>
+          <div id="NBtext" style="display:none;">
+          <br/>
+          <p>Many of the suggestions you'll receive from this tool are <em>highly context-dependent</em>. Be sure to read the explanations (click on the green buttons to see them) if you're confused or if the suggestion seems silly&mdash;it might be! You can also choose to ignore a particular item by clicking the blue 'Ignore' button below the explanation.</p>
+          <p>This tool is intended as a first-pass Britpicker; it can't handle anything more than the most obvious substitutions, but for me, at least, it's useful to find those pesky places where I write 'bathroom' instead of 'toilet/loo' or 'apartment' instead of 'flat' without ever noticing.</p>
+        </div>
+        </div> -->
+        <textarea id="fic" class="input-block-level" rows="6" placeholder="Your un-Britpick-ed text" autofocus required></textarea>
+        <br/>
+        <button type="submit" class="btn btn-primary btn-large">Britpick, activate</button>
+      </form>
+    </div>
+    <div id="britpicked" class="container-narrow">
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <!-- <div class="container">
+    <div class="navbar navbar-fixed-bottom">
+      <div class="navbar-inner">
+          <ul class="nav pull-right">
+            <li class="divider-vertical"></li>
+            <li id="faq"><a href="faq.html">Help</a></li>
+            <li class="divider-vertical"></li>
+            <li id="github"><a href="https://github.com/somethingsarenotuptous/britpick.me">This Project on GitHub</a></li>
+            <li class="divider-vertical"></li>
+            <li id="me"><a href="http://somethingsarenotuptous.tumblr.com">Me on Tumblr</a></li>
+          </ul>
+      </div>
+    </div>
   </div> -->
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="Keywords" content="Britpick, Brit-pick, Britpicking, Brit-picking, fanfiction" />
+  <meta name="Description" content="A mini webapp for automatically Britpicking fanfiction" />
+	<title>Britpick.me</title>
+	<link href="img/favicon.ico" rel="shortcut icon" />
+	<!-- Bootstrap -->
+	<link href="bootstrap.min.css" type="text/css" rel="stylesheet" media="screen" />
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="bootstrap.min.js"></script>
+    <style type="text/css">
+      body {
+        padding: 60px 20px 40px 20px;
+      }
+
+      /* Navbar logo left margin (JEB) */
+      .navbar .brand {
+        margin-left: 10px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 20px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .hero-unit {
+        padding: 20px;
+      }
+
+      /* Fix for hidden popovers */
+      .popover {
+        z-index: 1055;
+      }
+    </style>
+  <!-- My JavaScript -->
+  <script type="text/javascript" src="britpick.js"></script>
+  <script type="text/javascript" src="load.js"></script>
+  <!-- <script type="text/javascript" src="embiggen.js"></script> -->
+
+  <!-- Google Analytics -->
+  <!-- <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-37683895-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script> -->
+</head>
+<body>
+  <!-- ill fix this later maybe  -->
+  
+  <div class="container">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="">Britpick.me</a>
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            <li class="active" id="back to start"><a href="#" onClick="recreateIndex();">Start</a></li>
+            <li class="divider-vertical"></li>
+            <li id="check"><a href="#blank_check" onClick="createBlankCheck(false);">Check</a></li>
+
+            <!-- <li class="divider-vertical"></li>
+            <li id="customize"><a href="#customize" onClick="createCustomize();">Customize</a></li> -->
+          </ul>
+          <div class="btn-group pull-right">
+                <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">Sources
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a target="_blank" href="http://archiveofourown.org/works/259535">Brit-pick Hints for Sherlock Authors by red_adam</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="http://needlesslydefiantwithtea.tumblr.com/post/37663342231/britpicking-master-post">Britpicking Master Post by needlesslydefiantwithtea</a>
+                  </li>
+                  <li>
+                    <a target="_blank" href="https://www.uoc.edu/portal/en/servei-linguistic/convencions/british-american-english/spelling/index.html">UOC Language & Style</a>
+                  </li>
+                </ul>
+      </div>
+      </div>
+    </div>
+  </div>
 
 	<div id="main" class="container-narrow">
     <div>
