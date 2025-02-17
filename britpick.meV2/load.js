@@ -1357,7 +1357,5 @@ var defaults = [
 		"AmericanForms": "",
 		"British": "",
 		"Explanation": ""
-	},
-	
-
+	}
 ];
