@@ -42,14 +42,14 @@
 <div class="save-point"> 
     save points: <br/><br/>
 
-      <details class="choice-button ending1">
+      <details class="choice-button route1-next">
         <summary>
-          Yugamu > bio
+          Yugamu
         </summary>
       </details>
       <details class="choice-button ending1">
         <summary>
-          Yugamu > roof
+          Yugamu > bio
         </summary>
       </details>
       <!-- <details class="choice-button ending1-1">
@@ -79,7 +79,7 @@
       </details> -->
       <details class="choice-button route3">
         <summary>
-          Shion
+          <s>Shion</s>
         </summary>
       </details>
 
@@ -126,7 +126,7 @@
   </details>
   <details class="choice-button route3">
     <summary>
-      Shion
+      <s>Shion</s>
     </summary>
   </details>
 </div>
@@ -175,7 +175,7 @@
     <summary>Did you have a dream about kissing me, Sir Takumi?!</summary>
     </details>
     
-    <details class="kyoshika-talk takumi-embarassed3 pov-open">
+    <!-- <details class="kyoshika-talk takumi-embarassed3 pov-open">
     <summary>I, uh...</summary>
     </details>
     
@@ -217,22 +217,17 @@
     
 
     
-  <!-- <div class="hidden dialogue1"> -->
-    <!-- <details open></details> -->
+    
     <details class="target2-open kurara-pissed takumi-think-dark pov-open thoughts choice-unlock1 hidden dialogue1">
     <summary>I really don't think of her that way. I don't want to give her the wrong idea, or make her uncomfortable.</summary>
     </details>
-  <!-- </div> -->
     
-  <!-- <div class="hidden dialogue2"> -->
-    <!-- <details open></details> -->
+
+
     <details class="target2-open kurara-pissed takumi-think-stressed pov-open thoughts choice-unlock2 hidden dialogue2">
     <summary>Momo might actually break me in half. Definitely not worth it.</summary>
     </details>
-  <!-- </div> -->
     
-  <!-- <div class="hidden dialogue3"> -->
-    <!-- <details open></details> -->
     <details class="target2-open kurara-pissed takumi-think pov-open thoughts hidden dialogue3">
     <summary>I could say Hiruko but...</summary>
     </details>
@@ -244,10 +239,9 @@
     <details class="target2-open kurara-pissed takumi-hurt pov-open thoughts choice-unlock3">
     <summary>Whatever it is, something is telling me I should pick someone else.</summary>
     </details>
-  <!-- </div> -->
     
-  <!-- <div class="hidden dialogue4"> -->
-    <!-- <details open></details> -->
+
+
     <details class="target2-open kurara-pissed takumi-think pov-open thoughts hidden dialogue4">
     <summary>Kako...</summary>
     </details>
@@ -255,9 +249,9 @@
     <details class="target2-open kurara-pissed takumi-think-stressed pov-open thoughts choice-unlock4">
     <summary>If Ima ever found out I said anything about kissing her, falling off a roof would be the least of my problems...</summary>
     </details>
-  <!-- </div> -->
     
-  <!-- <div class="hidden dialogue-final"> -->
+
+    
     <details class="target2-open kurara-pissed takumi-embarassed3 pov-open thoughts hidden dialogue-final">
     <summary>Wait, doesn't that mean there's only guys left?!</summary>
     </details>
@@ -272,7 +266,7 @@
     
     <details class="target2-open kurara-argue takumi-embarassed3 pov-open thoughts">
     <summary>Ugh...!</summary>
-    </details>
+    </details> -->
     
     <details class="target2-open kurara-argue takumi-think-stressed pov-open thoughts">
     <summary>Maybe I should say someone so ridiculous they have to drop it.</summary>
@@ -298,7 +292,7 @@
     <summary>See? Dreams don't really mean any&mdash;</summary> 
     </details> 
     
-    <details class="kyoshika-embarassed  ">
+    <details class="kyoshika-embarassed takumi-talk-sweat ">
     <summary>What?! Then we have to go ask Sir Yugamu at once!</summary>
     </details>
     
@@ -306,15 +300,15 @@
     <summary>Huh!?</summary>
     </details>
     
-    <details class="tsubasa-disappointed target3-open ">
+    <details class="tsubasa-disappointed target3-open takumi-embarassed3 ">
     <summary>Oh... I didn't know you felt that way, Takumi.</summary>
     </details>
     
-    <details class="kurara-worried target2-open ">
+    <details class="kurara-worried target2-open takumi-embarassed3 ">
     <summary>You had a dream about that freak!?</summary>
     </details>
     
-    <details class="kurara-point target2-open ">
+    <details class="kurara-point target2-open takumi-embarassed3 ">
     <summary>Explain yourself!!</summary>
     </details>
     
@@ -326,21 +320,21 @@
     <summary>This isn't going how I planned at all...!</summary>
     </details>
     
-    <details class="tsubasa-disappointed target3-open ">
+    <details class="tsubasa-disappointed target3-open takumi-ohno">
     <summary>I don't really get what you see in him, but... </summary>
     </details>
     
-    <details class="tsubasa-smile target3-open ">
+    <details class="tsubasa-smile target3-open takumi-ohno">
     <summary>I'll support your relationship with Yugamu, Takumi!</summary>
     </details>
     
     <!-- ****GO TO NEW ROOM -->
-    <details class="tsubasa-smile takumi-no thoughts pov-open ending1 move-to-next">
+    <details class="tsubasa-smile takumi-no thoughts pov-open route1-next">
     <summary>I don't want support for that.</summary>
     </details>
 
-
-
+    <!-- breaks the vicious cycle -->
+    <div class="helpme"></div>
 
 
     <!-- EITO ROUTE: START -->
@@ -561,6 +555,9 @@
 
 
 
+    <!-- breaks the vicious cycle
+    <div class="helpme"></div> -->
+
 
     <!-- SHION ROUTE: START -->
     <!-- remove the divs actually? move classes to first details -->
@@ -584,7 +581,7 @@
 <!-- CHOICE 1 (yugamu) -->
 
 <!-- move to black-->
-<div class="main-box hidden result1 black">
+<div class="main-box hidden route1-next-room black">
 
 <!-- hard choice -->
 <!-- move-to-next is broken here for some reason? works for single view but not nested view  -->
@@ -596,7 +593,7 @@
   </details>
   <details class="choice-button ending2">
     <summary>
-      The Roof
+      <s>The Roof</s>
     </summary>
   </details>
 </div>
@@ -1120,7 +1117,7 @@
     <div class="choice-screen hard-choice hidden">
       <details class="choice-button ending2-1">
         <summary>
-          Answer earnestly
+          <s>Answer earnestly</s>
         </summary>
       </details>
       <details class="choice-button ending2-2">
@@ -1658,9 +1655,6 @@
   <div class="name-box target-element">Eito Aotsuki</div>
   
   <div class="text-box">
-
-    <!-- do smth else if this breaks stuff -->
-    <!-- <details open></details> -->
   
   <details class="alt-op eito-scary takumi-hey2 pov-open">
   <summary>Woah, are you okay? Do you need to sit down?</summary>

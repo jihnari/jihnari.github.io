@@ -1828,13 +1828,13 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
 
  
   /* room changing for endings */
-  .main-box:has(details.ending1[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.move-ending2-2[open]){
+  .main-box:has(details.ending1[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.move-ending2-2[open]){
     /* i think this is snagging on the savepoint telling it to be open */
     display:none !important; 
   } 
-
+  
   /* added a > to route2 */
-  :has(details.route2-next[open]) > .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2{
+  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) > .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2{
     display:flex;
   }
 
