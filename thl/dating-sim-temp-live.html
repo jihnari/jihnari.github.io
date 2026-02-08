@@ -6,6 +6,10 @@
 - script says thought, code says thoughts. python parser accounts for that but just making a note here anyway. 
 - narration DOES exist but i dont think its every used? test during a black room ig 
 - cage eito is closer (and also has bars). gonna draw bars.
+
+
+TODO/REMEMBER: 
+- add black-name-box to every .black view
  -->
 
 
@@ -175,7 +179,7 @@
     <summary>Did you have a dream about kissing me, Sir Takumi?!</summary>
     </details>
     
-    <!-- <details class="kyoshika-talk takumi-embarassed3 pov-open">
+    <details class="kyoshika-talk takumi-embarassed3 pov-open">
     <summary>I, uh...</summary>
     </details>
     
@@ -266,7 +270,7 @@
     
     <details class="target2-open kurara-argue takumi-embarassed3 pov-open thoughts">
     <summary>Ugh...!</summary>
-    </details> -->
+    </details>
     
     <details class="target2-open kurara-argue takumi-think-stressed pov-open thoughts">
     <summary>Maybe I should say someone so ridiculous they have to drop it.</summary>
@@ -729,6 +733,8 @@
   <div class="main-box black hidden next-view">
   
     <div class="anchor">
+  <div class="name-box black-name-box">&nbsp;</div>
+
   <div class="text-box">
   <details class="thoughts">
   <summary>I explained to Yugamu how Tsubasa, Karua, and Kyoshika all had dreams about kissing me, and I had dreams about kissing all three of them.</summary>
@@ -778,6 +784,8 @@
   <div class="anchor">
   <div class="name-box right pov-element">Takumi Sumino</div>
   <div class="name-box target-element">Yugamu Omokage</div>
+  <div class="name-box black-name-box">&nbsp;</div>
+
   
   <div class="text-box">
   
@@ -902,7 +910,7 @@
   </details>
 
 
-  <!-- YES -->
+  <!-- YUGAMU: YES -->
   <!-- add ending1-1-open and hidden to next dialogue box -->
   <details class="yugamu-explain takumi-embarassed3 pov-open hidden ending1-1-open">
   <summary>I... I don't know. I don't think so. </summary>
@@ -986,28 +994,427 @@
   
 
 
-  <!-- NO -->
+  <!-- YUGAMU: NO -->
   <!-- add ending1-2-open and hidden to next dialogue box -->
-
-
-  <!-- NOTE: CANNOT use move-to-next. yes route already using it.  -->
-
-
+  <details class="yugamu-explain takumi-resolved pov-open hidden ending1-2-open">
+    <summary>Definitely not. </summary> 
+    </details> 
+    
+    <details class="yugamu-sigh takumi-resolved ">
+    <summary>Well, that's disappointing. I thought maybe I'd finally found a kindred spirit. </summary> 
+    </details> 
+    
+    <details class="yugamu-sigh takumi-talk1 pov-open">
+    <summary>Well, you didn't. </summary> 
+    </details> 
+    
+    <details class="yugamu-sigh takumi-mad pov-open">
+    <summary>I'm gonna go. </summary> 
+    </details> 
+    
+    <details class="yugamu-sigh takumi-mad-side thoughts">
+    <summary>Before things get any weirder.</summary> 
+    </details> 
+    
+    <details class="yugamu-dread-talk takumi-mad-side ">
+    <summary>...Wait a moment, Takumi. </summary> 
+    </details> 
+    
+    <details class="yugamu-dread-talk takumi-unimpressed pov-open">
+    <summary>What is it now? </summary> 
+    </details> 
+    
+    <details class="yugamu-dread-think takumi-unimpressed ">
+    <summary>I've just decided I'm offended, actually. You told all those people about a dream you had where you kissed me&mdash;</summary>
+    </details>
+    
+    <details class="yugamu-dread-think takumi-explain-sweat pov-open">
+    <summary>I told three people!</summary>
+    </details>
+    
+    <details class="yugamu-dread takumi-explain-sweat ">
+    <summary>&mdash;they got to hear all about it. But me, your dream partner, gets nothing? </summary>
+    </details>
+    
+    <details class="yugamu-dread-talk takumi-explain-sweat ">
+    <summary>It's too unfair, Takumi. </summary>
+    </details>
+    
+    <details class="yugamu-dread-smile takumi-explain-sweat ">
+    <summary>I can't simply let this go. I'm too jealous of the dream version of me getting to kiss you. </summary>
+    </details>
+    
+    <details class="yugamu-dread-smile takumi-resolved pov-open">
+    <summary>What are you talking about, unfair? It never even happened! </summary>
+    </details>
+    
+    <details class="yugamu-neutral takumi-resolved ">
+    <summary>That may be.</summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-resolved ">
+    <summary>But now you've put the idea into my head and I can't stop thinking about it.</summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-no thoughts">
+    <summary>Please stop thinking about it. </summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-talk1 pov-open">
+    <summary>What do you want me to do about it?!</summary>
+    </details>
+    
+    <details class="yugamu-thoughtful takumi-talk1 ">
+    <summary>Well... it would make it fair if you kissed me. </summary>
+    </details>
+    
+    <details class="yugamu-thoughtful takumi-ohno pov-open">
+    <summary>Kissed you??!!!</summary>
+    </details>
+    
+    <details class="yugamu-thoughtful takumi-mad-quiet pov-open">
+    <summary>I just told you I don't want to!</summary>
+    </details>
+    
+    <details class="yugamu-talk2 takumi-mad-quiet ">
+    <summary>Come now, Takumi, don't tell me you're shy. It's only the two of us here. </summary>
+    </details>
+    
+    <details class="yugamu-talk2 takumi-mad thoughts">
+    <summary>This has nothing to do with being shy! </summary>
+    </details>
+    
+    <details class="yugamu-talk2 takumi-base thoughts">
+    <summary>I'm having a hard time keeping up with him. Does he really want to kiss me? Or is he just messing with me? </summary>
+    </details>
+    
+    <details class="yugamu-hmm takumi-base ">
+    <summary>I won't tell anyone, if that's what you're worried about. I don't kiss and tell. </summary>
+    </details>
+    
+    <details class="yugamu-smug takumi-base ">
+    <summary>Unlike you, apparently. </summary>
+    </details>
+    
+    <details class="yugamu-smug takumi-resolved pov-open">
+    <summary>Why would that be what I was worried about?! </summary>
+    </details>
+    
+    <details class="yugamu-think takumi-resolved ">
+    <summary>Then is it because you don't believe in your abilities? </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-resolved ">
+    <summary>Oh... that's so sad, Takumi. I didn't know you were a mouth virgin. </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-ohno pov-open">
+    <summary>A what?! That's not a real thing!! </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-embarassed1 pov-open">
+    <summary>And I'm&mdash;! I'm not a...! </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-embarassed1 ">
+    <summary>Oh? Have you kissed someone before? Who? </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-embarassed3 pov-open">
+    <summary>...!!</summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-embarassed pov-open">
+    <summary>L-lots of people! </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-embarassed ">
+    <summary>That's surprising. I was so sure you were the type to pine after the same girl for a decade and miss your shot because you waited too long to tell her your feelings. </summary>
+    </details>
+    
+    <details class="yugamu-hehe takumi-embarassed ">
+    <summary>But if you're so experienced, you won't mind showing me, right? </summary>
+    </details>
+    
+    <details class="yugamu-hehe takumi-embarassed3 pov-open">
+    <summary>...!!!!</summary>
+    </details>
+    
+    <details class="yugamu-hehe takumi-mad-quiet pov-open">
+    <summary>I would mind, actually!!! </summary>
+    </details>
+    
+    <details class="yugamu-thoughtful takumi-mad-quiet ">
+    <summary>Really? Are you sure you're not just lying about this being your first kiss? </summary>
+    </details>
+    
+    <details class="yugamu-thoughtful takumi-no pov-open">
+    <summary>I'm...! I'm not lying!! </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-no ">
+    <summary>Then you won't mind proving it, right? This should be no big deal for someone like you. </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-think-dark thoughts">
+    <summary>How did things turn out like this...</summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-pressed thoughts">
+    <summary>Do I really have to kiss Yugamu to prove I've kissed someone before? </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-think-stressed thoughts">
+    <summary>No... There has to be another way. </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-resolved2 thoughts">
+    <summary>Wait... I know...! </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-talk-dark pov-open">
+    <summary>Fine... I'll prove it. </summary>
+    </details>
+    
+    <details class="yugamu-smug takumi-talk-dark ">
+    <summary>Oh? </summary>
+    </details>
+    
+    <details class="yugamu-smug takumi-mad pov-open">
+    <summary>But I don't have to prove it with you. </summary>
+    </details>
+    
+    <details class="yugamu-what takumi-mad ">
+    <summary>W-what?! </summary>
+    </details>
+    
+    <details class="yugamu-what takumi-considering pov-open">
+    <summary>I don't have to kiss you to prove it. </summary>
+    </details>
+    
+    <details class="yugamu-what takumi-mad pov-open">
+    <summary>I just have to kiss <span class="important">someone</span>, right?</summary>
+    </details>
+    
+    <details class="yugamu-dread takumi-mad ">
+    <summary>...</summary>
+    </details>
+    
+    <details class="yugamu-dread-talk takumi-mad ">
+    <summary>That won't work like you're expecting.</summary>
+    </details>
+    
+    <details class="yugamu-dread-talk takumi-base thoughts">
+    <summary>He's bluffing.</summary>
+    </details>
+    
+    <details class="yugamu-dread-talk takumi-think thoughts">
+    <summary>...He has to be bluffing, right?</summary>
+    </details>
+    
+    <details class="yugamu-dread-talk takumi-talk1 pov-open">
+    <summary>...What do you mean? </summary>
+    </details>
+    
+    <details class="yugamu-dread-think takumi-talk1 ">
+    <summary>After what you said to the girls today, do you think any of them will ever give you a second glance? They all think you're in love with me.</summary>
+    </details>
+    
+    <details class="yugamu-dread-smile takumi-talk1 ">
+    <summary>And by tomorrow... Everyone else would think so too. </summary>
+    </details>
+    
+    <details class="yugamu-dread-smile takumi-ohno pov-open">
+    <summary>!!</summary>
+    </details>
+    
+    <details class="yugamu-dread-smile takumi-explain-sweat pov-open">
+    <summary>You wouldn't...! </summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-explain-sweat ">
+    <summary>I won't have to. </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-explain-sweat ">
+    <summary>Those three won't keep their secret for long. Especially Kyoshika. </summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-hurt thoughts">
+    <summary>He's right... She'll tell everyone. I have to stop her!</summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-hurt ">
+    <summary>I know what you're thinking, but it's already too late. </summary>
+    </details>
+    
+    <details class="yugamu-think takumi-hurt ">
+    <summary>What do you think she's been doing while you've been in here talking to me? </summary>
+    </details>
+    
+    <details class="yugamu-think takumi-fear pov-open">
+    <summary>No...! </summary>
+    </details>
+    
+    <details class="yugamu-smug takumi-fear ">
+    <summary>That's right. Forget about kissing. You'll never get the chance to experience anything. </summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-fear ">
+    <summary>Your youthful spring will never get the chance to bloom.</summary>
+    </details>
+    
+    <details class="yugamu-think takumi-fear ">
+    <summary>Unless...</summary>
+    </details>
+    
+    <details class="yugamu-think takumi-resolved pov-open">
+    <summary>Unless what?!</summary>
+    </details>
+    
+    <details class="yugamu-smug takumi-resolved ">
+    <summary>I could help you, Takumi.</summary>
+    </details>
+    
+    <details class="yugamu-smug takumi-resolved2 thoughts">
+    <summary>Help me how? </summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-resolved2 ">
+    <summary>How else? </summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-mad pov-open">
+    <summary>You can't be suggesting what I think you're suggesting.</summary>
+    </details>
+    
+    <details class="yugamu-talk takumi-mad ">
+    <summary>Why can't I? </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-mad ">
+    <summary>Come now, Takumi. Do you want to die a virgin? </summary>
+    </details>
+    
+    <details class="yugamu-thoughtful takumi-mad ">
+    <summary>If you don't, the solution is very simple. </summary>
+    </details>
+    
+    <details class="yugamu-happy takumi-mad ">
+    <summary>Just sleep with me. </summary>
+    </details>
+    
+    <details class="yugamu-happy takumi-mad-quiet thoughts">
+    <summary>Not this again!! </summary>
+    </details>
+    
+    <details class="yugamu-happy takumi-think-stressed thoughts">
+    <summary>But... is he right?</summary>
+    </details>
+    
+    <details class="yugamu-happy takumi-think-dark thoughts">
+    <summary>Will this be the only chance I get? </summary>
+    </details>
+    
+    <details class="yugamu-happy takumi-think-dark thoughts">
+    <summary>I lied to him before. I've never even kissed anyone. I don't want to die a virgin. </summary>
+    </details>
+    
+    <details class="yugamu-happy takumi-think-stressed pov-open">
+    <summary>...</summary>
+    </details>
+    
+    <details class="yugamu-smile takumi-think-stressed ">
+    <summary>How about it, Takumi? I think it's a pretty good offer. </summary>
+    </details>
+    
+    <details class="yugamu-smile takumi-mad-quiet thoughts">
+    <summary>It's a terrible offer!</summary>
+    </details>
+    
+    <details class="yugamu-smile takumi-think-dark thoughts">
+    <summary>But it might be the only one I ever get. </summary>
+    </details>
+    
+    <details class="yugamu-smile takumi-think-dark thoughts">
+    <summary>Ugh...</summary>
+    </details>
+    
+    <details class="yugamu-smile takumi-mad pov-open">
+    <summary>Aren't you more into murder than you are s-sex? </summary>
+    </details>
+    
+    <details class="yugamu-smile takumi-mad-quiet pov-open">
+    <summary>How do I know you wouldn't just kill me in the heat of the moment. </summary>
+    </details>
+    
+    <details class="yugamu-sigh takumi-mad-quiet ">
+    <summary>Oh Takumi, I wouldn't do that. I'm not interested in a loveless, non-consensual murder. </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-mad-quiet ">
+    <summary>I'll be on my best behavior. </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-resolved pov-open">
+    <summary>I find that hard to believe. </summary>
+    </details>
+    
+    <details class="yugamu-giveup takumi-resolved pov-open">
+    <summary>But...</summary>
+    </details>
+    
+    <details class="yugamu-explain takumi-resolved ">
+    <summary>But?</summary>
+    </details>
+    
+    <details class="yugamu-explain takumi-pressed pov-open">
+    <summary>Ugh, I can't think! It's too sudden. I didn't come here prepared for this. </summary>
+    </details>
+    
+    <details class="yugamu-explain takumi-mad-quiet pov-open">
+    <summary>...I'll think about it. </summary>
+    </details>
+    
+    <details class="yugamu-tongue takumi-mad-quiet ">
+    <summary>Oh, Takumi...</summary>
+    </details>
+    
+    <details class="yugamu-tongue takumi-woah pov-open">
+    <summary>No promises! And stop making that scary face!! </summary>
+    </details>
+    
+    <details class="yugamu-think takumi-woah ">
+    <summary>Hm? </summary>
+    </details>
+    
+    <details class="yugamu-dark takumi-woah ">
+    <summary>I don't know what face you're talking about. </summary>
+    </details>
+    
+    <details class="yugamu-dark takumi-whoa2 pov-open move-ending1-2">
+    <summary>That face right there!! </summary>
+    </details>
+    
+  <!-- NOTE: CANNOT use move-to-next. yes route already using it for bio > yes.  -->
 </div></div></div>
-
 
 <!-- YUGAMU ROUTE - BIO - YES  -->
 <!-- NOTE: MAKE SURE THIS VIEW IS NEXT. -->
 <!-- move to black-->
+<!-- <div class="main-box black next-view"> -->
 <div class="main-box black hidden next-view">
 
+
 <div class="anchor">
-<div class="name-box right pov-element">Takumi Sumino</div>
+<div class="name-box pov-element">Takumi Sumino</div>
 <div class="name-box target-element">Yugamu Omokage</div>
+<div class="name-box black-name-box">&nbsp;</div>
+
 
 <div class="text-box">
 
-<details class=" takumi- thoughts">
+<details class="alt-op takumi- thoughts">
 <summary>After a moment of hesitation, I took a few steps towards Yugamu. I stopped when we were standing less than a meter apart. </summary>
 </details>
 
@@ -1084,13 +1491,32 @@
 </details>
 
 <!-- does thought == end?  -->
-<details class="thoughts last">
+<details class="last">
 <summary>Ending 02: Here With Me Now </summary>
 </details>
 
 </div></div></div>
 
 
+<!-- YUGAMU ROUTE - BIO - NO  -->
+<!-- move to black-->
+<div class="main-box black hidden next-ending1-2">
+  <div class="anchor">
+  <div class="text-box">
+  <details class="  thoughts">
+  <summary>I left the Bio Lab with the sinking feeling that I would have to ask someone about how two men have sex.</summary>
+  </details>
+
+  <details class="  thoughts">
+  <summary>And unfortunately... That someone might be Kyoshika. </summary>
+  </details>
+
+  <details class="last">
+    <summary>Ending 03: [romance sidebar]: Out of Options </summary>
+    </details>
+
+
+</div>
 
 
 <!-- EITO ROUTE -->
@@ -1098,8 +1524,9 @@
   <!-- move to courtyard-->
 <div class="main-box hidden route2-next-room">
 
-  <div class="room courtyard blur">
-  </div>
+  <div class="room courtyard blur"></div>
+  <div class="room bars"></div>
+
   <p class="location">Courtyard
   </p>
   <!-- update date -->
@@ -1775,8 +2202,7 @@
   <summary>If my first kiss had to be Eito... I wish it hadn't been so gross. </summary>
   </details>
   
-  <!-- is thoughts diff from end -->
-  <details class="thoughts last">
+  <details class="last">
   <summary>Ending 05: Worst First Kiss</summary>
   </details>
 

@@ -20,9 +20,9 @@
 - fix choice orders code 
 - ** takumi huh and explain are the same. fix that. (just do one) 
 - ** oof and oops are also the same. 
-- add slight delay to scene changes? 
-- black view, name-box; a little broken. might be bc the first thing in the scene is thoughts and not the target character thinking 
-- also black view name box, alignment is off? easy fix but gotta look at canon 
+- ** whoa and smth else are also the same (how has this happened to me) 
+- add slight delay to scene changes? (probably impossible) 
+- if time: make .black .text-box a proper grid
 
 ao3 errors: 
 - takumi skew
@@ -94,7 +94,8 @@ done:
 - + move to a new view (without a hard choice) (done?)
 - + text box changes during black screen; replicate? 
 - + dialogue white bar on top? half ish done, needs more circles and a lot of tweaking 
-
+- + black view, name-box; a little broken. might be bc the first thing in the scene is thoughts and not the target character thinking 
+- + also black view name box, alignment is off? easy fix but gotta look at canon 
 
 
 THOUGHTS: 
@@ -351,8 +352,14 @@ summary {
 /* can we target "things in hidden" and make a reverse exception instead? */
 
 
-/* keeps the last dialogue box from closing (not currently in use) */
+/* keeps the last dialogue box from closing */
 .text-box details[open].last {display: inline-block;}
+:has(details[open] + details:not([open]).last) .name-box{
+  display:none;
+}
+:has(details[open].last) .name-box{
+  display:none;
+}
 
 
 /* open and close pop-out; toggle name boxes */
@@ -440,7 +447,7 @@ details.thoughts summary{
 /* "important" text */
 /* rename this? */
 .important{
-  color:#BC4D50;
+  color:#BC4D50 !important;
 }
 
 
@@ -769,6 +776,17 @@ details.thoughts summary{
     right:-630px;
     transform:scale(4.7);
   }
+  /* check this (then remove red) */
+  .bars{
+    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/bars.png');
+    background:red;
+    width:10px;
+    right:20%;
+
+    z-index:1;
+    /* opacity:.5; */
+
+  }
   .library{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Library.png');
   }
@@ -830,6 +848,7 @@ details.thoughts summary{
     -webkit-user-select: none; 
     -ms-user-select: none; 
     user-select: none;
+    z-index:3;
   }
   :has(details[open] + details:not([open]).location-close) .location{
     /* display:none; */
@@ -1214,15 +1233,13 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   /* BLACK SCREEN STYLING  */
   /* requires: 
   - .black to be parent
-  - .name-box-alt to be added
-  - alter text-box style; +kill top bar  
   - thats it ig  
   */
 
   /* this should be more gray? and fade out at the top and bottom. somehow.  */
   .black .text-box{
     width:100%;
-    color:#BFD3E2;
+    /* color:#BFD3E2; */
     /* opacity: .8; */
     padding:25px 0px;
     height:65px;
@@ -1235,6 +1252,11 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
     /* #456778d7 */
     background: linear-gradient(rgba(0,0,0, 0) 0%, #76868bd7 40%, #4c4f50d7 60%,rgba(0,0,0, 0) 90%, rgba(0, 0, 0, 0) 100%);
   }
+  /* bad attempt at making the grid come back (didnt work) */
+  /* .black .text-box::after{
+    content:"";
+    background: linear-gradient(rgba(0,0,0, 0) 0%, #76868bd7 40%, #4c4f50d7 60%,rgba(0,0,0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  } */
   /* kill the white topbar  */
   .black .text-box::before{
     background:none;
@@ -1243,43 +1265,53 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   .black .anchor{
     position:relative;
   }
-  /* rename */
-  .name-box-alt{
-    top:28;
-    /* margin:0; */
-    margin-left:30px;
-    border-bottom:solid white 1px; 
-    width:85%;
-    position:absolute;
-    /* margin-top:-10px; */
 
-    /* this isnt working */
-    z-index:3;
-    padding:0px 10px;
-  }
-
-   /* i think this just makes the name box not show up?  */
+  /* reformat name-box */
   .black .name-box{
-    top:10;
-    
-    /* margin:0; */
     background:none;
     box-shadow:none;
+    border:none; 
     position:absolute;
-    /* margin-top:-10px; */
+    margin-top:10px;
 
-    /* this isnt working */
-    z-index:3;
-    padding:0px 10px;
   }
-  .black .name-box-alt::after{
-    content:"";
-    border-right:white 2px solid;
-    width:5px;
-    height:13px;
+
+    /* always display namebox (line) in black view  */
+    .black-name-box{
+      display:block !important;
+    }
+
+    /* black view namebox styling */
+  .black-name-box{
+    /* top:22px; */
+    margin-top:10px;
+    margin-left:30px;
+    border-bottom:solid #9fbbcbdb 1px !important; 
+    width:85%;
     position:absolute;
-    margin-top:1px;
-    right:0;
+
+    z-index:3;
+    padding:2px 10px;
+  }
+  .black-name-box::after{
+    content:"";
+    border-right:#9fbbcbdb 3px solid;
+    width:5px;
+    height:17px;
+    position:absolute;
+    /* margin-top:-15px; */
+    top:22px;
+    right:0px;
+  }
+  .black-name-box::before{
+    content:"";
+    border-left:#e5ecefdb 2px solid;
+    border-bottom:#e5ecefdb 2px solid;
+    width:5px;
+    height:8px;
+    position:absolute;
+    top:13.5px;
+    left:-5px;
   }
   .black .name-box-alt::before{
     content:"";
@@ -1291,6 +1323,8 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
     margin-top:-8.5px;
     left:-5;
   }
+
+
   /* check canon for proper styling, but this might be all  */
   /* i think we ended up not doing this? narration is the same as thoughts, just with no takumi-open (pov-open) */
   :has(details[open] + details:not([open]).narration) .name-box{
@@ -1390,7 +1424,7 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
 
     overflow:hidden;
 
-    z-index:0;
+    z-index:1;
   }
 
   /* can this be... less classes */
@@ -1828,13 +1862,13 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
 
  
   /* room changing for endings */
-  .main-box:has(details.ending1[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.move-ending2-2[open]){
+  .main-box:has(details.ending1[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.move-ending1-2[open]), .main-box:has(details.move-ending1-2[open]){
     /* i think this is snagging on the savepoint telling it to be open */
     display:none !important; 
   } 
-  
+
   /* added a > to route2 */
-  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) > .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2{
+  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) > .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2, :has(details.move-ending1-2[open]) ~ .next-ending1-2{
     display:flex;
   }
 
