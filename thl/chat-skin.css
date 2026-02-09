@@ -291,7 +291,14 @@ summary {
 .main-box:has(details[open].takumi-start) .target-element {
   display:inherit;
 }
+/* this breaks things */
+/* .main-box:has(details[open].takumi-start) .pov-element {
+  display:inherit;
+} */
 .main-box:has(details[open].char-return) .character {
+  display:inherit;
+}
+.shown{
   display:inherit;
 }
 
