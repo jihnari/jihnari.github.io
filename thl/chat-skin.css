@@ -126,123 +126,6 @@ https://www.tumblr.com/reblogablename/783668993201471488/if-you-were-ever-curiou
  }
 
 
-.abox{
-
-}
-.abox:before{
-  content:"click me..."
-}
-
-
- audio {
-  /* filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%); */
-
-  /* filter:contrast(.2); */
-
-  position:absolute;
-  height:100px;
-  transform: scale(5,1.5);
-
-  width:100%;
-  /* can we overflow none this and push the ... off the edge? */
-  /* opacity:0; */
-
-  /* background-color: blue; */
-
-
-  
-}
-audio::-webkit-media-controls-enclosure {
-  border-radius: 5px;
-  background-color: green;
-  width:100px;
-  transform:scale(7);
-  margin-left:300px;
-  margin-bottom:70px;
-}
-/* audio::-webkit-media-controls-mute-button{
-  display:none;
-}
-audio::-webkit-media-controls-current-time-display{
-  display:none;
-}
-audio::-webkit-media-controls-time-remaining-display{
-  display:none;
-}
-audio::-webkit-media-controls-timeline{
-  display:none;
-}
-audio::-webkit-media-controls-volume-slider-container{
-  display:none;
-}
-audio::-webkit-media-controls-volume-slider{
-  display:none;
-} */
-
-
-.audiobox{
-  background:pink;
-  height:80px;
-  padding:10px;
-}
-
-/* use infinite active/delay trick  */
-.audiohacking audio{
-  /* width:100%; */
-   /* height:100%; */
-   /* height:200px; */
-   /* padding */
-   /* transition-delay:3s; 
-   transition-duration:1s;
-   transition:all; */
-}
-.audiohacking:hover{
-  /* display:none; */
-  /* transition-delay:3s;  */
-  filter:contrast(.2);
-  zoom:1.2;
-  /* z-index:-2; */
-
-  transition-duration:1s;
-  transition-delay:2s; 
-  transition:all;
-  
-
-}
-
-/* note:
-transition-delay for :active means the transition won't even START until the mouse click has been held for that long. hover could be used to hack around this, but cant trigger audio start. */
-.boxcheck{
-  height:30px;
-  width:50px;
-  background:green;
-  /* transition-duration:1s; */
-
-  /* for infinity hack, make this number REAL BIG and set :state number to be 0/small */
-  transition-delay:4s;
-}
-.boxcheck:hover{
-  /* transition:all; */
-  height:60px;
-  width:80px;
-
-  /* only affects return-to-base-state duration */
-  transition-duration:3s;
-
-  /* delays to start, returns immediately (or whatever base class is set to. default is 0.) */
-  transition-delay:0s;
-}
-.text-box:active .boxcheck{
-  background:teal;
-  /* transition-delay:1s; */
-  transition-duration:0s;
-}
-.text-box .boxcheck{
-  /* transinion-delay */
-
-  /* make this number big */
-  transition-duration:3s;
-}
 
 
 /* get rid of summary markers in all cases  */
@@ -260,10 +143,15 @@ summary {
 }
 .main-box:has(details.move-to-next[open]){
   display:none !important; 
-  /* opacity:0;
-  transition:all;
-  transition-duration:1s; */
 }
+
+:has(details.eito-move-to-next[open]) + .eito-next-view{
+  display:flex;
+}
+.main-box:has(details.eito-move-to-next[open]){
+  display:none !important; 
+}
+
 
 :has(details.show-daypp[open]) + .daypp{
   opacity:100%;
@@ -338,7 +226,7 @@ summary {
 
 /* handles text rotation  */
 /* if CLOSED box follows other CLOSED box, do not show box */
-.text-box details:not([open]) + details{
+.main-box .text-box details:not([open]) + details{
   display:none;
 }
 
@@ -368,47 +256,69 @@ summary {
 .pov-element{
   display:none;
 }
-:has(details[open] + details:not([open]).pov-open) .pov-element{
+.main-box:has(details[open] + details:not([open]).pov-open) .pov-element{
   display:block;
 }
 
-:has(details[open].pov-open) .takumi-box{
+.main-box:has(details[open].pov-open) .takumi-box{
   display:block;
 }
 
 /* this only disappears the namebox */
-:has(details[open] + details:not([open]).pov-open) .target-element{
+.main-box:has(details[open] + details:not([open]).pov-open) .target-element{
   display:none;
 }
 
 /* to unseed .character. do we need this? unclear. */
-.main-box:has(details:not([open]).alt-op) .character, .main-box:has(details:not([open]).alt-op) .target-element{
+/* .main-box:has(details:not([open]).alt-op) .character, .main-box:has(details:not([open]).alt-op)  .target-element{
   display:none;
-}
-.main-box:has(details:not([open]).force-show-takumi) .pov-element{
+} */
+
+
+
+/* .main-box:has(details:not([open]).force-show-takumi) .pov-element{
   display:block;
+} */
+
+
+/* .main-box:has(details:not([open]).takumi-start) .target-element, .main-box:has(details:not([open]).takumi-only) .character {
+  display:none;
+} */
+/* .main-box:has(details:not([open]).takumi-only) .pov-element{
+  display:block;
+} */
+
+.main-box:has(details[open].takumi-start) .target-element {
+  display:inherit;
 }
+.main-box:has(details[open].char-return) .character {
+  display:inherit;
+}
+
+
+
+
 
 /* for more than two characters in a scene */
 .target2, .target3{
   display:none;
 }
-:has(details[open] + details:not([open]).target2-open) .target2{
+.main-box:has(details[open] + details:not([open]).target2-open) .target2{
   display:block;
 }
-:has(details[open] + details:not([open]).target3-open) .target3{
+.main-box:has(details[open] + details:not([open]).target3-open) .target3{
   display:block;
 }
-:has(details[open] + details:not([open]).target2-open) .target-element{
+.main-box:has(details[open] + details:not([open]).target2-open) .target-element{
   display:none;
 }
-:has(details[open] + details:not([open]).target3-open) .target-element{
+.main-box:has(details[open] + details:not([open]).target3-open) .target-element{
   display:none;
 }
-:has(details[open] + details:not([open]).pov-open) .target3{
+.main-box:has(details[open] + details:not([open]).pov-open) .target3{
   display:none;
 }
-:has(details[open] + details:not([open]).pov-open) .target2{
+.main-box:has(details[open] + details:not([open]).pov-open) .target2{
   display:none;
 }
 
@@ -422,17 +332,17 @@ summary {
 } */
 
 /* if pov-open: shift target character left. if pov-closed: return target character to center.(? not sure ive tested that second part) */
-:has(details[open] + details:not([open]).pov-open) .character{
+.main-box:has(details[open] + details:not([open]).pov-open) .character{
   margin-left:5%;
 }
-:has(details[open].pov-open) .character{
+.main-box:has(details[open].pov-open) .character{
   margin-left:5%;
 }
 
 
 
 /* THOUGHTS TOGGLE */
-:has(details[open] + details:not([open]).thoughts) .name-box{
+.main-box:has(details[open] + details:not([open]).thoughts) .name-box{
 display:none;
 }
 details.thoughts summary{
@@ -453,75 +363,75 @@ details.thoughts summary{
 
 /* ALL CHARACTER PNG TOGGLES HERE  */
 /* eito */
-:has(details[open] + details:not([open]).eito-smile) .character{
+.main-box:has(details[open] + details:not([open]).eito-smile) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito2.png');
-}:has(details[open] + details:not([open]).eito-talk) .character{
+}.main-box:has(details[open] + details:not([open]).eito-talk) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito.png');
 }
-:has(details[open] + details:not([open]).eito-explain) .character{
+.main-box:has(details[open] + details:not([open]).eito-explain) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-explain.png');
-}:has(details[open] + details:not([open]).eito-hi) .character{
+}.main-box:has(details[open] + details:not([open]).eito-hi) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-hi.png');
-}:has(details[open] + details:not([open]).eito-oh) .character{
+}.main-box:has(details[open] + details:not([open]).eito-oh) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-oh.png');
-}:has(details[open] + details:not([open]).eito-relieved) .character{
+}.main-box:has(details[open] + details:not([open]).eito-relieved) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-relieved.png');
-}:has(details[open] + details:not([open]).eito-sigh) .character{
+}.main-box:has(details[open] + details:not([open]).eito-sigh) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-sigh.png');
-}:has(details[open] + details:not([open]).eito-simle) .character{
+}.main-box:has(details[open] + details:not([open]).eito-simle) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-simle.png');
-}:has(details[open] + details:not([open]).eito-talk1) .character{
+}.main-box:has(details[open] + details:not([open]).eito-talk1) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-talk1.png');
-}:has(details[open] + details:not([open]).eito-think-talk) .character{
+}.main-box:has(details[open] + details:not([open]).eito-think-talk) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-think-talk.png');
-}:has(details[open] + details:not([open]).eito-think) .character{
+}.main-box:has(details[open] + details:not([open]).eito-think) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-think.png');
-}:has(details[open] + details:not([open]).eito-explain2) .character{
+}.main-box:has(details[open] + details:not([open]).eito-explain2) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-explain2.png');
-}:has(details[open] + details:not([open]).eito-fear) .character{
+}.main-box:has(details[open] + details:not([open]).eito-fear) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-fear.png');
-}:has(details[open] + details:not([open]).eito-scary) .character{
+}.main-box:has(details[open] + details:not([open]).eito-scary) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-scary.png');
-}:has(details[open] + details:not([open]).eito-smile-die) .character{
+}.main-box:has(details[open] + details:not([open]).eito-smile-die) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-smile-die.png');
-}:has(details[open] + details:not([open]).eito-talk2) .character{
+}.main-box:has(details[open] + details:not([open]).eito-talk2) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-talk2.png');
-}:has(details[open] + details:not([open]).eito-ugh) .character{
+}.main-box:has(details[open] + details:not([open]).eito-ugh) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-ugh.png');
-}:has(details[open] + details:not([open]).eito-think) .character{
+}.main-box:has(details[open] + details:not([open]).eito-think) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-unrelieved.png');
 }:
 
 
 /* yugamu */
-:has(details[open] + details:not([open]).yugamu-smile) .character{
+.main-box:has(details[open] + details:not([open]).yugamu-smile) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-smile.png');
 }
-:has(details[open] + details:not([open]).yugamu-talk) .character{
+.main-box:has(details[open] + details:not([open]).yugamu-talk) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-talk.png');
-}:has(details[open] + details:not([open]).yugamu-cough) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-cough) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-cough.png');
-}:has(details[open] + details:not([open]).yugamu-excite) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-excite) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-excite.png');
-}:has(details[open] + details:not([open]).yugamu-explain) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-explain) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-explain.png');
-}:has(details[open] + details:not([open]).yugamu-giveup) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-giveup) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-giveup.png');
-}:has(details[open] + details:not([open]).yugamu-hmm) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-hmm) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-hmm.png');
-}:has(details[open] + details:not([open]).yugamu-hug) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-hug) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-hug.png');
-}:has(details[open] + details:not([open]).yugamu-neutral) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-neutral) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-neutral.png');
-}:has(details[open] + details:not([open]).yugamu-sigh) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-sigh) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-sigh.png');
-}:has(details[open] + details:not([open]).yugamu-smug) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-smug) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-smug.png');
-}:has(details[open] + details:not([open]).yugamu-think) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-think) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-think.png');
-}:has(details[open] + details:not([open]).yugamu-wait) .character{
+}.main-box:has(details[open] + details:not([open]).yugamu-wait) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-wait.png');
-}:has(details[open] + details:not([open]).takumi-happy) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-happy) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sweat.png');
 }
 
@@ -531,78 +441,78 @@ details.thoughts summary{
 
 
 /* the girls  */
-:has(details[open] + details:not([open]).kyoshika-talk) .character{
+.main-box:has(details[open] + details:not([open]).kyoshika-talk) .character{
    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-talk.png');
-}:has(details[open] + details:not([open]).kyoshika-scared) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-scared) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-scared.png');
-}:has(details[open] + details:not([open]).kyoshika-embarassed) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-embarassed) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-embarassed.png');
-}:has(details[open] + details:not([open]).kyoshika-worried) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-worried) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-worried.png');
-}:has(details[open] + details:not([open]).kyoshika-fight) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-fight) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-fight.png');
-}:has(details[open] + details:not([open]).kyoshika-happy) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-happy) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-happy.png');
-}:has(details[open] + details:not([open]).kyoshika-resolved) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-resolved) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-resolved.png');
-}:has(details[open] + details:not([open]).kyoshika-think) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-think) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-think.png');
-}:has(details[open] + details:not([open]).kyoshika-thonk) .character{
+}.main-box:has(details[open] + details:not([open]).kyoshika-thonk) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-thonk.png');
 }
 
 /* for all non-kyoshika you'll have to set margin offset here  */
-:has(details[open] + details:not([open]).tsubasa-worried) .character{
+.main-box:has(details[open] + details:not([open]).tsubasa-worried) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-worried.png');
   top: -160px;
-}:has(details[open] + details:not([open]).tsubasa-disappointed) .character{
+}.main-box:has(details[open] + details:not([open]).tsubasa-disappointed) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-disappointed.png');
   top: -160px;
-}:has(details[open] + details:not([open]).tsubasa-insist) .character{
+}.main-box:has(details[open] + details:not([open]).tsubasa-insist) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-insist.png');
   top: -160px;
-}:has(details[open] + details:not([open]).tsubasa-smile) .character{
+}.main-box:has(details[open] + details:not([open]).tsubasa-smile) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-smile.png');
   top: -160px;
-}:has(details[open] + details:not([open]).tsubasa-gross) .character{
+}.main-box:has(details[open] + details:not([open]).tsubasa-gross) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-gross.png');
   top: -160px;
-}:has(details[open] + details:not([open]).tsubasa-think) .character{
+}.main-box:has(details[open] + details:not([open]).tsubasa-think) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-think.png');
   top: -160px;
-}:has(details[open] + details:not([open]).tsubasa-what) .character{
+}.main-box:has(details[open] + details:not([open]).tsubasa-what) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-what.png');
   top: -160px;
 }
 
 
-:has(details[open] + details:not([open]).kurara-pissed) .character{
+.main-box:has(details[open] + details:not([open]).kurara-pissed) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-pissed.png');
   top: -180px;
 }
-:has(details[open] + details:not([open]).kurara-argue) .character{
+.main-box:has(details[open] + details:not([open]).kurara-argue) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-argue.png');
   top: -180px;
 }
-:has(details[open] + details:not([open]).kurara-disarmed) .character{
+.main-box:has(details[open] + details:not([open]).kurara-disarmed) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-disarmed.png');
   top: -180px;
-}:has(details[open] + details:not([open]).kurara-giveup) .character{
+}.main-box:has(details[open] + details:not([open]).kurara-giveup) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-giveup.png');
   top: -180px;
-}:has(details[open] + details:not([open]).kurara-pissed-max) .character{
+}.main-box:has(details[open] + details:not([open]).kurara-pissed-max) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-pissed-max.png');
   top: -180px;
-}:has(details[open] + details:not([open]).kurara-point) .character{
+}.main-box:has(details[open] + details:not([open]).kurara-point) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-point.png');
   top: -180px;
-}:has(details[open] + details:not([open]).kurara-think) .character{
+}.main-box:has(details[open] + details:not([open]).kurara-think) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-think.png');
   top: -180px;
-}:has(details[open] + details:not([open]).kurara-worried) .character{
+}.main-box:has(details[open] + details:not([open]).kurara-worried) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-worried.png');
   top: -180px;
-}:has(details[open] + details:not([open]).kurara-done) .character{
+}.main-box:has(details[open] + details:not([open]).kurara-done) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-done.png');
   top: -180px;
 }
@@ -610,112 +520,118 @@ details.thoughts summary{
 
 
 /* TAKUMI STATES (also a character png toggle, in spirit (but not in class) */
-:has(details[open] + details:not([open]).takumi-talk) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-talk) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi-talk.png');
 }
-:has(details[open] + details:not([open]).takumi-embarassed1) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-embarassed1) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed1.png');
 }
-:has(details[open] + details:not([open]).takumi-embarassed) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-embarassed) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed.png');
 }
-:has(details[open] + details:not([open]).takumi-embarassed3) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-embarassed3) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed3.png');
 }
-:has(details[open] + details:not([open]).takumi-embarassed-side) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-embarassed-side) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side.png');
 }
-:has(details[open] + details:not([open]).takumi-embarassed-side1) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-embarassed-side1) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side1.png');
 }
-:has(details[open] + details:not([open]).takumi-embarassed-side-talk) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-embarassed-side-talk) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side-talk.png');
 }
-:has(details[open] + details:not([open]).takumi-think-stressed) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-think-stressed) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-stressed.png');
 }
-:has(details[open] + details:not([open]).takumi-think) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-think) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think.png');
 }
-:has(details[open] + details:not([open]).takumi-think-dark) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-think-dark) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-dark.png');
 }
 
-:has(details[open] + details:not([open]).takumi-explain) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-explain) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain.png');
 }
-:has(details[open] + details:not([open]).takumi-explain-sweat) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-explain-sweat) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain-sweat.png');
 }
-:has(details[open] + details:not([open]).takumi-huh) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-huh) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh.png');
+}.main-box:has(details[open] + details:not([open]).takumi-hurt) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hurt.png');
 }
-:has(details[open] + details:not([open]).takumi-neutral) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-neutral) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral.png');
 }
-:has(details[open] + details:not([open]).takumi-no) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-no) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-no.png');
 }
-:has(details[open] + details:not([open]).takumi-nono) .takumi-insert{
+.main-box:has(details[open] + details:not([open]).takumi-nono) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-nono.png');
-}:has(details[open] + details:not([open]).takumi-ohno) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-ohno) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-ohno.png');
-}:has(details[open] + details:not([open]).takumi-resolved) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-resolved) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-resolved.png');
-}:has(details[open] + details:not([open]).takumi-sweat) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-sweat) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sweat.png');
-}:has(details[open] + details:not([open]).takumi-talk-sweat) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-talk-sweat) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk-sweat.png');
-}:has(details[open] + details:not([open]).takumi-hehe) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-hehe) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hehe.png');
-}:has(details[open] + details:not([open]).takumi-hey) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-hey) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey.png');
-}:has(details[open] + details:not([open]).takumi-huh3) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-huh3) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh3.png');
-}:has(details[open] + details:not([open]).takumi-oof) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-oof) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-oof.png');
-}:has(details[open] + details:not([open]).takumi-oops) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-oops) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-oops.png');
-}:has(details[open] + details:not([open]).takumi-pensive) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-pensive) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-pensive.png');
-}:has(details[open] + details:not([open]).takumi-resolved2) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-resolved2) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-resolved2.png');
-}:has(details[open] + details:not([open]).takumi-talk1) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-talk1) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk1.png');
-}:has(details[open] + details:not([open]).takumi-talk2) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-talk2) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk2.png');
-}:has(details[open] + details:not([open]).takumi-think-hand) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-think-hand) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-hand.png');
-}:has(details[open] + details:not([open]).takumi-unimpressed) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-unimpressed) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-unimpressed.png');
-}:has(details[open] + details:not([open]).takumi-unimpressed) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-unimpressed) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-unimpressed.png');
-}:has(details[open] + details:not([open]).takumi-wait) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-wait) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-wait.png');
-}:has(details[open] + details:not([open]).takumi-wait2) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-wait2) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-wait2.png');
-}:has(details[open] + details:not([open]).takumi-whoa) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-whoa) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-whoa.png');
-}:has(details[open] + details:not([open]).takumi-yeah) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-yeah) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yeah.png');
-}:has(details[open] + details:not([open]).takumi-hey2) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-hey2) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey2.png');
-}:has(details[open] + details:not([open]).takumi-mad-quiet) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-mad-quiet) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad-quiet.png');
-}:has(details[open] + details:not([open]).takumi-mad-side) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-mad-side) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad-side.png');
-}:has(details[open] + details:not([open]).takumi-mad) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-mad) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad.png');
-}:has(details[open] + details:not([open]).takumi-sleepy) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-sleepy) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sleepy.png');
-}:has(details[open] + details:not([open]).takumi-whoa2) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-whoa2) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-whoa2.png');
-}:has(details[open] + details:not([open]).takumi-yawn) .takumi-insert{
+}.main-box:has(details[open] + details:not([open]).takumi-yawn) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yawn.png');
 }
 
 
 
+/* special cases */
+.takumi-huh-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh.png');
+}
 
 
 /* BOX TO HOLD ALL THE THINGS */
@@ -1445,7 +1361,7 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   }
 
   .takumi-insert{
-    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi.png');
+    /* background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi.png'); */
     background-repeat: no-repeat;
 
     height:1000px;
@@ -1852,11 +1768,11 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   }
 
   /* display route text */
-  .main-box:has(details.route1[open]) .route1-open,.main-box:has(details.route2[open]) .route2-open,.main-box:has(details.route3[open]) .route3-open, .main-box:has(details.ending1-1[open]) .ending1-1-open, .main-box:has(details.ending2-1[open]) .ending2-1-open, .main-box:has(details.ending2-2[open]) .ending2-2-open{
+  .main-box:has(details.route1[open]) .route1-open,.main-box:has(details.route2[open]) .route2-open,.main-box:has(details.route3[open]) .route3-open, .main-box:has(details.ending1-1[open]) .ending1-1-open, .main-box:has(details.ending1-2[open]) .ending1-2-open, .main-box:has(details.ending2-1[open]) .ending2-1-open, .main-box:has(details.ending2-2[open]) .ending2-2-open{
     display:block;
   }  
   /* kill special (now stuck) route text */
-  .main-box:has(details.route1-open[open]) .route1-open,.main-box:has(details.route2-open[open]) .route2-open,.main-box:has(details.route3-open[open]) .route3-open, .main-box:has(details.ending1-1-open[open]) .ending1-1-open, .main-box:has(details.ending2-1-open[open]) .ending2-1-open, .main-box:has(details.ending2-2-open[open]) .ending2-2-open{
+  .main-box:has(details.route1-open[open]) .route1-open,.main-box:has(details.route2-open[open]) .route2-open,.main-box:has(details.route3-open[open]) .route3-open, .main-box:has(details.ending1-1-open[open]) .ending1-1-open, .main-box:has(details.ending1-2-open[open]) .ending1-2-open, .main-box:has(details.ending2-1-open[open]) .ending2-1-open, .main-box:has(details.ending2-2-open[open]) .ending2-2-open{
     display:none !important;
   }
 
@@ -1868,7 +1784,7 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   } 
 
   /* added a > to route2 */
-  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) > .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2, :has(details.move-ending1-2[open]) ~ .next-ending1-2{
+  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) ~ .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2, :has(details.move-ending1-2[open]) > .next-ending1-2{
     display:flex;
   }
 

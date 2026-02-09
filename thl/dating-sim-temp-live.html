@@ -10,6 +10,7 @@
 
 TODO/REMEMBER: 
 - add black-name-box to every .black view
+- first black box yugamu route, text box broken ?
  -->
 
 
@@ -56,6 +57,13 @@ TODO/REMEMBER:
           Yugamu > bio
         </summary>
       </details>
+
+      <details class="choice-button move-ending1-2">
+        <summary>
+          Yugamu > bio > no
+        </summary>
+      </details>
+
       <!-- <details class="choice-button ending1-1">
         <summary>
           yugamu > bio > yes
@@ -100,11 +108,7 @@ TODO/REMEMBER:
   </div>
 <p class="location">Cafeteria
 </p>
-<!-- <p class="date">029</p> -->
-<!-- STILL NEED A FIVE BUD -->
 <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
-
-<!-- <details class="rotate"></details> -->
 
 <!-- seed scene characters -->
 <!-- <div class="character kyoshika"></div> -->
@@ -123,7 +127,9 @@ TODO/REMEMBER:
       Yugamu
     </summary>
   </details>
-  <details class="choice-button route2">
+  <!-- <details class="choice-button route2"> -->
+  <details class="choice-button route2-next">
+  <!-- <details class="choice-button move-to-next"> -->
     <summary>
       Eito
     </summary>
@@ -183,7 +189,7 @@ TODO/REMEMBER:
     <summary>I, uh...</summary>
     </details>
     
-    <details class="kyoshika-talk takumi-embarassed3">
+    <!-- <details class="kyoshika-talk takumi-embarassed3">
     <summary>Then we're bound by fate! It's as simple as that.</summary>
     </details>
     
@@ -274,11 +280,13 @@ TODO/REMEMBER:
     
     <details class="target2-open kurara-argue takumi-think-stressed pov-open thoughts">
     <summary>Maybe I should say someone so ridiculous they have to drop it.</summary>
-    </details>
+    </details> -->
     
     <details class="target2-open kurara-argue takumi-think-stressed pov-open thoughts hard-choice-time">
     <summary>Who should I say...!?</summary>
     </details>
+
+    <!-- <div class="helpme"></div> -->
 
 
 
@@ -338,234 +346,233 @@ TODO/REMEMBER:
     </details>
 
     <!-- breaks the vicious cycle -->
-    <div class="helpme"></div>
+    <!-- <div class="helpme"></div> -->
 
 
     <!-- EITO ROUTE: START -->
-    <!-- remove the divs actually? move classes to first details -->
-    <details class="kurara-argue takumi-huh pov-open route2-open hidden">
+    <!-- <details class="kurara-argue takumi-huh pov-open route2-open hidden">
     <summary>Eito?</summary>
     </details>
     
     <details class="kurara-argue takumi-embarassed1 thoughts">
-    <summary>I can't believe I just said that. Why did I just say that?! </summary>
-    </details>
+      <summary>I can't believe I just said that. Why did I just say that?! </summary>
+      </details>
+      
+      <details class="kurara-argue takumi-hurt thoughts">
+      <summary>This is the worst...</summary>
+      </details>
+      
+      <details class="kurara-argue takumi-think-dark thoughts">
+      <summary>But at least they can't possibly take it seriously anymore. Right? </summary>
+      </details>
+      
+      <details class="target3-open tsubasa-what takumi-hurt ">
+      <summary>?!?!?</summary>
+      </details>
+      
+      <details class="kyoshika-scared takumi-hurt ">
+      <summary>That's...!!</summary>
+      </details>
+      
+      <details class="target2-open kurara-point takumi-hurt ">
+      <summary>You had a dream about kissing the guy who tried to kill you?! </summary>
+      </details>
+      
+      <details class="kurara-point takumi-ohno thoughts">
+      <summary>They're taking it seriously?!</summary>
+      </details>
+      
+      <details class="kurara-point takumi-no pov-open">
+      <summary>No, I&mdash;</summary>
+      </details>
+      
+      <details class="kyoshika-talk takumi-no ">
+      <summary>So romantic!!</summary>
+      </details>
+      
+      <details class="kyoshika-talk takumi-huh3 pov-open">
+      <summary>What?</summary>
+      </details>
+      
+      <details class="target3-open tsubasa-gross takumi-huh3 ">
+      <summary>What??</summary>
+      </details>
+      
+      <details class="target2-open kurara-pissed takumi-huh3 ">
+      <summary>Whaaaat?!!!</summary>
+      </details>
+      
+      <details class="kyoshika-talk takumi-huh3 ">
+      <summary>Of course none of us could compare with a bond that transcends life and death, that transcends timelines! </summary>
+      </details>
+      
+      <details class="target3-open tsubasa-what takumi-huh3 ">
+      <summary>Didn't he try to kill you, Takumi?! You really had a dream about kissing HIM?!</summary>
+      </details>
+      
+      <details class="tsubasa-what takumi-think-stressed thoughts">
+      <summary>It was more like a nightmare than a dream. </summary>
+      </details>
+      
+      <details class="tsubasa-what takumi-resolved pov-open">
+      <summary>Look, I&mdash;</summary>
+      </details>
+      
+      <details class="kyoshika-embarassed takumi-resolved ">
+      <summary>That's the best part!!</summary>
+      </details>
+      
+      <details class="kyoshika-resolved takumi-resolved ">
+      <summary>Friends turned rivals turned sworn enemies...</summary>
+      </details>
+      
+      <details class="kyoshika-resolved takumi-ohno thoughts">
+      <summary>We weren't ever rivals though?</summary>
+      </details>
+      
+      <details class="kyoshika-resolved takumi-ohno ">
+      <summary>And with you traveling to the past... It's the most tragic form of starcrossed lovers!!</summary>
+      </details>
+      
+      <details class="kyoshika-fight takumi-ohno ">
+      <summary>I'll support you, Takumi!</summary>
+      </details>
+      
+      <details class="kyoshika-fight takumi-resolved thoughts">
+      <summary>Please don't.</summary>
+      </details>
+      
+      <details class="target3-open tsubasa-disappointed takumi-resolved ">
+      <summary>I mean... I guess you can't help who you love. </summary>
+      </details>
+      
+      <details class="tsubasa-disappointed takumi-embarassed1 thoughts">
+      <summary>I never said I was in love with him?! </summary>
+      </details>
+      
+      <details class="target2-open kurara-worried takumi-embarassed1 ">
+      <summary>You're insane. You're both crazy.</summary>
+      </details>
+      
+      <details class="kurara-worried takumi-resolved pov-open">
+      <summary>Can we please stop talking about this? </summary>
+      </details>
+      
+      <details class="kyoshika-think takumi-resolved ">
+      <summary>Takumi...</summary>
+      </details>
+      
+      <details class="kyoshika-happy takumi-resolved ">
+      <summary>We should go talk to him!! </summary>
+      </details>
+      
+      <details class="kyoshika-happy takumi-ohno pov-open">
+      <summary>Huh??</summary>
+      </details>
+      
+      <details class="kyoshika-happy takumi-ohno ">
+      <summary>Right now!!</summary>
+      </details>
+      
+      <details class="kyoshika-fight takumi-ohno ">
+      <summary>Passing even a single moment more without your beloved would be the greatest tragedy. </summary>
+      </details>
+      
+      <details class="kyoshika-fight takumi-ohno pov-open">
+      <summary>He's not my&mdash;!</summary>
+      </details>
+      
+      <details class="target3-open tsubasa-disappointed takumi-ohno ">
+      <summary>Wow Takumi, I didn't know you felt that seriously about him. </summary>
+      </details>
+      
+      <details class="target3-open tsubasa-disappointed takumi-ohno ">
+      <summary>I see...  </summary>
+      </details>
+      
+      <details class="target3-open tsubasa-worried takumi-ohno ">
+      <summary>I'll... guess I have no choice but to support you too, Takumi. </summary>
+      </details>
+      
+      <details class="target3-open tsubasa-think takumi-ohno ">
+      <summary>Let's go see Eito! </summary>
+      </details>
+      
+      <details class="tsubasa-think takumi-resolved pov-open">
+      <summary>Wait!!</summary>
+      </details>
+      
+      <details class="tsubasa-think takumi-resolved pov-open">
+      <summary>Hold on a minute. I...</summary>
+      </details>
+      
+      <details class="tsubasa-think takumi-think thoughts">
+      <summary>I don't know where to begin to set the record straight. But there's no way I can let them tell Eito I'm in love with him. </summary>
+      </details>
+      
+      <details class="tsubasa-think takumi-no pov-open">
+      <summary>I'll... I'll talk to him myself. Okay?</summary>
+      </details>
+      
+      <details class="tsubasa-think takumi-no thoughts">
+      <summary>I'll go and pretend to talk to him, and then tell them he turned me down. That should fix things.</summary>
+      </details>
+      
+      <details class="kyoshika-thonk takumi-no ">
+      <summary>!!!</summary>
+      </details>
+      
+      <details class="kyoshika-think takumi-no ">
+      <summary>Of course, Takumi! You want to be alone with your beloved, we understand completely. </summary>
+      </details>
+      
+      <details class="target2-open kurara-think takumi-no ">
+      <summary>...</summary>
+      </details>
+      
+      <details class="kurara-think takumi-think-dark thoughts">
+      <summary>My beloved...</summary>
+      </details>
+      
+      <details class="target3-open tsubasa-worried takumi-think-dark ">
+      <summary>Oh... I suppose we shouldn't intrude on something like that. </summary>
+      </details>
+      
+      <details class="tsubasa-worried takumi-think-stressed thoughts">
+      <summary>Maybe I should go up to the courtyard now. If I don't, they might find out and pressure me into talking to him. </summary>
+      </details>
+      
+      <details class="tsubasa-worried takumi-think-stressed thoughts">
+      <summary>Or worse, talk to him themselves. </summary>
+      </details>
+      
+      <details class="tsubasa-worried takumi-resolved pov-open">
+      <summary>I guess I'll... go now. </summary>
+      </details>
+      
+      <details class="kyoshika-fight takumi-resolved ">
+      <summary>May the embers of your love billow to a raging love forest fire! </summary>
+      </details>
+      
+      <details class="target3-open tsubasa-insist takumi-resolved ">
+      <summary>Good luck, Takumi!</summary>
+      </details> -->
+      
+      <!-- MOVE TO EITO ROUTE -->
+      <!-- <details class="target2-open kurara-done takumi-resolved eito-move-to-next">
+      <summary>.........I'm going back to bed. </summary>
+      </details> -->
     
-    <details class="kurara-argue takumi-hurt thoughts">
-    <summary>This is the worst...</summary>
-    </details>
-    
-    <details class="kurara-argue takumi-hurt thoughts">
-    <summary>But at least they can't possibly take it seriously anymore. Right? </summary>
-    </details>
-    
-    <details class="target3-open tsubasa-what takumi-hurt ">
-    <summary>?!?!?</summary>
-    </details>
-    
-    <details class="kyoshika-scared takumi-hurt ">
-    <summary>That's...!!</summary>
-    </details>
-    
-    <details class="target2-open kurara-point takumi-hurt ">
-    <summary>You had a dream about kissing the guy who tried to kill you?! </summary>
-    </details>
-    
-    <details class="kurara-point takumi-ohno thoughts">
-    <summary>They're taking it seriously?!</summary>
-    </details>
-    
-    <details class="kurara-point takumi-no pov-open">
-    <summary>No, I&mdash;</summary>
-    </details>
-    
-    <details class="kyoshika-talk takumi-no ">
-    <summary>So romantic!!</summary>
-    </details>
-    
-    <details class="kyoshika-talk takumi-huh3 pov-open">
-    <summary>What?</summary>
-    </details>
-    
-    <details class="target3-open tsubasa-gross takumi-huh3 ">
-    <summary>What??</summary>
-    </details>
-    
-    <details class="target2-open kurara-pissed takumi-huh3 ">
-    <summary>Whaaaat?!!!</summary>
-    </details>
-    
-    <details class="kyoshika-talk takumi-huh3 ">
-    <summary>Of course none of us could compare with a bond that transcends life and death, that transcends timelines! </summary>
-    </details>
-    
-    <details class="target3-open tsubasa-what takumi-huh3 ">
-    <summary>Didn't he try to kill you, Takumi?! You really had a dream about kissing HIM?!</summary>
-    </details>
-    
-    <details class="tsubasa-what takumi-think-stressed thoughts">
-    <summary>It was more like a nightmare than a dream. </summary>
-    </details>
-    
-    <details class="tsubasa-what takumi-resolved pov-open">
-    <summary>Look, I&mdash;</summary>
-    </details>
-    
-    <details class="kyoshika-embarassed takumi-resolved ">
-    <summary>That's the best part!!</summary>
-    </details>
-    
-    <details class="kyoshika-resolved takumi-resolved ">
-    <summary>Friends turned rivals turned sworn enemies...</summary>
-    </details>
-    
-    <details class="kyoshika-resolved takumi-ohno thoughts">
-    <summary>We weren't ever rivals though?</summary>
-    </details>
-    
-    <details class="kyoshika-resolved takumi-ohno ">
-    <summary>And with you traveling to the past... It's the most tragic form of starcrossed lovers!!</summary>
-    </details>
-    
-    <details class="kyoshika-fight takumi-ohno ">
-    <summary>I'll support you, Takumi!</summary>
-    </details>
-    
-    <details class="kyoshika-fight takumi-resolved thoughts">
-    <summary>Please don't.</summary>
-    </details>
-    
-    <details class="target3-open tsubasa-disappointed takumi-resolved ">
-    <summary>I mean... I guess you can't help who you love. </summary>
-    </details>
-    
-    <details class="tsubasa-disappointed takumi-embarassed1 thoughts">
-    <summary>I never said I was in love with him?! </summary>
-    </details>
-    
-    <details class="target2-open kurara-worried takumi-embarassed1 ">
-    <summary>You're insane. You're both crazy.</summary>
-    </details>
-    
-    <details class="kurara-worried takumi-resolved pov-open">
-    <summary>Can we please stop talking about this? </summary>
-    </details>
-    
-    <details class="kyoshika-think takumi-resolved ">
-    <summary>Takumi...</summary>
-    </details>
-    
-    <details class="kyoshika-happy takumi-resolved ">
-    <summary>We should go talk to him!! </summary>
-    </details>
-    
-    <details class="kyoshika-happy takumi-ohno pov-open">
-    <summary>Huh??</summary>
-    </details>
-    
-    <details class="kyoshika-happy takumi-ohno ">
-    <summary>Right now!!</summary>
-    </details>
-    
-    <details class="kyoshika-fight takumi-ohno ">
-    <summary>Passing even a single moment more without your beloved would be the greatest tragedy. </summary>
-    </details>
-    
-    <details class="kyoshika-fight takumi-ohno pov-open">
-    <summary>He's not my&mdash;!</summary>
-    </details>
-    
-    <details class="target3-open tsubasa-disappointed takumi-ohno ">
-    <summary>Wow Takumi, I didn't know you felt that seriously about him. </summary>
-    </details>
-    
-    <details class="target3-open tsubasa-disappointed takumi-ohno ">
-    <summary>I see...  </summary>
-    </details>
-    
-    <details class="target3-open tsubasa-worried takumi-ohno ">
-    <summary>I'll... guess I have no choice but to support you too, Takumi. </summary>
-    </details>
-    
-    <details class="target3-open tsubasa-think takumi-ohno ">
-    <summary>Let's go see Eito! </summary>
-    </details>
-    
-    <details class="tsubasa-think takumi-resolved pov-open">
-    <summary>Wait!!</summary>
-    </details>
-    
-    <details class="tsubasa-think takumi-resolved pov-open">
-    <summary>Hold on a minute. I...</summary>
-    </details>
-    
-    <details class="tsubasa-think takumi-resolved thoughts">
-    <summary>I don't know where to begin to set the record straight. But there's no way I can let them tell Eito I'm in love with him. </summary>
-    </details>
-    
-    <details class="tsubasa-think takumi-no pov-open">
-    <summary>I'll... I'll talk to him myself. Okay?</summary>
-    </details>
-    
-    <details class="tsubasa-think takumi-no thoughts">
-    <summary>I'll go and pretend to talk to him, and then tell them he turned me down. That should fix things.</summary>
-    </details>
-    
-    <details class="kyoshika-thonk takumi-no ">
-    <summary>!!!</summary>
-    </details>
-    
-    <details class="kyoshika-think takumi-no ">
-    <summary>Of course, Takumi! You want to be alone with your beloved, we understand completely. </summary>
-    </details>
-    
-    <details class="target2-open kurara-think takumi-no ">
-    <summary>...</summary>
-    </details>
-    
-    <details class="kurara-think takumi-no thoughts">
-    <summary>My beloved...</summary>
-    </details>
-    
-    <details class="target3-open tsubasa-worried takumi-no ">
-    <summary>Oh... I suppose we shouldn't intrude on something like that. </summary>
-    </details>
-    
-    <details class="tsubasa-worried takumi-think-stressed thoughts">
-    <summary>Maybe I should go up to the courtyard now. If I don't, they might find out and pressure me into talking to him. </summary>
-    </details>
-    
-    <details class="tsubasa-worried takumi-think-stressed thoughts">
-    <summary>Or worse, talk to him themselves. </summary>
-    </details>
-    
-    <details class="tsubasa-worried takumi-resolved pov-open">
-    <summary>I guess I'll... go now. </summary>
-    </details>
-    
-    <details class="kyoshika-fight takumi-resolved ">
-    <summary>May the embers of your love billow to a raging love forest fire! </summary>
-    </details>
-    
-    <details class="target3-open tsubasa-insist takumi-resolved ">
-    <summary>Good luck, Takumi!</summary>
-    </details>
-    
-    <!-- MOVE TO EITO ROUTE -->
-    <details class="target2-open kurara-done takumi-resolved route2-next">
-    <summary>.........I'm going back to bed. </summary>
-    </details>
-  
 
 
-
-    <!-- breaks the vicious cycle
-    <div class="helpme"></div> -->
+    <!-- breaks the vicious cycle -->
+    <!-- <div class="helpme"></div>  -->
 
 
     <!-- SHION ROUTE: START -->
     <!-- remove the divs actually? move classes to first details -->
     <div class="hidden route3">
+      <!-- move to a new view actually  -->
 
 
 
@@ -574,10 +581,6 @@ TODO/REMEMBER:
     <!-- route3 move-to-next -->
 
 </div></div></div>
-
-
-
-
 
 
 
@@ -773,7 +776,7 @@ TODO/REMEMBER:
           Yes
         </summary>
       </details>
-      <details class="choice-button ending1-2">
+      <details class="choice-button move-ending1-2">
         <summary>
           No
         </summary>
@@ -784,7 +787,6 @@ TODO/REMEMBER:
   <div class="anchor">
   <div class="name-box right pov-element">Takumi Sumino</div>
   <div class="name-box target-element">Yugamu Omokage</div>
-  <div class="name-box black-name-box">&nbsp;</div>
 
   
   <div class="text-box">
@@ -797,7 +799,7 @@ TODO/REMEMBER:
   <summary>Oh, I'm not worried about that.</summary>
   </details>
   
-  <details class="yugamu-talk takumi-huh pov-open">
+  <!-- <details class="yugamu-talk takumi-huh pov-open">
   <summary>You aren't?</summary>
   </details>
   
@@ -903,7 +905,7 @@ TODO/REMEMBER:
   
   <details class="yugamu-hug takumi-embarassed3 pov-open">
   <summary>... </summary>
-  </details>
+  </details> -->
   
   <details class="yugamu-explain takumi-embarassed3 hard-choice-time">
   <summary>Are you certain you didn't say you had a dream about kissing me because subconsciously, you'd like to try it? </summary>
@@ -991,12 +993,141 @@ TODO/REMEMBER:
   <details class="yugamu-smile takumi-embarassed-side1 move-to-next">
   <summary>Come over here, Takumi. </summary>
   </details>
+  <!-- NOTE: CANNOT use move-to-next. yes route already using it for bio > yes.  -->
+</div></div></div>
+
+
+<!-- YUGAMU ROUTE - BIO - YES  -->
+<!-- NOTE: MAKE SURE THIS VIEW IS NEXT. -->
+<!-- move to black-->
+<!-- <div class="main-box black next-view"> -->
+<div class="main-box black hidden next-view">
+
+
+<div class="anchor">
+<div class="name-box pov-element">Takumi Sumino</div>
+<div class="name-box target-element">Yugamu Omokage</div>
+<div class="name-box black-name-box">&nbsp;</div>
+
+
+<div class="text-box">
+
+<details class="alt-op takumi- thoughts">
+<summary>After a moment of hesitation, I took a few steps towards Yugamu. I stopped when we were standing less than a meter apart. </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>Is this insane? Am I really sure about this? I don't even like Yugamu like that... Do I? </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>Yugamu smiled, and reached out to touch my face. It was... kind of weird. This whole situation is weird. But his hand was warm, and I didn't mind it as much as I thought I would. </summary>
+</details>
+
+<details class="yugamu-  ">
+<summary>Are you ready?</summary>
+</details>
+
+<details class=" takumi- pov-open">
+<summary>Just get it over with.</summary>
+</details>
+
+<details class="yugamu-  ">
+<summary>My my, that's not very romantic of you. </summary>
+</details>
+
+<details class="yugamu-  ">
+<summary>You're sure you're alright with this? </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>I squinted at Yugamu's face, trying to decide if he was making fun of me, but his expression was soft and earnest. </summary>
+</details>
+
+<details class=" takumi- pov-open">
+<summary>...Yeah. I'm sure. </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>I reached out with one hand and fisted it in his hakama, then I hesitated again. </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>I've never done this before. The only person I could have imagined wanting to do something like this with was always Karua. </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>But she's not here anymore. I might never see her again. The one here right now is Yugamu. And Yugamu... wants to kiss me. </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>And I guess... I want to kiss him, too? </summary>
+</details>
+
+<details class="yugamu-  ">
+<summary>You look nervous.</summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>I am nervous. But...</summary>
+</details>
+
+<details class=" takumi- pov-open">
+<summary>So do you.</summary>
+</details>
+
+<details class="yugamu-  ">
+<summary>Hehe. You're right, I am.</summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>Him admitting it made me relax. It wasn't so scary if we were feeling the same. </summary>
+</details>
+
+<details class=" takumi- thoughts">
+<summary>Yugamu leaned in, and I closed my eyes. </summary>
+</details>
+
+<!-- does thought == end?  -->
+<details class="last">
+<summary>Ending 02: Here With Me Now </summary>
+</details>
+
+</div></div></div>
+
+
+<!-- YUGAMU ROUTE - BIO - NO  -->
+  <!-- move to biolab-->
+<div class="main-box hidden next-ending1-2">
+  <div class="room biolab blur">
+  </div>
+
+  <!-- update date -->
+  <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
   
+    <!-- seed scene characters -->
+    <div class="character yugamu"></div>
+    <div class="takumi-box pov-element">
+      <div class="takumi-bg biolab">
+      <div class="takumi-insert"></div>
+      </div>
+    </div>
+
+  <!-- character name boxes -->
+  <div class="anchor"> 
+    <div class="name-box right pov-element">Takumi Sumino</div>
+    <div class="name-box target-element hidden">Yugamu Omokage</div>
+  
+  
+    <!-- text box container -->
+    <div class="text-box">
 
 
+      <!-- gonna need to force takumi again -->
+  
   <!-- YUGAMU: NO -->
   <!-- add ending1-2-open and hidden to next dialogue box -->
-  <details class="yugamu-explain takumi-resolved pov-open hidden ending1-2-open">
+  <details class="yugamu-explain takumi-resolved pov-open rotate takumi-start">
     <summary>Definitely not. </summary> 
     </details> 
     
@@ -1008,7 +1139,7 @@ TODO/REMEMBER:
     <summary>Well, you didn't. </summary> 
     </details> 
     
-    <details class="yugamu-sigh takumi-mad pov-open">
+    <details class="yugamu-sigh takumi-oof pov-open">
     <summary>I'm gonna go. </summary> 
     </details> 
     
@@ -1392,115 +1523,14 @@ TODO/REMEMBER:
     <summary>I don't know what face you're talking about. </summary>
     </details>
     
-    <details class="yugamu-dark takumi-whoa2 pov-open move-ending1-2">
+    <details class="yugamu-dark takumi-whoa2 pov-open move-to-next">
     <summary>That face right there!! </summary>
     </details>
     
-  <!-- NOTE: CANNOT use move-to-next. yes route already using it for bio > yes.  -->
-</div></div></div>
+  </div></div></div>
 
-<!-- YUGAMU ROUTE - BIO - YES  -->
-<!-- NOTE: MAKE SURE THIS VIEW IS NEXT. -->
 <!-- move to black-->
-<!-- <div class="main-box black next-view"> -->
 <div class="main-box black hidden next-view">
-
-
-<div class="anchor">
-<div class="name-box pov-element">Takumi Sumino</div>
-<div class="name-box target-element">Yugamu Omokage</div>
-<div class="name-box black-name-box">&nbsp;</div>
-
-
-<div class="text-box">
-
-<details class="alt-op takumi- thoughts">
-<summary>After a moment of hesitation, I took a few steps towards Yugamu. I stopped when we were standing less than a meter apart. </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>Is this insane? Am I really sure about this? I don't even like Yugamu like that... Do I? </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>Yugamu smiled, and reached out to touch my face. It was... kind of weird. This whole situation is weird. But his hand was warm, and I didn't mind it as much as I thought I would. </summary>
-</details>
-
-<details class="yugamu-  ">
-<summary>Are you ready?</summary>
-</details>
-
-<details class=" takumi- pov-open">
-<summary>Just get it over with.</summary>
-</details>
-
-<details class="yugamu-  ">
-<summary>My my, that's not very romantic of you. </summary>
-</details>
-
-<details class="yugamu-  ">
-<summary>You're sure you're alright with this? </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>I squinted at Yugamu's face, trying to decide if he was making fun of me, but his expression was soft and earnest. </summary>
-</details>
-
-<details class=" takumi- pov-open">
-<summary>...Yeah. I'm sure. </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>I reached out with one hand and fisted it in his hakama, then I hesitated again. </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>I've never done this before. The only person I could have imagined wanting to do something like this with was always Karua. </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>But she's not here anymore. I might never see her again. The one here right now is Yugamu. And Yugamu... wants to kiss me. </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>And I guess... I want to kiss him, too? </summary>
-</details>
-
-<details class="yugamu-  ">
-<summary>You look nervous.</summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>I am nervous. But...</summary>
-</details>
-
-<details class=" takumi- pov-open">
-<summary>So do you.</summary>
-</details>
-
-<details class="yugamu-  ">
-<summary>Hehe. You're right, I am.</summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>Him admitting it made me relax. It wasn't so scary if we were feeling the same. </summary>
-</details>
-
-<details class=" takumi- thoughts">
-<summary>Yugamu leaned in, and I closed my eyes. </summary>
-</details>
-
-<!-- does thought == end?  -->
-<details class="last">
-<summary>Ending 02: Here With Me Now </summary>
-</details>
-
-</div></div></div>
-
-
-<!-- YUGAMU ROUTE - BIO - NO  -->
-<!-- move to black-->
-<div class="main-box black hidden next-ending1-2">
   <div class="anchor">
   <div class="text-box">
   <details class="  thoughts">
@@ -1517,12 +1547,254 @@ TODO/REMEMBER:
 
 
 </div>
+  </div>
+</div>
+
 
 
 <!-- EITO ROUTE -->
+<div class="main-box hidden route2-next-room">
+  <!-- <div class="main-box hidden next-view"> -->
+  
+    <div class="room cafeteria blur">
+    </div>
+  <p class="location">Cafeteria
+  </p>
+  <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
+  
+  <div class="character kyoshika"></div>
+  <div class="takumi-box pov-element">
+    <div class="takumi-bg cafeteria">
+      <div class="takumi-insert takumi-huh-forced"></div>
+    </div>
+  </div>
+  
+  <div class="anchor"> 
+    <div class="hidden name-box right pov-element">Takumi Sumino</div>
+    <div class="name-box target-element">Kyoshika Magadori</div>
+    <div class="name-box target2">Kurara Oosuzuki</div>
+    <div class="name-box target3">Tsubasa Kawana</div>
+  
+  
+    <!-- this was almost working for a second  -->
+  <div class="text-box">
+      <details class="kurara-argue takumi-huh pov-open alt-op force-show-takumi">
+        <summary>Eito?</summary>
+        </details>
+        
+        <details class="kurara-argue takumi-embarassed1 thoughts">
+        <summary>I can't believe I just said that. Why did I just say that?! </summary>
+        </details>
+        
+        <details class="kurara-argue takumi-hurt thoughts">
+        <summary>This is the worst...</summary>
+        </details>
+        
+        <details class="kurara-argue takumi-think-dark thoughts">
+        <summary>But at least they can't possibly take it seriously anymore. Right? </summary>
+        </details>
+        
+        <details class="target3-open tsubasa-what takumi-think-dark ">
+        <summary>?!?!?</summary>
+        </details>
+        
+        <details class="kyoshika-scared takumi-think-dark ">
+        <summary>That's...!!</summary>
+        </details>
+        
+        <details class="target2-open kurara-point takumi-think-dark ">
+        <summary>You had a dream about kissing the guy who tried to kill you?! </summary>
+        </details>
+        
+        <details class="kurara-point takumi-ohno thoughts">
+        <summary>They're taking it seriously?!</summary>
+        </details>
+        
+        <details class="kurara-point takumi-no pov-open">
+        <summary>No, I&mdash;</summary>
+        </details>
+        
+        <details class="kyoshika-talk takumi-no ">
+        <summary>So romantic!!</summary>
+        </details>
+        
+        <details class="kyoshika-talk takumi-huh3 pov-open">
+        <summary>What?</summary>
+        </details>
+        
+        <details class="target3-open tsubasa-gross takumi-huh3 ">
+        <summary>What??</summary>
+        </details>
+        
+        <details class="target2-open kurara-pissed takumi-huh3 ">
+        <summary>Whaaaat?!!!</summary>
+        </details>
+        
+        <details class="kyoshika-talk takumi-huh3 ">
+        <summary>Of course none of us could compare with a bond that transcends life and death, that transcends timelines! </summary>
+        </details>
+        
+        <details class="target3-open tsubasa-what takumi-huh3 ">
+        <summary>Didn't he try to kill you, Takumi?! You really had a dream about kissing HIM?!</summary>
+        </details>
+        
+        <details class="tsubasa-what takumi-think-stressed thoughts">
+        <summary>It was more like a nightmare than a dream. </summary>
+        </details>
+        
+        <details class="tsubasa-what takumi-resolved pov-open">
+        <summary>Look, I&mdash;</summary>
+        </details>
+        
+        <details class="kyoshika-embarassed takumi-resolved ">
+        <summary>That's the best part!!</summary>
+        </details>
+        
+        <details class="kyoshika-resolved takumi-resolved ">
+        <summary>Friends turned rivals turned sworn enemies...</summary>
+        </details>
+        
+        <details class="kyoshika-resolved takumi-ohno thoughts">
+        <summary>We weren't ever rivals though?</summary>
+        </details>
+        
+        <details class="kyoshika-resolved takumi-ohno ">
+        <summary>And with you traveling to the past... It's the most tragic form of starcrossed lovers!!</summary>
+        </details>
+        
+        <details class="kyoshika-fight takumi-ohno ">
+        <summary>I'll support you, Takumi!</summary>
+        </details>
+        
+        <details class="kyoshika-fight takumi-resolved thoughts">
+        <summary>Please don't.</summary>
+        </details>
+        
+        <details class="target3-open tsubasa-disappointed takumi-resolved ">
+        <summary>I mean... I guess you can't help who you love. </summary>
+        </details>
+        
+        <details class="tsubasa-disappointed takumi-embarassed1 thoughts">
+        <summary>I never said I was in love with him?! </summary>
+        </details>
+        
+        <details class="target2-open kurara-worried takumi-embarassed1 ">
+        <summary>You're insane. You're both crazy.</summary>
+        </details>
+        
+        <details class="kurara-worried takumi-resolved pov-open">
+        <summary>Can we please stop talking about this? </summary>
+        </details>
+        
+        <details class="kyoshika-think takumi-resolved ">
+        <summary>Takumi...</summary>
+        </details>
+        
+        <details class="kyoshika-happy takumi-resolved ">
+        <summary>We should go talk to him!! </summary>
+        </details>
+        
+        <details class="kyoshika-happy takumi-ohno pov-open">
+        <summary>Huh??</summary>
+        </details>
+        
+        <details class="kyoshika-happy takumi-ohno ">
+        <summary>Right now!!</summary>
+        </details>
+        
+        <details class="kyoshika-fight takumi-ohno ">
+        <summary>Passing even a single moment more without your beloved would be the greatest tragedy. </summary>
+        </details>
+        
+        <details class="kyoshika-fight takumi-ohno pov-open">
+        <summary>He's not my&mdash;!</summary>
+        </details>
+        
+        <details class="target3-open tsubasa-disappointed takumi-ohno ">
+        <summary>Wow Takumi, I didn't know you felt that seriously about him. </summary>
+        </details>
+        
+        <details class="target3-open tsubasa-disappointed takumi-ohno ">
+        <summary>I see...  </summary>
+        </details>
+        
+        <details class="target3-open tsubasa-worried takumi-ohno ">
+        <summary>I'll... guess I have no choice but to support you too, Takumi. </summary>
+        </details>
+        
+        <details class="target3-open tsubasa-think takumi-ohno ">
+        <summary>Let's go see Eito! </summary>
+        </details>
+        
+        <details class="tsubasa-think takumi-resolved pov-open">
+        <summary>Wait!!</summary>
+        </details>
+        
+        <details class="tsubasa-think takumi-resolved pov-open">
+        <summary>Hold on a minute. I...</summary>
+        </details>
+        
+        <details class="tsubasa-think takumi-think thoughts">
+        <summary>I don't know where to begin to set the record straight. But there's no way I can let them tell Eito I'm in love with him. </summary>
+        </details>
+        
+        <details class="tsubasa-think takumi-no pov-open">
+        <summary>I'll... I'll talk to him myself. Okay?</summary>
+        </details>
+        
+        <details class="tsubasa-think takumi-no thoughts">
+        <summary>I'll go and pretend to talk to him, and then tell them he turned me down. That should fix things.</summary>
+        </details>
+        
+        <details class="kyoshika-thonk takumi-no ">
+        <summary>!!!</summary>
+        </details>
+        
+        <details class="kyoshika-think takumi-no ">
+        <summary>Of course, Takumi! You want to be alone with your beloved, we understand completely. </summary>
+        </details>
+        
+        <details class="target2-open kurara-think takumi-no ">
+        <summary>...</summary>
+        </details>
+        
+        <details class="kurara-think takumi-think-dark thoughts">
+        <summary>My beloved...</summary>
+        </details>
+        
+        <details class="target3-open tsubasa-worried takumi-think-dark ">
+        <summary>Oh... I suppose we shouldn't intrude on something like that. </summary>
+        </details>
+        
+        <details class="tsubasa-worried takumi-think-stressed thoughts">
+        <summary>Maybe I should go up to the courtyard now. If I don't, they might find out and pressure me into talking to him. </summary>
+        </details>
+        
+        <details class="tsubasa-worried takumi-think-stressed thoughts">
+        <summary>Or worse, talk to him themselves. </summary>
+        </details>
+        
+        <details class="tsubasa-worried takumi-resolved pov-open">
+        <summary>I guess I'll... go now. </summary>
+        </details>
+        
+        <details class="kyoshika-fight takumi-resolved ">
+        <summary>May the embers of your love billow to a raging love forest fire! </summary>
+        </details>
+        
+        <details class="target3-open tsubasa-insist takumi-resolved ">
+        <summary>Good luck, Takumi!</summary>
+        </details>
+        
+        <!-- MOVE TO EITO ROUTE -->
+        <details class="target2-open kurara-done takumi-resolved eito-move-to-next">
+        <summary>.........I'm going back to bed. </summary>
+        </details>
+  </div></div></div>
+  
   
   <!-- move to courtyard-->
-<div class="main-box hidden route2-next-room">
+<div class="main-box hidden eito-next-view">
 
   <div class="room courtyard blur"></div>
   <div class="room bars"></div>
@@ -1717,9 +1989,8 @@ TODO/REMEMBER:
   </div></div></div>
   <!-- end of current room-->
   
-  
+
   <!-- move to black-->
-  <!-- hide, black this later -->
   <div class="main-box black hidden next-ending2-2"> 
   <div class="anchor">
   <div class="name-box right pov-element">Takumi Sumino</div>
@@ -1732,9 +2003,6 @@ TODO/REMEMBER:
   
 
   </div></div></div>
-
-
-</div>
   <!-- end of current room-->
   
   
@@ -1748,8 +2016,6 @@ TODO/REMEMBER:
   </details>
   </div> 
   
-
-  
   <!-- move to bedroom-->
   <div class="main-box hidden next-view">
     <div class="room bedroom blur">
@@ -1761,7 +2027,7 @@ TODO/REMEMBER:
   
     <!-- seed scene characters -->
     <!-- dont seed eito -->
-    <div class="character eito"></div>
+    <div class="character eito hidden"></div>
     <div class="takumi-box pov-element">
       <div class="takumi-bg bedroom">
       <div class="takumi-insert"></div>
@@ -1770,19 +2036,19 @@ TODO/REMEMBER:
   
   <div class="anchor">
   <div class="name-box right pov-element">Takumi Sumino</div>
-  <div class="name-box target-element">Eito Aotsuki</div>
+  <div class="name-box target-element hidden">Eito Aotsuki</div>
   
   <div class="text-box">
 
-  <details class="thoughts alt-op">
+  <details class="thoughts">
   <summary>Huh? What was that? </summary>
   </details>
   
-  <details class="takumi-sleepy pov-open alt-op">
+  <details class="takumi-sleepy pov-open">
   <summary>Wait, it's still dark. What time is it...? </summary>
   </details>
   
-  <details class=" takumi-yawn pov-open alt-op">
+  <details class=" takumi-yawn pov-open char-return takumi-start">
   <summary>I thought I heard a noise... was it just a dream?</summary>
   </details>
   
