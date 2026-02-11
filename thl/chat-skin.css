@@ -529,6 +529,8 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-thoughtful.png');
 }.main-box:has(details[open] + details:not([open]).yugamu-what) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-what.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-thoughtful-dark) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-thoughtful-dark.png');
 }
 
 
@@ -611,6 +613,29 @@ details.thoughts summary{
 }.main-box:has(details[open] + details:not([open]).kurara-done) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-done.png');
   top: -180px;
+}
+
+/* kako */
+.main-box:has(details[open] + details:not([open]).kako-yay) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-yay.png');
+}.main-box:has(details[open] + details:not([open]).kako-hey-determined) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-hey-determined.png');
+}.main-box:has(details[open] + details:not([open]).kako-pensive-talk) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-pensive-talk.png');
+}.main-box:has(details[open] + details:not([open]).kako-pensive) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-pensive.png');
+}.main-box:has(details[open] + details:not([open]).kako-point) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-point.png');
+}.main-box:has(details[open] + details:not([open]).kako-pout) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-pout.png');
+}.main-box:has(details[open] + details:not([open]).kako-psychic) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-psychic.png');
+}.main-box:has(details[open] + details:not([open]).kako-talk-side) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-talk-side.png');
+}.main-box:has(details[open] + details:not([open]).kako-think) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-think.png');
+}.main-box:has(details[open] + details:not([open]).kako-worried) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-worried.png');
 }
 
 
@@ -743,6 +768,16 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk3.png');
 }.main-box:has(details[open] + details:not([open]).takumi-explain2) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain2.png');
+}.main-box:has(details[open] + details:not([open]).takumi-hurt1) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hurt1.png');
+}.main-box:has(details[open] + details:not([open]).takumi-hurt2) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hurt2.png');
+}.main-box:has(details[open] + details:not([open]).takumi-point) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-point.png');
+}.main-box:has(details[open] + details:not([open]).takumi-talk4) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk4.png');
+}.main-box:has(details[open] + details:not([open]).takumi-yeah2) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yeah2.png');
 }
 /* is whoa a repeat... */
 .main-box:has(details[open] + details:not([open]).takumi-woah) .takumi-insert{
