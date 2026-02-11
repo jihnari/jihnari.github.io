@@ -20,37 +20,39 @@
 - fix choice orders code 
 - ** takumi huh and explain are the same. fix that. (just do one) 
 - ** oof and oops are also the same. 
-- ** whoa and smth else are also the same (how has this happened to me) 
+- ** whoa and ohno are also the same (how has this happened to me) 
+- ** hey & talk-sweat
+- ** pensive & considering
 - add slight delay to scene changes? (probably impossible) 
 - if time: make .black .text-box a proper grid
 
 ao3 errors: 
 - takumi skew
-- clock steps are illegal 
-- choice-screen, rbg value hates that 
-- 
+- + clock steps are illegal (gonna ignore it) 
+- + choice-screen, rbg value hates that 
+- + summary shrunk?
+- + takumi disappears...? eito route (oh yeah this is the zoom issue) made two courtyards
 
 
 potential todo: 
 - clair de lune?
 - - + get an mp3, put on github 
 - - got the song, got it to play, looks bad on ao3 and you cant auto play or trick users into clicking it. could make a new view that pops up during emotional scenes and says "click me..." 
+- could make a menu and include the audio there. make the area flash when smth emotional happens 
 - / have a separate interface for selecting characters to talk to? seems like work. (we're not doing that)
-- + png all the numbers? 
 - redraw the numbers (kinda messy) 
 - redraw the second hand? should have a small ball on the other end
 - redraw the date box...? should have 60 tick marks :clown: 
 - / character png animations? flash white, shake, shake violently, etc 
 - - https://codepen.io/mackerel-cheese/pen/KwMQjrq
 - / sfx for the character animations? might be several steps too far (only possible if u figure out clair de lune. but if you figure out that, its possible. you will however have to get audio files from somewhere) 
+- pngs flash white? 
 
 
 PROBLEMS: 
 - main-box is too big, idk what happened. cap differently?  (i think i fixed this?) 
-- some weirdness after an overlay (text-box margin-right increases or smth) 
-- + shion doesnt have a name at this point. could just leave him ??? the whole time? (yes i think u gotta) 
-- takumi disappears during choice time 
-- generating the script (cant worry about it too much until theres an existing script tho. hopefully soon.) 
+- some weirdness after an overlay (text-box margin-right increases or smth) (i think i fixed this) 
+- sometimes the location box doesnt entirely disappear...? 
 
 
 done: 
@@ -96,6 +98,11 @@ done:
 - + dialogue white bar on top? half ish done, needs more circles and a lot of tweaking 
 - + black view, name-box; a little broken. might be bc the first thing in the scene is thoughts and not the target character thinking 
 - + also black view name box, alignment is off? easy fix but gotta look at canon 
+- + shion doesnt have a name at this point. could just leave him ??? the whole time? (yes i think u gotta) 
+- + generating the script (cant worry about it too much until theres an existing script tho. hopefully soon.) 
+- + takumi disappears during choice time
+- + png all the numbers?  
+
 
 
 THOUGHTS: 
@@ -124,7 +131,9 @@ https://www.tumblr.com/reblogablename/783668993201471488/if-you-were-ever-curiou
  details{
   margin:0;
  }
-
+.squish{
+  height:0px;
+}
 
 
 
@@ -199,6 +208,30 @@ summary {
 .save-point:has(details[open]) ~ .init-box{
   display:none;
 }
+.save-point{
+  height:20px;
+  background-color:rgba(63, 95, 111, .8);
+  border:solid #B7E1EF 1px;
+
+  
+  overflow:visible;
+  top:630px;
+  position:absolute;
+
+  
+  color:white;
+  font-size:1em;
+  padding:3px 0px;
+    width: 50%;
+  text-align:center;
+  cursor:pointer;
+}
+
+
+.save-point summary{
+  /* margin-bottom:10px; */
+}
+
 
 /* make savepoint disappear after use. also make save point disappear after interaction with first dialogue */
 /* .save-point:has(details[open]){ 
@@ -212,7 +245,7 @@ summary {
 
 /* dialogue is held in text-box. the entire box is selectable by user to continue to the next dialogue. */
 .text-box summary{
-  height:85%;
+  height:70px;
   color:white;
   padding: 10px 100px 0px 100px;
   overflow-y:scroll;
@@ -229,6 +262,13 @@ summary {
 .main-box .text-box details:not([open]) + details{
   display:none;
 }
+
+/* this wouldve been cool but seems impossible with the current structure */
+/* .main-box:has(.text-box details[open]) .character{
+filter:  brightness(0) invert(1);
+transition:filter;
+transition-duration:1s;
+} */
 
 /* box starts CLOSED. when box OPENS, remove from existence */
 .text-box details[open] {display: none;}
@@ -278,7 +318,7 @@ summary {
 
 /* .main-box:has(details:not([open]).force-show-takumi) .pov-element{
   display:block;
-} */
+} */ 
 
 
 /* .main-box:has(details:not([open]).takumi-start) .target-element, .main-box:has(details:not([open]).takumi-only) .character {
@@ -300,6 +340,9 @@ summary {
 }
 .shown{
   display:inherit;
+}
+.main-box:has(details[open].takumi-start) .temp-name-box {
+  display:none;
 }
 
 
@@ -368,11 +411,17 @@ details.thoughts summary{
 }
 
 
+
+
+
+
+
+
+
 /* ALL CHARACTER PNG TOGGLES HERE  */
 /* eito */
-.main-box:has(details[open] + details:not([open]).eito-smile) .character{
-  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito2.png');
-}.main-box:has(details[open] + details:not([open]).eito-talk) .character{
+
+.main-box:has(details[open] + details:not([open]).eito-talk) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito.png');
 }
 .main-box:has(details[open] + details:not([open]).eito-explain) .character{
@@ -385,8 +434,8 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-relieved.png');
 }.main-box:has(details[open] + details:not([open]).eito-sigh) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-sigh.png');
-}.main-box:has(details[open] + details:not([open]).eito-simle) .character{
-  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-simle.png');
+}.main-box:has(details[open] + details:not([open]).eito-smile) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-smile.png');
 }.main-box:has(details[open] + details:not([open]).eito-talk1) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-talk1.png');
 }.main-box:has(details[open] + details:not([open]).eito-think-talk) .character{
@@ -405,9 +454,29 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-talk2.png');
 }.main-box:has(details[open] + details:not([open]).eito-ugh) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-ugh.png');
-}.main-box:has(details[open] + details:not([open]).eito-think) .character{
+}.main-box:has(details[open] + details:not([open]).eito-unrelieved) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-unrelieved.png');
-}:
+}.main-box:has(details[open] + details:not([open]).eito-happy) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-happy.png');
+}.main-box:has(details[open] + details:not([open]).eito-mad-stressed) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-mad-stressed.png');
+}.main-box:has(details[open] + details:not([open]).eito-mad) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-mad.png');
+}.main-box:has(details[open] + details:not([open]).eito-side-think) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-side-think.png');
+}.main-box:has(details[open] + details:not([open]).eito-side-think2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-side-think2.png');
+}.main-box:has(details[open] + details:not([open]).eito-side-think3) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-side-think3.png');
+}.main-box:has(details[open] + details:not([open]).eito-think2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-think2.png');
+}.main-box:has(details[open] + details:not([open]).eito-wink) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-wink.png');
+}.main-box:has(details[open] + details:not([open]).eito-wink1) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-wink1.png');
+}.main-box:has(details[open] + details:not([open]).eito-worry) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-worry.png');
+}
 
 
 /* yugamu */
@@ -438,8 +507,28 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-think.png');
 }.main-box:has(details[open] + details:not([open]).yugamu-wait) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-wait.png');
-}.main-box:has(details[open] + details:not([open]).takumi-happy) .takumi-insert{
-  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sweat.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-dark-tongue) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dark-tongue.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-dark-tongue2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dark-tongue2.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-dark) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dark.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-dread-smile) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dread-smile.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-dread-talk) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dread-talk.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-dread-think) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dread-think.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-dread) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dread.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-hehe) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-hehe.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-talk2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-talk2.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-thoughtful) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-thoughtful.png');
+}.main-box:has(details[open] + details:not([open]).yugamu-what) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-what.png');
 }
 
 
@@ -572,6 +661,9 @@ details.thoughts summary{
 .main-box:has(details[open] + details:not([open]).takumi-neutral) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral.png');
 }
+/* .main-box:has(details[open] + details:not([open]).takumi-happy) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-happy.png');
+} */
 .main-box:has(details[open] + details:not([open]).takumi-no) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-no.png');
 }
@@ -607,8 +699,6 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-hand.png');
 }.main-box:has(details[open] + details:not([open]).takumi-unimpressed) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-unimpressed.png');
-}.main-box:has(details[open] + details:not([open]).takumi-unimpressed) .takumi-insert{
-  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-unimpressed.png');
 }.main-box:has(details[open] + details:not([open]).takumi-wait) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-wait.png');
 }.main-box:has(details[open] + details:not([open]).takumi-wait2) .takumi-insert{
@@ -631,14 +721,83 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-whoa2.png');
 }.main-box:has(details[open] + details:not([open]).takumi-yawn) .takumi-insert{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yawn.png');
+}.main-box:has(details[open] + details:not([open]).takumi-considering) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-considering.png');
+}.main-box:has(details[open] + details:not([open]).takumi-base) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-base.png');
+}.main-box:has(details[open] + details:not([open]).takumi-fear) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-fear.png');
+}.main-box:has(details[open] + details:not([open]).takumi-pressed) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-pressed.png');
+}.main-box:has(details[open] + details:not([open]).takumi-talk-dark) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk-dark.png');
+}.main-box:has(details[open] + details:not([open]).takumi-neutral2) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral2.png');
+}.main-box:has(details[open] + details:not([open]).takumi-neutral-sweat) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral-sweat.png');
+}.main-box:has(details[open] + details:not([open]).takumi-sad) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sad.png');
+}.main-box:has(details[open] + details:not([open]).takumi-shock) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-shock.png');
+}.main-box:has(details[open] + details:not([open]).takumi-talk3) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk3.png');
+}.main-box:has(details[open] + details:not([open]).takumi-explain2) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain2.png');
+}
+/* is whoa a repeat... */
+.main-box:has(details[open] + details:not([open]).takumi-woah) .takumi-insert{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-woah.png');
+} 
+
+
+/* load... all the images?  */
+/* this doesnt seem to work, unfortunately */
+.blorbo-preload{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-considering.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side-talk.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side1.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed1.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed3.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain-sweat.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hehe.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey2.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh3.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hurt.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad-quiet.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad-side.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-no.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-nono.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-ohno.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-oof.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-oops.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-pensive.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-resolved.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-resolved2.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sleepy.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sweat.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk-sweat.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk1.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk2.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-dark.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-hand.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-stressed.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-unimpressed.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-wait.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-wait2.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-whoa2.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-woah.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yawn.png'),
+  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yeah.png');
 }
 
-
-
-/* special cases */
-.takumi-huh-forced{
-  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh.png');
-}
 
 
 /* BOX TO HOLD ALL THE THINGS */
@@ -695,20 +854,24 @@ details.thoughts summary{
   }
   .courtyard{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Courtyard.png');
-    /* margin-right:40px; */
-    right:-630px;
-    transform:scale(4.7);
+    right: -1330px;
+    transform: scale(6);
   }
-  /* check this (then remove red) */
+  .courtyard-takumi{
+    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Courtyard.png');
+  }
   .bars{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/bars.png');
-    background:red;
-    width:10px;
-    right:20%;
+    /* width:10px; */
+    /* right:20%; */
 
     z-index:1;
-    /* opacity:.5; */
-
+  }
+  .eito-jailed{
+    transform: scale(1.25);
+    top: 110px !important;
+    
+    margin-left:15% !important;
   }
   .library{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Library.png');
@@ -719,10 +882,16 @@ details.thoughts summary{
   .roof{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Rooftop.png');
   }
+  .yugamu-room{
+    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/yugamu-room.png');
+  }
   .bedroom{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Bedroom.png');
     right: -600px;
   top: -200px;
+  }
+  .nighttime{
+    background:rgba(0, 0, 0, 0.5);
   }
   /* for thinking scenes or transitions  */
   .black{
@@ -1277,7 +1446,8 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
     background-size: 550px auto;
     width:100%;
     /* if this number isnt big enough, weird crap happens */
-    height: 200vh;
+    /* height: 200vh; */
+    height:2000px;
 
     position:absolute;
     /* there should be a real way to center this but i cant find it */
@@ -1300,23 +1470,44 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   .kyoshika{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-embarassed.png');
   }
+  .kako{
+    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kako/kako-yay.png');
+  }
 
-  /* no wait not these? these are useless?  */
-  /* .kyoshika-talk{
-    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-talk.png');
-  }
-  .kyoshika-embarassed{
-    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-embarassed.png');
-  }
-  .tsubasa-worried{
-    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-worried.png');
-  }
-  .kurara-pissed{
-    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-pissed.png');
-  }
-  .kurara-argue{
-    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-argue.png');
-  } */
+
+
+  /* special cases */
+.takumi-huh-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh.png');
+}.takumi-resolved-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-resolved.png');
+}
+.takumi-mad-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad.png');
+}.takumi-yawn-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yawn.png');
+}.takumi-sleepy-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sleepy.png');
+}.takumi-think-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think.png');
+}.takumi-neutral2-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral2.png');
+}
+
+.eito-hi-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-hi.png');
+}.eito-smile-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-smile.png');
+}.eito-think-talk-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-think-talk.png');
+}
+
+
+.kurara-argue-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-argue.png');
+  /* top: -180px; */
+  margin-left:5%;
+}
 
 
   /* POV CHARACTER */
@@ -1366,6 +1557,13 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
 
     margin-left:-110px;
   }
+  .takumi-bg-filter{
+    /* having a default png here means nothing can override it i think. might be order based  */
+    /* background-color:#5E7683; */
+    height:700px;
+    width:1000px;
+    background-size:auto;
+  }
 
   .takumi-insert{
     /* background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi.png'); */
@@ -1395,7 +1593,7 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   .choice-screen{
     /* this replaces overlay  */
     /* should this be .8 */
-    background-color:rgb(69 103 120 /.5);
+    background-color:rgb(69, 103, 120, 0.5);
 
     height:100%;
     width:100%;
@@ -1785,13 +1983,13 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
 
  
   /* room changing for endings */
-  .main-box:has(details.ending1[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.move-ending1-2[open]), .main-box:has(details.move-ending1-2[open]){
+  .main-box:has(details.ending1[open]), .main-box:has(details.ending2[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.move-ending1-2[open]), .main-box:has(details.move-ending1-2[open]){
     /* i think this is snagging on the savepoint telling it to be open */
     display:none !important; 
   } 
 
   /* added a > to route2 */
-  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) ~ .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2, :has(details.move-ending1-2[open]) > .next-ending1-2{
+  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) ~ .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.ending2[open]) > .ending2-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2, :has(details.move-ending1-2[open]) > .next-ending1-2{
     display:flex;
   }
 
