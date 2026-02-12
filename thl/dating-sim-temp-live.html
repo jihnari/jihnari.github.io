@@ -90,8 +90,10 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
   there is no going back. there is only forward!! i initially wanted to have a log like the game does, but it would literally double the word count (and also be a ton of effort to try and code). 
 
-  pot;
-  for the first choice menu: it's a. little broken. maybe go in order,,, 
+  disclaimers: 
+  - i... did not finish the romance route.
+  - i also didn't get very far in CoA so shion's characterization might be off 
+  - the first choice menu is a little... broken. 
 
   save points: 
   please play the game through once! these save points are also not linked directly to the choice menu, due to coding limitations. they'll only take you to the nearest room change after having made that choice. 
@@ -159,14 +161,28 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
       </details> -->
       <details class="choice-button move-ending2-2">
         <summary>
-          Eito > defensive
+          Eito > Defensive
         </summary>
       </details>
-      <details class="choice-button route3">
+      <details class="choice-button route3-next">
         <summary>
-          <s>??? (Shion)</s>
+          ??? (Shion)
         </summary>
       </details>
+      <!-- switched these... i think im right?  -->
+      <details class="choice-button route3-2-next">
+        <summary>
+          ??? > Ask
+        </summary>
+      </details>
+      <details class="choice-button route3-1-next">
+        <summary>
+          ??? > Walk
+        </summary>
+      </details>
+      
+
+      
 
 </details>
 <!-- </div> -->
@@ -206,9 +222,9 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
       Eito
     </summary>
   </details>
-  <details class="choice-button route3">
+  <details class="choice-button route3-next">
     <summary>
-      <s>Shion</s>
+      Someone else
     </summary>
   </details>
 </div>
@@ -416,17 +432,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
     <summary>I don't want support for that.</summary>
     </details>
 
-
-    <!-- SHION ROUTE: START -->
-    <!-- remove the divs actually? move classes to first details -->
-    <div class="hidden route3">
-      <!-- move to a new view actually  -->
-
-
-
       
-    </div>
-    <!-- route3 move-to-next -->
 
 </div></div></div>
 
@@ -941,7 +947,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
 <!-- does thought == end?  -->
 <details class="last">
-<summary>Ending 02: Here With Me Now </summary>
+<summary>D01: Romance Route: Here With Me Now </summary>
 </details>
 
 </div></div></div>
@@ -1399,7 +1405,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
   </details>
 
   <details class="last">
-    <summary>D03: Romance Route: Out of Options </summary>
+    <summary>D02: Romance Route: Out of Options </summary>
     </details>
 
 
@@ -1415,7 +1421,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 <div class="main-box hidden ending2-room">
   <div class="room roof blur">
   </div>
-<p class="location">Roof
+<p class="location">Rooftop
 </p>
 <!-- update date -->
 <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
@@ -1433,11 +1439,11 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
 <div class="text-box">
 
-<details class="takumi-think thoughts takumi-start">
+<details class="takumi-think thoughts takumi-start rotate">
 <summary>Doesn't look like he's here... </summary>
 </details>
 
-<details class=" takumi-think-hand thoughts">
+<details class=" takumi-think-hand thoughts location-close">
 <summary>Maybe I should wait and try again tomorrow. I don't want to run into Kurara or Kyoshika again today. They'll keep hounding me for answers. </summary>
 </details>
 
@@ -1481,7 +1487,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
 
 <div class="text-box">
-<details class=" takumi-yawn pov-open takumi-start">
+<details class=" takumi-yawn pov-open takumi-start rotate">
 <summary>What time is it...?</summary>
 </details>
 
@@ -1532,7 +1538,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="six"></span></p></div>
 
   <!-- seed scene characters -->
-  <div class="character kako"></div>
+  <div class="character kako hidden"></div>
   <div class="takumi-box pov-element">
     <div class="takumi-bg cafeteria">
     <div class="takumi-insert"></div>
@@ -1550,131 +1556,135 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 <summary>Huh... Kako is the only one still in the cafeteria. </summary>
 </details>
 
-<details class="thoughts">
+<details class="thoughts location-close">
 <summary>Everyone else must've eaten earlier. I guess I'll sit with her. </summary>
 </details>
 
-<details class=" takumi-talk2 pov-open">
-<summary>Hey, Kako. </summary>
-</details>
+  <details class=" takumi-talk2 pov-open">
+  <summary>Hey, Kako. </summary>
+  </details>
+  
+  <details class="kako-yay takumi-talk2 ">
+  <summary>Hi, Takumi! </summary>
+  </details>
+  
+  <details class="kako-yay takumi-talk2 ">
+  <summary>Do you want any of this pudding? The ketchup really brings out the caramel! </summary>
+  </details>
+  
+  <details class="kako-yay takumi-wait pov-open">
+  <summary>No thanks. </summary>
+  </details>
+  
+  <details class="kako-pout takumi-wait ">
+  <summary>Aw, it's really good though.</summary>
+  </details>
+  
+  <details class="kako-point takumi-wait ">
+  <summary>By the way... </summary>
+  </details>
+  <details class="kako-point takumi-wait ">
+    <summary> Kyoshika was looking for you earlier.  </summary>
+    </details>
+ 
+  <details class="kako-point takumi-wait2 pov-open">
+  <summary>She was? </summary>
+  </details>
+  
+  <details class="kako-pensive-talk takumi-wait2 ">
+  <summary>Yeah. She said something about how the female third wheel can't peddle a bicycle in a shounen manga of love, but she could be your training wheels... </summary>
+  </details>
+  
+  <details class="kako-worried takumi-wait2 ">
+  <summary>I might've heard her wrong, she wasn't making much sense. </summary>
+  </details>
+  
+  <details class="kako-worried takumi-oof thoughts">
+  <summary>What's THAT supposed to mean? Does she mean she'll...? </summary>
+  </details>
+  
+  <details class="kako-worried takumi-think thoughts">
+  <summary>No, I have to stop thinking about this. Whatever she wants, it can't be good.</summary>
+  </details>
+  
+  <details class="kako-worried takumi-think thoughts">
+  <summary>If I avoid her for a few days, she'll find something else to obsess over.</summary>
+  </details>
+  
+  <details class="kako-worried takumi-think thoughts">
+  <summary>Maybe I should get out of the school for a bit...</summary>
+  </details>
+  
+  <details class="kako-worried takumi-hey pov-open">
+  <summary>Hey Kako, are you busy? </summary>
+  </details>
+  
+  <details class="kako-worried takumi-hey pov-open">
+  <summary>Do you want to go with me to look for supplies today? </summary>
+  </details>
+  
+  <details class="kako-worried takumi-neutral2 thoughts">
+  <summary>I'm not being irresponsible. We need more textile materials, anyway. </summary>
+  </details>
+  
+  <details class="kako-yay takumi-neutral2 ">
+  <summary>Sure! </summary>
+  </details>
+  
+  <details class="kako-yay takumi-talk2 pov-open">
+  <summary>Okay, great. </summary>
+  </details>
+  
+  <details class="kako-point takumi-talk2 ">
+  <summary>Before we go... Takumi, you should be careful. </summary>
+  </details>
+  
+  <details class="kako-point takumi-huh pov-open">
+  <summary>Huh? </summary>
+  </details>
+  
+  <details class="kako-point takumi-huh pov-open">
+  <summary>It's just a supply run. I'm always careful on those. </summary>
+  </details>
+  
+  <details class="kako-talk-side takumi-huh ">
+  <summary>No, not about that. </summary>
+  </details>
+  
+  <details class="kako-point takumi-huh ">
+  <summary>I just have a feeling you may have made a [red]dangerous choice[red/] recently. </summary>
+  </details>
+  
+  <details class="kako-point takumi-think thoughts">
+  <summary>What is she talking about? </summary>
+  </details>
+  
+  <details class="kako-point takumi-oof thoughts">
+  <summary>Maybe it's about what I told the girls yesterday?</summary>
+  </details>
+  
+  <details class="kako-point takumi-resolved thoughts">
+  <summary>But there's no way she could know about that. </summary>
+  </details>
+  
+  <details class="kako-point takumi-hey pov-open">
+  <summary>I'm fine, Kako. I'm sure it's nothing to worry about. </summary>
+  </details>
+  
+  <details class="kako-psychic takumi-hey ">
+  <summary>Well... Okay. But if any trouble comes up, you should remember to [red]be honest[/red]. </summary>
+  </details>
+  
+  <details class="kako-psychic takumi-huh3 pov-open">
+  <summary>Be honest...? </summary>
+  </details>
+  
+  <details class="kako-hey-determined takumi-huh3 ">
+  <summary>Of course! Honesty is the best policy! </summary>
+  </details>
 
-<details class="kako-yay  ">
-<summary>Hi, Takumi! </summary>
-</details>
 
-<details class="kako-yay  ">
-<summary>Do you want any of this pudding? The ketchup really brings out the caramel! </summary>
-</details>
-
-<details class=" takumi-wait pov-open">
-<summary>No thanks. </summary>
-</details>
-
-<details class="kako-pout  ">
-<summary>Aw, it's really good though.</summary>
-</details>
-
-<details class="kako-point  ">
-<summary>By the way, Kyoshika was looking for you earlier. </summary>
-</details>
-
-<details class=" takumi-wait2 pov-open">
-<summary>She was? </summary>
-</details>
-
-<details class="kako-pensive-talk  ">
-<summary>Yeah. She said something about how the female third wheel can't peddle a bicycle in a shounen manga of love, but she could be your training wheels... </summary>
-</details>
-
-<details class="kako-worried  ">
-<summary>I might've heard her wrong, she wasn't making much sense. </summary>
-</details>
-
-<details class=" takumi-oof thoughts">
-<summary>What's THAT supposed to mean? Does she mean she'll...? </summary>
-</details>
-
-<details class=" takumi-think thoughts">
-<summary>No, I have to stop thinking about this. Whatever she wants, it can't be good.</summary>
-</details>
-
-<details class=" takumi-think thoughts">
-<summary>If I avoid her for a few days, she'll find something else to obsess over.</summary>
-</details>
-
-<details class=" takumi-think thoughts">
-<summary>Maybe I should get out of the school for a bit...</summary>
-</details>
-
-<details class=" takumi-hey pov-open">
-<summary>Hey Kako, are you busy? </summary>
-</details>
-
-<details class=" takumi-hey pov-open">
-<summary>Do you want to go with me to look for supplies today? </summary>
-</details>
-
-<details class=" takumi-neutral2 thoughts">
-<summary>I'm not being irresponsible. We need more textile materials, anyway. </summary>
-</details>
-
-<details class="kako-yay  ">
-<summary>Sure! </summary>
-</details>
-
-<details class=" takumi-talk2 pov-open">
-<summary>Okay, great. </summary>
-</details>
-
-<details class="kako-point  ">
-<summary>Before we go... Takumi, you should be careful. </summary>
-</details>
-
-<details class=" takumi-huh pov-open">
-<summary>Huh? </summary>
-</details>
-
-<details class=" takumi-huh pov-open">
-<summary>It's just a supply run. I'm always careful on those. </summary>
-</details>
-
-<details class="kako-talk-side  ">
-<summary>No, not about that. </summary>
-</details>
-
-<details class="kako-point  ">
-<summary>I just have a feeling you may have made a <span class="important">dangerous choice</span> recently. </summary>
-</details>
-
-<details class=" takumi-think thoughts">
-<summary>What is she talking about? </summary>
-</details>
-
-<details class=" takumi-oof thoughts">
-<summary>Maybe it's about what I told the girls yesterday?</summary>
-</details>
-
-<details class=" takumi-resolved thoughts">
-<summary>But there's no way she could know about that. </summary>
-</details>
-
-<details class=" takumi-hey pov-open">
-<summary>I'm fine, Kako. I'm sure it's nothing to worry about. </summary>
-</details>
-
-<details class="kako-psychic  ">
-<summary>Well... Okay. But if any trouble comes up, you should remember to <span class="important">be honest</span>. </summary>
-</details>
-
-<details class=" takumi-huh3 pov-open">
-<summary>Be honest...? </summary>
-</details>
-
-<details class="kako-hey-determined  ">
-<summary>Of course! Honesty is the best policy! </summary>
-</details>
-
-<details class=" takumi-huh pov-open move-to-next">
+<details class="kako-hey-determined takumi-huh pov-open move-to-next">
 <summary>Oh... Okay. </summary>
 </details>
 
@@ -1782,14 +1792,14 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 <div class="main-box hidden next-view">
   <div class="room roof blur">
   </div>
-<p class="location">Roof
+<p class="location">Rooftop
 </p>
 <!-- update date -->
 <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="seven"></span></p></div>
 
   <!-- seed scene characters -->
   <div class="character yugamu"></div>
-  <div class="takumi-box">
+  <div class="takumi-box pov-element">
     <div class="takumi-bg roof">
     <div class="takumi-insert"></div>
     </div>
@@ -1798,116 +1808,118 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
 <div class="anchor">
 <div class="name-box right pov-element">Takumi Sumino</div>
-<div class="name-box target-element hidden">Yugamu Omokage</div>
-
-<div class="temp-name-box right pov-element">Takumi Sumino</div>
+<div class="name-box target-element">Yugamu Omokage</div>
 
 
 <div class="text-box">
 
-<details class="yugamu-dark-tongue2">
+<details class="yugamu-dark-tongue2 rotate">
 <summary>...</summary>
 </details>
 
-<details class="takumi-whoa pov-open location-close rotate takumi-start">
+<details class="takumi-whoa pov-open location-close takumi-start">
 <summary>Huh?! Yugamu?!</summary>
 </details>
-
-<details class="yugamu-talk  ">
-<summary>Good morning, Takumi. </summary>
-</details>
-
-<details class="yugamu-think  ">
-<summary>Or... maybe good afternoon. Are you feeling alright? I didn't see you at breakfast. </summary>
-</details>
-
-<details class=" takumi-hey pov-open">
-<summary>Y-Yeah, I'm fine! Everything's totally fine. </summary>
-</details>
-
-<details class=" takumi-explain pov-open">
-<summary>Did you need something?</summary>
-</details>
-
-<details class="yugamu-think  ">
-<summary>...</summary>
-</details>
-
-<details class=" takumi-talk1 pov-open">
-<summary>...?</summary>
-</details>
-
-<details class="yugamu-smug  ">
-<summary>Do you have <span class="important">something you want to tell me</span>, Takumi?</summary>
-</details>
-
-<details class=" takumi-talk2 pov-open">
-<summary>Huh? I can't think of anything. Why?</summary>
-</details>
-
-<details class=" takumi-think thoughts">
-<summary>What's he talking about? </summary>
-</details>
-
-<details class=" takumi-oops thoughts">
-<summary>Could this be about the dream I lied about having? </summary>
-</details>
-
-<details class=" takumi-considering thoughts">
-<summary>No... He shouldn't know anything about that. </summary>
-</details>
-
-<details class="yumagu-sigh  ">
-<summary>Oh, for the love of murder. </summary>
-</details>
-
-<details class="yumagu-giveup  ">
-<summary>Well... I suppose I can't force you.</summary>
-</details>
-
-<details class="yumagu-dark-tongue  ">
-<summary>Or, I could. Everyone breaks under the right kind of torture. </summary>
-</details>
-
-<details class=" takumi-woah pov-open">
-<summary>...! </summary>
-</details>
-
-<details class="yugamu-excite  ">
-<summary>I can barely contain myself, thinking about it. </summary>
-</details>
-
-<details class="yugamu-giveup  ">
-<summary>But I don't want that for my cute little Takumi. Not if you don't ask for it, first. </summary>
-</details>
-
-<details class=" takumi-hey pov-open">
-<summary>Uh, thanks I guess? </summary>
-</details>
-
-<details class="yugamu-happy  ">
-<summary>You're welcome. </summary>
-</details>
-
-<details class="yugamu-hehe  ">
-<summary>You're so cute, Takumi. I could eat you right up. </summary>
-</details>
-
-<details class=" takumi-mad-quiet pov-open">
-<summary>Um, please don't. </summary>
-</details>
-
-<details class="yugamu-thoughtful  ">
-<summary>No promises. </summary>
-</details>
-
-<details class="yugamu-talk  ">
-<summary>See you later. </summary>
-</details>
-
-<details class="yugamu-  ">
-<summary>[yugamu leaves]</summary>
-</details>
+<details class="yugamu-dark-tongue2 takumi-whoa pov-open lotation-close">
+  <summary>Huh?! Yugamu?!</summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-whoa ">
+  <summary>Good morning, Takumi. </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-whoa ">
+  <summary>Or... maybe good afternoon. Are you feeling alright? I didn't see you at breakfast. </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-hey pov-open">
+  <summary>Y-Yeah, I'm fine! Everything's totally fine. </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-explain pov-open">
+  <summary>Did you need something?</summary>
+  </details>
+  
+  <details class="yugamu-think takumi-explain ">
+  <summary>...</summary>
+  </details>
+  
+  <details class="yugamu-think takumi-talk1 pov-open">
+  <summary>...?</summary>
+  </details>
+  
+  <details class="yugamu-smug takumi-talk1 ">
+  <summary>Do you have [red]something you want to tell me[/red], Takumi?</summary>
+  </details>
+  
+  <details class="yugamu-smug takumi-talk2 pov-open">
+  <summary>Huh? I can't think of anything. Why?</summary>
+  </details>
+  
+  <details class="yugamu-smug takumi-think thoughts">
+  <summary>What's he talking about? </summary>
+  </details>
+  
+  <details class="yugamu-smug takumi-oops thoughts">
+  <summary>Could this be about the dream I lied about having? </summary>
+  </details>
+  
+  <details class="yugamu-smug takumi-considering thoughts">
+  <summary>No... He shouldn't know anything about that. </summary>
+  </details>
+  
+  <details class="yumagu-sigh takumi-considering ">
+  <summary>Oh, for the love of murder. </summary>
+  </details>
+  
+  <details class="yumagu-giveup takumi-considering ">
+  <summary>Well... I suppose I can't force you.</summary>
+  </details>
+  
+  <details class="yumagu-dark-tongue takumi-considering ">
+  <summary>Or, I could. Everyone breaks under the right kind of torture. </summary>
+  </details>
+  
+  <details class="yumagu-dark-tongue takumi-woah pov-open">
+  <summary>...! </summary>
+  </details>
+  
+  <details class="yugamu-excite takumi-woah ">
+  <summary>I can barely contain myself, thinking about it. </summary>
+  </details>
+  
+  <details class="yugamu-giveup takumi-woah ">
+  <summary>But I don't want that for my cute little Takumi. Not if you don't ask for it, first. </summary>
+  </details>
+  
+  <details class="yugamu-giveup takumi-hey pov-open">
+  <summary>Uh, thanks I guess? </summary>
+  </details>
+  
+  <details class="yugamu-happy takumi-hey ">
+  <summary>You're welcome. </summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-hey ">
+  <summary>You're so cute, Takumi. I could eat you right up. </summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-mad-quiet pov-open">
+  <summary>Um, please don't. </summary>
+  </details>
+  
+  <details class="yugamu-thoughtful takumi-mad-quiet ">
+  <summary>No promises. </summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-mad-quiet char-bye">
+  <summary>See you later. </summary>
+  </details>
+  
+  
+  <details class="takumi-think pov-open">
+  <summary>...</summary>
+  </details>
 
 <details class=" takumi-think pov-open">
 <summary>That was weird...</summary>
@@ -2024,7 +2036,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="eight"></span></p></div>
 
   <!-- seed scene characters -->
-  <div class="character yugamu"></div>
+  <div class="character yugamu hidden"></div>
   <div class="takumi-box">
     <div class="takumi-bg cafeteria">
     <div class="takumi-insert takumi-neutral2-forced"></div>
@@ -2036,118 +2048,124 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
 <div class="anchor">
 <div class="name-box right pov-element">Takumi Sumino</div>
-<div class="name-box target-element">Yugamu Omokage</div>
+<div class="name-box target-element hidden">Yugamu Omokage</div>
 
 <div class="text-box">
 
 <details class=" takumi-neutral2 thoughts rotate takumi-start">
 <summary>Yugamu's here? Everyone else is gone, though...</summary>
 </details>
-
-<details class=" takumi-considering thoughts">
-<summary>I still feel awkward, but that's not his fault. I should try to act normal. </summary>
-</details>
-
-<details class=" takumi-hey pov-open">
-<summary>Hey, Yugamu. </summary>
-</details>
-
-<details class="yugamu-talk  ">
-<summary>Hello, Takumi. Looks like we both got a late start today. Here to keep me company?</summary>
-</details>
-
-<details class=" takumi-hehe pov-open">
-<summary>Um, yeah, I guess. </summary>
-</details>
-
-<details class=" takumi-huh pov-open">
-<summary>Did you stay up late last night? </summary>
-</details>
-
-<details class="yugamu-talk  ">
-<summary>I did. </summary>
-</details>
-
-<details class=" takumi-hey pov-open">
-<summary>What were you doing up so late?</summary>
-</details>
-
-<details class="yugamu-thoughtful  ">
-<summary>Oh, nothing, just a little personal project. By the way, aren't you going to eat something? </summary>
-</details>
-
-<details class=" takumi-hehe pov-open">
-<summary>Oh right, I'll be right back. </summary>
-</details>
-
-<details class="yugamu-talk  ">
-<summary>Take your time. I'm not going anywhere. </summary>
-</details>
-
-<details class=" takumi-think thoughts">
-<summary>Is it just me, or is he acting weird today? </summary>
-</details>
-
 <details class=" takumi-neutral2 thoughts">
-<summary>I'm probably overthinking it. </summary>
-</details>
-
-<details class=" neutral thoughts">
-<summary>I went to get some breakfast and came back to sit next to Yugamu. </summary>
-</details>
-
-<details class=" neutral thoughts">
-<summary>He told me about an experiment he'd been working on involving fungi, but I wasn't really following. </summary>
-</details>
-
-<details class=" neutral thoughts">
-<summary>Usually I could pay attention better than this, even if the topic wasn't something I was really interested in. </summary>
-</details>
-
-<details class=" neutral thoughts">
-<summary>But today, I kept finding myself zoning out. I was only halfway through my food when I dropped my fork. </summary>
-</details>
-
-<details class="yugamu-wait  ">
-<summary>Oh, my. Are you feeling alright, Takumi?</summary>
-</details>
-
-<details class=" takumi-yeah pov-open">
-<summary>Yeah, I'm... </summary>
-</details>
-
-<details class=" takumi-hurt1 pov-open">
-<summary>Huh...? </summary>
-</details>
-
-<details class=" takumi-hurt2 thoughts">
-<summary>I feel dizzy all of the sudden. </summary>
-</details>
-
-<details class=" takumi-hurt thoughts">
-<summary>What's going on? </summary>
-</details>
-
-<details class="yugamu-thoughtful-dark  ">
-<summary>...</summary>
-</details>
-
-<details class=" takumi-hurt1 pov-open">
-<summary>I think I'm...</summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>...going to pass out...</summary>
-</details>
-
-<details class="yugamu-dark-tongue2 takumi-none ">
-<summary>... </summary>
-</details>
+  <summary>Yugamu's here? Everyone else is gone, though...</summary> 
+  </details> 
+  
+  <details class=" takumi-considering thoughts char-return">
+  <summary>I still feel awkward, but that's not his fault. I should try to act normal. </summary> 
+  </details> 
+  
+  <details class=" takumi-hey pov-open">
+  <summary>Hey, Yugamu. </summary> 
+  </details> 
+  
+  <details class="yugamu-talk takumi-hey ">
+  <summary>Hello, Takumi. Looks like we both got a late start today. Here to keep me company?</summary> 
+  </details> 
+  
+  <details class="yugamu-talk takumi-hehe pov-open">
+  <summary>Um, yeah, I guess. </summary> 
+  </details> 
+  
+  <details class="yugamu-talk takumi-huh pov-open">
+  <summary>Did you stay up late last night? </summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-huh ">
+  <summary>I did. </summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-hey pov-open">
+  <summary>What were you doing up so late?</summary>
+  </details>
+  
+  <details class="yugamu-thoughtful takumi-hey ">
+  <summary>Oh, nothing, just a little personal project. By the way, aren't you going to eat something? </summary>
+  </details>
+  
+  <details class="yugamu-thoughtful takumi-hehe pov-open">
+  <summary>Oh right, I'll be right back. </summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-hehe ">
+  <summary>Take your time. I'm not going anywhere. </summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-think thoughts">
+  <summary>Is it just me, or is he acting weird today? </summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-neutral2 thoughts">
+  <summary>I'm probably overthinking it. </summary>
+  </details>
+  
+  <details class="yugamu-talk narration thoughts">
+  <summary>I went to get some breakfast and came back to sit next to Yugamu. </summary>
+  </details>
+  
+  <details class="yugamu-talk narration thoughts">
+  <summary>He told me about an experiment he'd been working on involving fungi, but I wasn't really following. </summary>
+  </details>
+  
+  <details class="yugamu-talk narration thoughts">
+  <summary>Usually I could pay attention better than this, even if the topic wasn't something I was really interested in. </summary>
+  </details>
+  
+  <details class="yugamu-talk narration thoughts">
+  <summary>But today, I kept finding myself zoning out. I was only halfway through my food when I dropped my fork. </summary>
+  </details>
+  
+  <details class="yugamu-wait narration ">
+  <summary>Oh, my. Are you feeling alright, Takumi?</summary>
+  </details>
+  
+  <details class="yugamu-wait takumi-yeah pov-open">
+  <summary>Yeah, I'm... </summary>
+  </details>
+  
+  <details class="yugamu-wait takumi-hurt1 pov-open">
+  <summary>Huh...? </summary>
+  </details>
+  
+  <details class="yugamu-wait takumi-hurt2 thoughts">
+  <summary>I feel dizzy all of the sudden. </summary>
+  </details>
+  
+  <details class="yugamu-wait takumi-hurt thoughts">
+  <summary>What's going on? </summary>
+  </details>
+  
+  <details class="yugamu-thoughtful-dark takumi-hurt ">
+  <summary>...</summary>
+  </details>
+  
+  <details class="yugamu-thoughtful-dark takumi-hurt1 pov-open">
+  <summary>I think I'm...</summary>
+  </details>
+  
+  <details class="yugamu-thoughtful-dark takumi-sleepy thoughts">
+  <summary>...going to pass out...</summary>
+  </details>
+  
+  <details class="yugamu-dark-tongue2 takumi-bye">
+  <summary>... </summary>
+  </details>  
 
 <details class="yugamu-dark-tongue move-to-next">
-<summary>Don't worry, Takumi. I'll take care of everything. </summary>
+<summary>Don't worry, Takumi.  </summary>
 </details>
-
+<details class="yugamu-dark-tongue move-to-next">
+  <summary>I'll take care of everything. </summary>
+  </details>
+  
 
 </div></div></div>
 <!-- end of current room-->
@@ -2183,7 +2201,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 </details>
 
 <details class="pov-open">
-<summary>...! ...!!</summary>
+<summary>........</summary>
 </details>
 
 <details class="  thoughts">
@@ -2224,164 +2242,164 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
   <!-- ***consider no takumi -->
 <details class="consider-no-takumi takumi-sleepy thoughts rotate takumi-start">
-<summary>Yu...gamu...? </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>What's going on...? </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Where am I?</summary>
-</details>
-
-<details class="yugamu-talk takumi-sleepy ">
-<summary>Good morning, my sweet little Takumi.</summary>
-</details>
-
-<details class="yugamu-thoughtful takumi-sleepy ">
-<summary>Or, well, I suppose it's evening now. You slept for quite a while. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>What's that blue light...? </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>It looks like my room, but the furniture is wrong... </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Is this Yugamu's room...?</summary>
-</details>
-
-<details class="yugamu-think takumi-sleepy ">
-<summary>Don't try to get up. The drugs won't have worn off enough yet. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Hey... why can't I move? </summary>
-</details>
-
-<details class="yugamu-hmm takumi-sleepy ">
-<summary>I think you know exactly what, Takumi dearest. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Why... is he calling me that...? </summary>
-</details>
-
-<details class="yugamu-think takumi-sleepy ">
-<summary>You were playing hard to get, and I can respect that. </summary>
-</details>
-
-<details class="yugamu-sigh takumi-sleepy ">
-<summary>I meant to keep waiting, but honestly, I just don't have the patience. </summary>
-</details>
-
-<details class="yugamu-hehe takumi-sleepy ">
-<summary>So I made my own move.</summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>My head hurts... I can't focus. What move is he talking about? Were we playing a game...?  This doesn't make any sense. How did I get here?</summary>
-</details>
-
-<details class="yugamu-dark-tongue2 takumi-sleepy ">
-<summary>You've been keeping to yourself these last few days, which is lucky. We'll probably have a full week before anyone notices you're missing. </summary>
-</details>
-
-<details class="yugamu-dark-tongue2 takumi-sleepy ">
-<summary>Well, unless the invaders come. But we'll just hope they won't, hm? </summary>
-</details>
-
-<details class="yugamu-dread-smile takumi-sleepy ">
-<summary>If they do, things will get... interesting. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>What does he mean? What is he talking about? </summary>
-</details>
-
-<details class="yugamu-giveup takumi-sleepy ">
-<summary>I really hesitated, you know. I didn't want to force you into anything you didn't want. </summary>
-</details>
-
-<details class="yugamu-giveup takumi-sleepy ">
-<summary>I would liked to wait, and let you come to me on your own time. </summary>
-</details>
-
-<details class="yugamu-think takumi-sleepy ">
-<summary>But who knows what the future holds? After a hundred days are up, we'll go back to our old lives... assuming we're both still alive. </summary>
-</details>
-
-<details class="yugamu-talk2 takumi-sleepy ">
-<summary>There's only 70 days before then. That's not nearly enough time. We have to start now, and make the most of it. </summary>
-</details>
-
-<details class="yugamu-think takumi-sleepy ">
-<summary>Kyoshika's right. If you love each other, you should do absolutely anything to be together. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Love'...? </summary>
-</details>
-
-<details class="yugamu-smug takumi-sleepy ">
-<summary>I know why you didn't say anything. It's scary, right? Wanting someone on such a visceral level... </summary>
-</details>
-
-<details class="yugamu-giveup takumi-sleepy ">
-<summary>Especially for someone who comes from such a normal family. A normal upbringing. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>I don't want that. I don't have any 'visceral wanting' or anything like that. I don't know what Yugamu is talking about, but I'm starting to get scared. </summary>
-</details>
-
-<details class="yugamu-hehe takumi-sleepy ">
-<summary>That's why, I'll be the one to open that door for both of us. Oh my lovely, adorable Takumi... </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>I couldn't move my head, but I could still look around. It was just me and Yugamu, alone in his room. Yugamu stared down at me with a smile. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>I tried to move, but my arms wouldn't cooperate. I couldn't sit myself up. That must be the drugs Yugamu was talking about. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Why did he drug me? What's he planning? </summary>
-</details>
-
-<details class="yugamu-explain takumi-sleepy ">
-<summary>I know, you're probably scared for your first time, right? Just for you, I included a numbing agent into the drug I gave you.</summary>
-</details>
-
-<details class="yugamu-dread-smile takumi-sleepy ">
-<summary>Personally, I'd rather you could feel everything... But I don't want this to be a bad experience. </summary>
-</details>
-
-<details class="yugamu-dread-talk takumi-sleepy ">
-<summary>You'll be able to see everything, but the sensations will be largely dulled. It's a little disappointing, but I don't want our first time to hurt too much. </summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Our first time for what!? I have to get out of here.</summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>I have to... move...</summary>
-</details>
-
-<details class=" takumi-sleepy thoughts">
-<summary>Why can't I move...!</summary>
-</details>
-
-<details class="yugamu-dark-tongue takumi-sleepy ">
-<summary>Shh... Don't be afraid, Takumi. </summary>
-</details>
+  <summary>Was that... Yugamu...? </summary>
+  </details>
+  
+  <details class=" takumi-sleepy thoughts">
+  <summary>What's going on...? </summary>
+  </details>
+  
+  <details class=" takumi-sleepy thoughts">
+  <summary>Where am I?</summary>
+  </details>
+  
+  <details class="yugamu-talk takumi-sleepy ">
+  <summary>Good morning, my sweet little Takumi.</summary>
+  </details>
+  
+  <details class="yugamu-thoughtful takumi-sleepy ">
+  <summary>Or, well, I suppose it's evening now. You slept for quite a while. </summary>
+  </details>
+  
+  <details class="yugamu-thoughtful takumi-sleepy thoughts">
+  <summary>What's that blue light...? </summary>
+  </details>
+  
+  <details class="yugamu-thoughtful takumi-sleepy thoughts">
+  <summary>It looks like my room, but the furniture is wrong... </summary>
+  </details>
+  
+  <details class="yugamu-thoughtful takumi-sleepy thoughts">
+  <summary>Is this Yugamu's room...?</summary>
+  </details>
+  
+  <details class="yugamu-think takumi-sleepy ">
+  <summary>Don't try to get up. The drugs won't have worn off enough yet. </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-sleepy thoughts">
+  <summary>Hey... why can't I move? </summary>
+  </details>
+  
+  <details class="yugamu-hmm takumi-sleepy ">
+  <summary>I think you know exactly what, Takumi dearest. </summary>
+  </details>
+  
+  <details class="yugamu-hmm takumi-sleepy thoughts">
+  <summary>Why... is he calling me that...? </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-sleepy ">
+  <summary>You were playing hard to get, and I can respect that. </summary>
+  </details>
+  
+  <details class="yugamu-sigh takumi-sleepy ">
+  <summary>I meant to keep waiting, but honestly, I just don't have the patience. </summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-sleepy ">
+  <summary>So I made my own move.</summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-sleepy thoughts">
+  <summary>My head hurts... I can't focus. What move is he talking about? Were we playing a game...?  This doesn't make any sense. How did I get here?</summary>
+  </details>
+  
+  <details class="yugamu-dark-tongue2 takumi-sleepy ">
+  <summary>You've been keeping to yourself these last few days, which is lucky. We'll probably have a full week before anyone notices you're missing. </summary>
+  </details>
+  
+  <details class="yugamu-dark-tongue2 takumi-sleepy ">
+  <summary>Well, unless the invaders come. But we'll just hope they won't, hm? </summary>
+  </details>
+  
+  <details class="yugamu-dread-smile takumi-sleepy ">
+  <summary>If they do, things will get... interesting. </summary>
+  </details>
+  
+  <details class="yugamu-dread-smile takumi-sleepy thoughts">
+  <summary>What does he mean? What is he talking about? </summary>
+  </details>
+  
+  <details class="yugamu-giveup takumi-sleepy ">
+  <summary>I really hesitated, you know. I didn't want to force you into anything you didn't want. </summary>
+  </details>
+  
+  <details class="yugamu-giveup takumi-sleepy ">
+  <summary>I would liked to wait, and let you come to me on your own time. </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-sleepy ">
+  <summary>But who knows what the future holds? After a hundred days are up, we'll go back to our old lives... assuming we're both still alive. </summary>
+  </details>
+  
+  <details class="yugamu-talk2 takumi-sleepy ">
+  <summary>There's only 70 days before then. That's not nearly enough time. We have to start now, and make the most of it. </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-sleepy ">
+  <summary>Kyoshika's right. If you love each other, you should do absolutely anything to be together. </summary>
+  </details>
+  
+  <details class="yugamu-think takumi-sleepy thoughts">
+  <summary>'Love'...? </summary>
+  </details>
+  
+  <details class="yugamu-smug takumi-sleepy ">
+  <summary>I know why you didn't say anything. It's scary, right? Wanting someone on such a visceral level... </summary>
+  </details>
+  
+  <details class="yugamu-giveup takumi-sleepy ">
+  <summary>Especially for someone who comes from such a normal family. A normal upbringing. </summary>
+  </details>
+  
+  <details class="yugamu-giveup takumi-sleepy thoughts">
+  <summary>I don't want that. I don't have any 'visceral wanting' or anything like that. I don't know what Yugamu is talking about, but I'm starting to get scared. </summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-sleepy ">
+  <summary>That's why, I'll be the one to open that door for both of us. Oh my lovely, adorable Takumi... </summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-sleepy thoughts">
+  <summary>I couldn't move my head, but I could still look around. It was just me and Yugamu, alone in his room. Yugamu stared down at me with a smile. </summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-sleepy thoughts">
+  <summary>I tried to move, but my arms wouldn't cooperate. I couldn't sit myself up. That must be the drugs Yugamu was talking about. </summary>
+  </details>
+  
+  <details class="yugamu-hehe takumi-sleepy thoughts">
+  <summary>Why did he drug me? What's he planning? </summary>
+  </details>
+  
+  <details class="yugamu-explain takumi-sleepy ">
+  <summary>I know, you're probably scared for your first time, right? Just for you, I included a numbing agent into the drug I gave you.</summary>
+  </details>
+  
+  <details class="yugamu-dread-smile takumi-sleepy ">
+  <summary>Personally, I'd rather you could feel everything... But I don't want this to be a bad experience. </summary>
+  </details>
+  
+  <details class="yugamu-dread-talk takumi-sleepy ">
+  <summary>You'll be able to see everything, but the sensations will be largely dulled. It's a little disappointing, but I don't want our first time to hurt too much. </summary>
+  </details>
+  
+  <details class="yugamu-dread-talk takumi-sleepy thoughts">
+  <summary>Our first time for what!? I have to get out of here.</summary>
+  </details>
+  
+  <details class="yugamu-dread-talk takumi-sleepy thoughts">
+  <summary>I have to... move...</summary>
+  </details>
+  
+  <details class="yugamu-dread-talk takumi-sleepy thoughts">
+  <summary>Why can't I move...!</summary>
+  </details>
+  
+  <details class="yugamu-dark-tongue takumi-sleepy ">
+  <summary>Shh... Don't be afraid, Takumi. </summary>
+  </details>  
 
 <details class="yugamu-dark takumi-sleepy move-to-next">
 <summary>I'm going to make it good for both of us. </summary>
@@ -2449,7 +2467,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 </details>
 
 <details class="yugamu-  ">
-<summary>Your insides are going to be beautiful too, I just know it. </summary>
+<summary>Your insides are going to be beautiful, too. I just know it. </summary>
 </details>
 
 <details class="yugamu-  ">
@@ -2891,19 +2909,19 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
   <summary>Were you scared no one would believe you? That they'd turn on you once you murdered someone in cold blood?</summary>
   </details>
   
-  <details class="eito-explain takumi-huh2 pov-open">
+  <details class="eito-explain takumi-huh3 pov-open">
   <summary>Huh? No. </summary>
   </details>
   
-  <details class="eito-think takumi-huh2 ">
+  <details class="eito-think takumi-huh3 ">
   <summary>Figures. That would be too smart for you, ugly Takumi. </summary>
   </details>
   
-  <details class="eito-think-talk takumi-huh2 ">
+  <details class="eito-think-talk takumi-huh3 ">
   <summary>It can't be that you were scared of killing me... You've already done it once.</summary>
   </details>
   
-  <details class="eito-think-talk takumi-huh2 hard-choice-time">
+  <details class="eito-think-talk takumi-huh3 hard-choice-time">
   <summary>So what was it, then? What was going through your microscopic brain when you decided to spare me?</summary>
   </details>
 
@@ -3313,7 +3331,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
     </details>
 
     <details class="last">
-      <summary>D05: Romance Route: Another Way</summary>
+      <summary>D04: Romance Route: Another Way</summary>
       </details>
     
     
@@ -3889,7 +3907,7 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
   </details>
   
   <details class="last">
-  <summary>Ending 05: Worst First Kiss</summary>
+  <summary>D05: Romance Route: Worst First Kiss</summary>
   </details>
 
 </div></div></div>  
@@ -3899,7 +3917,1324 @@ takumi-start, remove pov-open from takumi-box, hackfix temp-name-box
 
 <!-- SHION ROUTE  -->
 
+<!-- move to cafeteria-->
+<div class="main-box hidden route3-next-room">
+  <div class="room cafeteria blur">
+  </div>
+<p class="location">Cafeteria
+</p>
+<!-- update date -->
+<div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
 
+  <!-- seed scene characters -->
+  <!-- shes still too short -->
+  <div class="character kurara-argue-forced"></div>
+  <div class="takumi-box">
+    <div class="takumi-bg cafeteria">
+    <div class="takumi-insert takumi-resolved-forced"></div>
+    </div>
+  </div>
+
+  <!-- choice code goes here (if applicable)  -->
+
+
+<div class="anchor">
+<div class="name-box right pov-element">Takumi Sumino</div>
+<div class="name-box target-element hidden">Kyoshika Magadori</div>
+<div class="name-box target2">Kurara Oosuzuki</div>
+<div class="name-box target3">Tsubasa Kawana</div>
+
+
+<div class="text-box">
+
+<details class="kurara-argue takumi-resolved pov-open rotate takumi-start">
+<summary>I had a dream about... </summary>
+</details>
+
+<details class="kurara-argue takumi-resolved thoughts">
+<summary>Who should I say?</summary>
+</details>
+
+<details class="kurara-argue takumi-resolved thoughts">
+<summary>Is there anyone outlandish enough that they'd let this go?</summary>
+</details>
+
+<details class="kurara-argue takumi-resolved thoughts">
+<summary>Sirei... but I don't want to say that even as a joke.</summary>
+</details>
+
+<details class="kurara-argue takumi-resolved thoughts">
+<summary>Maybe...</summary>
+</details>
+
+<details class="kurara-argue takumi-explain-sweat pov-open">
+<summary>...The undying flames boy.</summary>
+</details>
+
+<details class="kurara-argue takumi-talk-sweat pov-open">
+<summary>See? Dreams don't really mean any&mdash;</summary>
+</details>
+
+<details class="kyoshika-embarassed takumi-talk-sweat ">
+<summary>What!? But he's a ghost! </summary>
+</details>
+
+<details class="kyoshika-scared takumi-talk-sweat ">
+<summary>Will you date each other in the afterlife!? </summary>
+</details>
+
+<details class="target3-open tsubasa-worried takumi-talk-sweat ">
+<summary>He's not a ghost, Kyoshika. His appearance is a projection he makes with his hemoanima. He's fully alive. </summary>
+</details>
+
+<details class="target2-open kurara-point takumi-talk-sweat ">
+<summary>Didn't you say he was a baby!?</summary>
+</details>
+
+<details class="kurara-point takumi-explain-sweat pov-open">
+<summary>That's just his physical form. He wasn't able to grow correctly because of his powers. He's not REALLY a baby.</summary>
+</details>
+
+<details class="target3-open tsubasa-disappointed takumi-explain-sweat ">
+<summary>Yeah, he's our age. And I mean... I kind of get it, Takumi. </summary>
+</details>
+
+<details class="target3-open tsubasa-disappointed takumi-huh3 pov-open">
+<summary>Wait, you do?</summary>
+</details>
+
+<details class="kyoshika-embarassed takumi-huh3 ">
+<summary>You do!? </summary>
+</details>
+
+<details class="target2-open kurara-worried takumi-huh3 ">
+<summary>You understand kissing a baby!?</summary>
+</details>
+
+<details class="target3-open tsubasa-insist takumi-huh3 ">
+<summary>He seems really nice, okay?! And he and Takumi had a special bond before Takumi time traveled. Didn't you?</summary>
+</details>
+
+<details class="tsubasa-insist takumi-think thoughts">
+<summary>That's an embarrassing way to put it, but... I suppose we did. </summary>
+</details>
+
+<details class="tsubasa-insist takumi-think thoughts">
+<summary>I was the only one who saw him for a long time, and he tried so hard to help us. Plus, it's thanks to his power that I was able to come back and try to fix everything.</summary>
+</details>
+
+<details class="tsubasa-insist takumi-think thoughts">
+<summary> I really do owe him a lot. </summary>
+</details>
+
+<details class="tsubasa-insist takumi-considering thoughts">
+<summary>He's one of the people I came back to save, along with everyone else. </summary>
+</details>
+
+<details class="tsubasa-insist takumi-considering thoughts">
+<summary>It might be best to just agree with her. </summary>
+</details>
+
+<details class="tsubasa-insist takumi-talk-sweat pov-open">
+<summary>Y-yeah.</summary>
+</details>
+
+<details class="target2-open kurara-disarmed takumi-talk-sweat ">
+<summary>Hm. </summary>
+</details>
+
+<details class="target2-open kurara-disarmed takumi-talk-sweat ">
+<summary>...</summary>
+</details>
+
+<details class="target2-open kurara-think takumi-talk-sweat ">
+<summary>.......</summary>
+</details>
+
+<details class="target2-open kurara-think takumi-talk-sweat ">
+<summary>You really had a dream about a BABY instead of a dream about ME?</summary>
+</details>
+
+<details class="target2-open kurara-disarmed takumi-talk-sweat ">
+<summary>Are you SURE?</summary>
+</details>
+
+<details class="kurara-disarmed takumi-talk-sweat pov-open">
+<summary>I'm sure. </summary>
+</details>
+
+<details class="target2-open kurara-giveup takumi-talk-sweat ">
+<summary>Ugh... Alright then.</summary>
+</details>
+
+<details class="kyoshika-worried takumi-talk-sweat move-to-next">
+<summary>A ghost...</summary>
+</details>
+
+
+</div></div></div>
+<!-- end of current room-->
+
+
+<!-- move to black-->
+<div class="main-box black hidden next-view">
+
+<div class="anchor">
+<div class="name-box black-name-box">&nbsp;</div>
+
+<div class="text-box">
+
+<details class="thoughts">
+<summary>They let the whole dream thing go after that. </summary>
+</details>
+
+<details class="  thoughts">
+<summary>I don't think they'd say anything to the undying flames boy, but... it's been a while. I feel like I should go check on him. </summary>
+</details>
+
+<details class=" move-to-next thoughts move-to-next">
+<summary>It has to be lonely, being by himself all the time with no one to talk to. </summary>
+</details>
+
+
+</div></div></div>
+<!-- end of current room-->
+
+
+<!-- move to defenseroom-->
+<div class="main-box hidden next-view">
+  <div class="room defenseroom blur">
+  </div>
+<p class="location">Defense Room Door&nbsp;
+</p>
+<!-- update date -->
+<div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
+
+  <!-- seed scene characters -->
+  <div class="character shion hidden"></div>
+  <div class="takumi-box">
+    <div class="takumi-bg defenseroom">
+    <div class="takumi-insert takumi-neutral-forced"></div>
+    </div>
+  </div>
+
+  <!-- choice code goes here (if applicable)  -->
+  <div class="choice-screen hard-choice hidden">
+    <details class="choice-button ending1-1">
+      <summary>
+        Take a walk together
+      </summary>
+    </details>
+    <details class="choice-button route3-2-next">
+      <summary>
+        Ask him about himself
+      </summary>
+    </details>
+  </div>
+
+
+<div class="anchor">
+<div class="name-box right pov-element">Takumi Sumino</div>
+<div class="name-box target-element hidden">???</div>
+
+<div class="text-box">
+
+<details class="takumi-neutral thoughts takumi-start rotate">
+<summary>He's not here...</summary>
+</details>
+
+<details class=" takumi-think thoughts">
+<summary>Of course he's not. He's probably sleeping. Maybe I should try to wake him up?</summary>
+</details>
+
+<details class=" takumi-explain pov-open">
+<summary>Hello...? Are you there?</summary>
+</details>
+
+<details class=" takumi-hey pov-open">
+<summary>If you're around I thought maybe we could talk. </summary>
+</details>
+
+<details class=" takumi-hey pov-open">
+  <summary>... </summary>
+  </details>
+
+<details class="char-return takumi-hehe thoughts">
+<summary>I'm probably just talking to myself... </summary>
+</details>
+
+<details class="shion-talk takumi-hehe ">
+<summary>What did you want to talk about? </summary>
+</details>
+
+<details class="shion-talk takumi-woah pov-open">
+<summary>Woah! I didn't think you'd answer. </summary>
+</details>
+
+<details class="shion-talk takumi-hey pov-open">
+<summary>Um... Hi. How have you been? </summary>
+</details>
+
+<details class="shion-talk takumi-hey ">
+<summary>If you didn't think I'd answer, why are you here...? </summary>
+</details>
+
+<details class="shion-talk takumi-hey pov-open">
+<summary>I just thought I'd check in on you. </summary>
+</details>
+
+<details class="shion-talk takumi-oops pov-open">
+<summary>I meant to come sooner but things got busy and then I kind of fell off a roof... </summary>
+</details>
+
+<details class="shion-huh takumi-oops ">
+<summary>I heard about that. Are you alright now? </summary>
+</details>
+
+<details class="shion-huh takumi-talk2 pov-open">
+<summary>Yeah, I'm fine. We can't exactly 'die' the normal way.</summary>
+</details>
+<details class="shion-huh takumi-talk2 pov-open">
+  <summary>I was unconscious for a while, though. And there's some memories I still haven't recovered... </summary>
+  </details>
+
+<details class="shion-huh takumi-hehe pov-open">
+<summary>But if I can't remember them, they must not have been that important. Right? </summary>
+</details>
+
+<details class="shion-talk2 takumi-hehe ">
+<summary>I don't know about that.</summary>
+</details>
+
+<details class="shion-relieved2 takumi-hehe ">
+<summary>I'm glad you're alright, though. It's good to see you looking better. </summary>
+</details>
+
+<details class="shion-talk2 takumi-hehe ">
+<summary>If that's everything, I'll be going now. </summary>
+</details>
+
+<details class="shion-talk2 takumi-wait pov-open">
+<summary>W-wait! I thought maybe we could hang out a little longer? </summary>
+</details>
+
+<details class="shion-distant takumi-wait ">
+<summary>...Sirei doesn't want me wasting my strength on talking to anyone.</summary>
+</details>
+
+<details class="shion-distant takumi-explain pov-open">
+<summary>Huh? That's not fair. </summary>
+</details>
+
+<details class="shion-distant takumi-huh pov-open">
+<summary>You're part of this team. You're working harder than anyone. </summary>
+</details>
+
+<details class="shion-distant takumi-resolved2 pov-open">
+<summary>You deserve to be friends with everyone. </summary>
+</details>
+
+<details class="shion-hmm takumi-resolved2 ">
+<summary>Thank you for saying so, but I'm not even sure the others would like me. </summary>
+</details>
+
+<details class="shion-hmm takumi-talk2 pov-open">
+<summary>Why not? I like you. </summary>
+</details>
+
+<details class="shion-huh takumi-talk2 ">
+<summary>You do?</summary>
+</details>
+
+<details class="shion-huh takumi-talk2 pov-open">
+<summary>Of course! </summary>
+</details>
+
+<details class="shion-huh takumi-talk2 pov-open">
+<summary>Even if you weren't so nice, and you hadn't helped me out so much before I traveled back to this time...</summary>
+</details>
+
+<details class="shion-huh takumi-yeah pov-open">
+<summary>You're really important to everything here. We couldn't even sleep soundly at night without the Undying Wall of Flames. </summary>
+</details>
+
+<details class="shion-huh takumi-yeah pov-open">
+<summary>The safety and security we have here is thanks to you. And we'll be able to end this war too, only because you're around. </summary>
+</details>
+
+<details class="shion-huh takumi-hey pov-open">
+<summary>You're really kind, and selfless. </summary>
+</details>
+
+<details class="shion-huh takumi-oof thoughts">
+<summary>So selfless, he's going to die for it. </summary>
+</details>
+
+<details class="shion-huh takumi-think-dark thoughts">
+<summary>But I didn't come here to talk about depressing things.</summary>
+</details>
+
+<details class="shion-huh takumi-think-dark ">
+<summary>Oh.</summary>
+</details>
+
+<details class="shion-happy takumi-think-dark ">
+<summary>Thank you for saying so... </summary>
+</details>
+
+<details class="shion-happy takumi-huh3 thoughts">
+<summary>He's so earnest...</summary>
+</details>
+
+<details class="shion-happy takumi-hehe thoughts">
+<summary>It's making me a little embarassed.</summary>
+</details>
+
+<details class="shion-happy takumi-hey pov-open">
+<summary>Yeah, of course. </summary>
+</details>
+
+<details class="shion-happy takumi-yeah pov-open">
+<summary>Anyway, I'm sure everyone would love to be friends with you. </summary>
+</details>
+
+<details class="shion-distant takumi-yeah ">
+<summary>I really would like to be friends with everyone, but... </summary>
+</details>
+
+<details class="shion-distant takumi-yeah ">
+<summary>...</summary>
+</details>
+
+<details class="shion-talk takumi-yeah ">
+<summary>I'll think about it. </summary>
+</details>
+
+<details class="shion-talk takumi-hey pov-open">
+<summary>Sure. Thanks. </summary>
+</details>
+
+<details class="shion-talk2 takumi-hey ">
+<summary>Did you need anything else? </summary>
+</details>
+
+<details class="shion-talk2 takumi-oof thoughts">
+<summary>I don't want him to go yet. We're friends. Or... we should be friends.</summary>
+</details>
+
+<details class="shion-talk2 takumi-considering thoughts">
+<summary>We should do something together that friends do. </summary>
+</details>
+
+<details class="shion-talk2 takumi-think thoughts">
+<summary>I'd ask if he wants to get lunch together, but... he doesn't eat. He can't leave the school to help me gather materials, either. </summary>
+</details>
+
+<details class="shion-talk2 takumi-think thoughts hard-choice-time">
+<summary>What else could we do...?</summary>
+</details>
+
+
+<!-- SHION ROUTE: WALK -->
+<details class="shion-talk2 takumi-hey pov-open hidden ending1-1-open ">
+  <summary>What if we went on a walk? </summary>
+  </details>
+  
+  <details class="shion-huh takumi-hey ">
+  <summary>A walk...?</summary>
+  </details>
+  
+  <details class="shion-huh takumi-hehe pov-open">
+  <summary>Sorry, is that dumb?</summary>
+  </details>
+  
+  <details class="shion-talk takumi-hehe ">
+  <summary>It's not dumb. But I'm not sure I know what you mean. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-explain pov-open">
+  <summary>I have a friend on the TRC, and we used to take the long way home from school. Or we'd walk around the park on the weekends. It was more her thing than mine, but... It could be nice. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-hey2 pov-open">
+  <summary>You can't get too far away from your body, right? But anywhere within the school grounds should be fine. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-talk2 pov-open">
+  <summary>And if we run into anyone along the way, I can introduce you. </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-talk2 ">
+  <summary>...</summary>
+  </details>
+  
+  <details class="shion-hmm takumi-hey pov-open">
+  <summary>So...?</summary>
+  </details>
+  
+  <details class="shion-talk takumi-hey ">
+  <summary>Hm... Alright. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-yeah thoughts">
+  <summary>Yes! </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-yeah ">
+  <summary>Where should we go? </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-think thoughts">
+  <summary>The courtyard would be nice... if Eito wasn't there. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-think thoughts">
+  <summary>And I do want to introduce him to the others, but I also don't want him to get overwhelmed. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-neutral2 thoughts">
+  <summary>The gym is nice and big, but it's a bit stuffy... And Moko might be in there training. I don't want to bother her. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-think-hand thoughts">
+  <summary>Where would be a nice place for a quiet walk... </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-point pov-open">
+  <summary>How about we walk up to the roof? </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-neutral2 thoughts">
+  <summary>We might run into one or two people, but it won't be everyone all at once. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-think thoughts">
+  <summary>Yugamu and Nozomi hang out on the roof pretty frequently. Nozomi would be happy to meet the ghost boy, and Yugamu...</summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-neutral thoughts">
+  <summary>He might be strange, but I'm sure he'd treat the ghost boy kindly. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-neutral ">
+  <summary>The roof...? </summary>
+  </details>
+  
+  <details class="shion-huh takumi-hey pov-open">
+  <summary>It's a nice day, and it'll be good to get some fresh air. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-wait2 pov-open">
+  <summary>Wait... you don't breathe air, huh?</summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-wait2 ">
+  <summary>I do, but not with this body. </summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-hehe pov-open">
+  <summary>Well... The sun is still nice. Right? </summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-oof pov-open">
+  <summary>Do you... not want to? </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-oof ">
+  <summary>No, that sounds fine. Let's go. </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-oof thoughts">
+  <summary>He's kind of hard to read sometimes... </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-think thoughts">
+  <summary>I can't tell if he's just humoring me or if he really wants to go. </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-think-dark thoughts">
+  <summary>No, it's fine. I'm probably overthinking it. </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-think-hand thoughts move-to-next">
+  <summary>If he gets really annoyed at me, he can just disappear any time he wants to. </summary>
+  </details>
+  
+  
+  </div></div></div>
+  <!-- end of current room-->
+  
+  
+  <!-- move to roof-fence-->
+  <div class="main-box hidden next-view route3-1-next-room">
+    <div class="room roof-fence blur">
+    </div>
+  <p class="location">Rooftop
+  </p>
+  <!-- update date -->
+  <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
+  
+    <!-- seed scene characters -->
+    <div class="character shion"></div>
+    <div class="takumi-box pov-element">
+      <div class="takumi-bg roof-fence">
+      <div class="takumi-insert"></div>
+      </div>
+    </div>
+  
+  
+  <div class="anchor">
+  <div class="name-box right pov-element">Takumi Sumino</div>
+  <div class="name-box target-element hidden">???</div>
+  
+  <div class="text-box">
+  
+  <details class="takumi-think-hand thoughts rotate narration takumi-start">
+  <summary>The roof was empty when we got there. It was just us. </summary>
+  </details>
+  
+  <details class="takumi-think-hand thoughts location-close">
+  <summary>It was a nice sunny day for a walk. We started to weave our way through the student rooms.</summary>
+  </details>
+  
+  <details class="char-return takumi-talk2 pov-open">
+  <summary>My friend from back home told me the sun is mostly made of hydrogen, and that it's 300,000 times bigger than the earth. Doesn't that seem too big? </summary>
+  </details>
+  
+  <details class="shion-distant takumi-talk2">
+  <summary>...</summary>
+  </details>
+  
+  <details class="shion-distant takumi-hehe pov-open">
+  <summary>I always thought so, anyway. How could anything be that big? Anyway, apparently it's really far away, and it would take months to get there...  </summary>
+  </details>
+  <details class="shion-distant takumi-hehe pov-open">
+    <summary>Not that you'd want to, because it's made of super hot, constantly burning gas. But it looks so much closer, you know? </summary>
+    </details>
+  
+  <details class="shion-distant takumi-talk1 pov-open">
+  <summary>Back in the TRC, we had lights on the ceiling that went from night to day, but they didn't bother suns or moons or stars. So it's kind of neat to see them now... </summary>
+  </details>
+  
+  <details class="shion-distant takumi-neutral2 pov-open">
+  <summary>...</summary>
+  </details>
+  
+  <details class="shion-distant takumi-point pov-open">
+  <summary>Um, sometimes at night I'll go out on the rooftop just to look at the moon. It's really pretty. </summary>
+  </details>
+
+  <details class="shion-distant takumi-point pov-open">
+    <summary>... </summary>
+    </details>
+  
+  <details class="shion-distant takumi-oof thoughts">
+  <summary>I keep rambling because he keeps not saying anything... Am I annoying him? I wish he would just say something. </summary>
+  </details>
+  
+  <details class="shion-distant takumi-hey pov-open">
+  <summary>Do you ever go outside by yourself? Either here out on the grounds, or up on the roof? </summary>
+  </details>
+  
+  <details class="shion-talk takumi-hey ">
+  <summary>Sometimes. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-explain pov-open">
+  <summary>Oh. Cool. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-talk3 pov-open">
+  <summary>Um...</summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-talk3 ">
+  <summary>...? </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-oof pov-open">
+  <summary>I'm being annoying, aren't I? I'm not really good at reading the room, but I know I've been talking too much. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-oof ">
+  <summary>Huh? You haven't been. I'm not annoyed at you. </summary>
+  </details>
+  
+  <details class="shion-distant takumi-oof ">
+  <summary>I'm... not used to talking with other people. </summary>
+  </details>
+  
+  <details class="shion-think2 takumi-oof ">
+  <summary>For such a long time, no one could hear me. There was no point in saying anything. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-oof ">
+  <summary>I promise I'm listening though. Please, tell me more about the sun. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hehe pov-open">
+  <summary>I... actually don't remember anything else about it. That's all I can remember.</summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hey pov-open">
+  <summary>We could talk about something else, though. </summary>
+  </details>
+  
+  <details class="shion-happy2 takumi-hey ">
+  <summary>Sure. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-hey ">
+  <summary>Actually... I have a question. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-talk1 pov-open">
+  <summary>Yeah?</summary>
+  </details>
+  
+  <details class="shion-hmm takumi-talk1 ">
+  <summary>During your walks with your friend, did you ever hold hands? </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-talk4 pov-open">
+  <summary>H-huh?!</summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-talk4 ">
+  <summary>I've heard that sometimes friends hold hands on walks.</summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-oof thoughts">
+  <summary>Where did he hear that? </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hehe pov-open">
+  <summary>Um... We used to as kids. But when we grew up, we stopped. It would have been weird. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hehe pov-open">
+  <summary>My friend was a girl, you know? So... </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-think thoughts">
+  <summary>Not that I didn't want to hold Karua's hand, but there's no way I would have asked. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-think ">
+  <summary>Oh. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-think ">
+  <summary>So, we could hold hands?</summary>
+  </details>
+  
+  <details class="shion-huh takumi-woah pov-open">
+  <summary>What?! </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-woah ">
+  <summary>We're friends. And neither of us are girls. So, it's fine, right? </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-woah thoughts">
+  <summary>It's not fine at all! </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-resolved pov-open">
+  <summary>Um, that's kind of...</summary>
+  </details>
+  
+  <details class="shion-think takumi-resolved ">
+  <summary>...We don't have to. It's alright. I'm sorry for asking.</summary>
+  </details>
+
+  <details class="shion-think takumi-oof thoughts">
+    <summary>...</summary>
+    </details>
+  <details class="shion-think takumi-considering thoughts">
+  <summary>I'm overreacting to this. If he wants to hold my hand, what's the harm? No one's going to see. </summary>
+  </details>
+  
+  <details class="shion-think takumi-hey pov-open">
+  <summary>It's fine, we can hold hands... </summary>
+  </details>
+  
+  <details class="shion-think takumi-huh3 pov-open">
+  <summary>...Wait a minute. </summary>
+  </details>
+  
+  <details class="shion-think takumi-huh3 pov-open">
+  <summary>Can you even hold hands? Your body is just a projection. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-huh3 ">
+  <summary>We can. If I concentrate, I can touch things in this form. It might feel strange to you, but it won't hurt. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-think thoughts">
+  <summary>I forgot he was made of flames, for a moment... </summary>
+  </details>
+  
+  <details class="shion-huh takumi-considering thoughts">
+  <summary>Well, even if it does hurt, there's always the revive'o'matic. It won't do any permanent damage. </summary>
+  </details>
+  
+  <details class="shion-happy takumi-considering ">
+  <summary>I won't hurt you. I promise. </summary>
+  </details>
+  
+  <details class="shion-happy takumi-oof thoughts">
+  <summary>I must've hesitated for too long and he thinks I'm trying to back out. </summary>
+  </details>
+  
+  <details class="shion-happy takumi-talk-sweat pov-open move-to-next">
+  <summary>Okay. Sure. </summary>
+  </details>
+  
+  
+  </div></div></div>
+  <!-- end of current room-->
+  
+  
+  <!-- move to black-->
+  <div class="main-box black hidden next-view">
+  
+  
+  <div class="anchor">
+  <div class="name-box right pov-element">Takumi Sumino</div>
+  <div class="name-box target-element hidden">???</div>
+  <div class="name-box black-name-box">&nbsp;</div>
+  
+  <div class="text-box">
+  
+  <details class=" takumi-start thoughts takumi-start">
+  <summary>I held out my hand for the ghost boy to take and braced myself. He said it wouldn't hurt, but it was hard to believe him. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>He reached out slowly and touched my hand.</summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>And just like he'd said... It didn't hurt. </summary>
+  </details>
+  
+  <details class=" takumi- pov-open">
+  <summary>Oh... </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>See? </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>The feeling of touching the ghost boy was odd. Warm but not burning. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>It felt like touching something not quite solid, and the feeling of his projection prickled against my skin almost like static electricity. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>My chest felt warm, and my heart beat a little faster. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>I gently closed my hand around his, hoping I wouldn't go straight through him like a ghost. His own hand tightened tentatively back. </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>Now we walk, right?</summary>
+  </details>
+  
+  <details class=" takumi- pov-open">
+  <summary>Yeah. Let's go. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>I was glad no one was around to see us, but holding hands wasn't as awkward as I thought it would be. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>As we walked, I told the ghost boy about what life was like on the TRC, about my family, about my school. For some reason it felt weird to bring up Karua, so I didn't. </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>You really had that many people in your class?</summary>
+  </details>
+  
+  <details class=" takumi- pov-open">
+  <summary>Yeah. And that was just my class. The school itself had way more kids. </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>It's hard to even imagine that many people... I would've liked to see it. </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>I wonder if I had gone to school, if I'd have made any friends. </summary>
+  </details>
+  
+  <details class=" takumi- pov-open">
+  <summary>You would have. I'm sure of it. </summary>
+  </details>
+  
+  <details class=" takumi- pov-open">
+  <summary>I would have been your friend for sure. </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>...Thank you. </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>Thank you so much... Takumi.</summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>It's not fair. This war isn't fair for any of us, but at least we had normal lives before. At least we had families and friends. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>He should get to go to school and have friends and stress about exams and enjoy summer vacation. It's not fair. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>I decide then and there that I'm going to save him. There has to be a way to get him out with the rest of us. We can set up the bombs to go off without him, and he can get on the escape pod with us. </summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>I don't know how I'm going to do it yet, but I came back to save my friends. And the ghost boy is one of my friends. </summary>
+  </details>
+  
+  <details class="last  ">
+  <summary>D06: Romance Route: Undying Friendship</summary>
+  </details>
+  
+</div></div></div>
+
+
+
+
+
+
+
+<!-- SHION ROUTE: ASK -->
+<!-- route3-next-room -->
+
+<!-- move to defenseroom-->
+<div class="main-box hidden route3-2-next-room ">
+  <div class="room defenseroom blur">
+  </div>
+<!-- update date -->
+<div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
+
+  <!-- seed scene characters -->
+  <div class="character shion"></div>
+  <div class="takumi-box">
+    <div class="takumi-bg defenseroom">
+    <div class="takumi-insert takumi-think-forced"></div>
+    </div>
+  </div>
+
+
+<div class="anchor">
+<div class="name-box right pov-element">Takumi Sumino</div>
+<div class="name-box target-element hidden">???</div>
+
+<div class="text-box">
+
+
+<details class="shion-talk2 takumi-think thoughts takumi-start rotate">
+  <summary>I can't think of anything. Still, maybe if we talk for a while I can figure out what kinds of things he might like to do. </summary> 
+  </details> 
+  
+  <details class="shion-huh takumi-think ">
+  <summary>About me?</summary> 
+  </details> 
+  
+  <details class="shion-huh takumi-talk2 pov-open">
+  <summary>Yeah. I've known you for way longer than you've known me, but we could only talk for a little bit of that. I don't know much about you as a person. </summary> 
+  </details> 
+  
+  <details class="shion-huh takumi-talk-sweat pov-open">
+  <summary>Do you have... a favorite color? </summary> 
+  </details> 
+  
+  <details class="shion-huh takumi-oof thoughts">
+  <summary>That was stupid... I should have asked something else. </summary> 
+  </details> 
+  
+  <details class="shion-hmm takumi-oof ">
+  <summary>Hm... </summary> 
+  </details> 
+  
+  <details class="shion-hmm takumi-hey2 thoughts">
+  <summary>Huh. He seems like he's really giving this some serious thought. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hey2 ">
+  <summary>I like red. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hey pov-open">
+  <summary>Oh, that's cool. I like red, too. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hey ">
+  <summary>...</summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hehe pov-open">
+  <summary>...</summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-oof thoughts">
+  <summary>This is so awkward... I have to do something. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-think thoughts">
+  <summary>Maybe I should just ask directly. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-talk2 pov-open">
+  <summary>Do you have anything you've always wanted to do?</summary>
+  </details>
+  
+  <details class="shion-huh takumi-talk2 ">
+  <summary>Always wanted to do...?</summary>
+  </details>
+  
+  <details class="shion-huh takumi-hey pov-open">
+  <summary>Like, anything you've always dreamed about doing. Or just something you wanted to get around to doing before you die, like a bucket list. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-oof pov-open">
+  <summary>Sorry, was that too insensitive? </summary>
+  </details>
+
+  <details class="shion-huh takumi-huh pov-open">
+    <summary>I know you plan to use up all of your power on the 100th day, but... that doesn't mean you can't live life to the fullest until then. </summary>
+    </details>
+  
+  <details class="shion-talk takumi-huh ">
+  <summary>...Sirei would disagree with you. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-huh pov-open">
+  <summary>Huh? Why? </summary>
+  </details>
+  
+  <details class="shion-distant takumi-huh ">
+  <summary>He said I shouldn't talk to anyone anymore, because it uses up too much of my energy and there's a chance the missiles won't be ready.</summary>
+  </details>
+  
+  <details class="shion-distant takumi-huh ">
+  <summary>He's right. Even now, I'm being selfish. </summary>
+  </details>
+  
+  <details class="shion-distant takumi-huh3 pov-open">
+  <summary>So he's just going to treat you like a tool until the very end? That's not fair. </summary>
+  </details>
+  
+  <details class="shion-distant takumi-mad pov-open">
+  <summary>You're fighting this war you didn't ask for, just like the rest of us. You deserve to be a little selfish. </summary>
+  </details>
+  
+  <details class="shion-distant takumi-talk1 pov-open">
+  <summary>We still have time left, all of us. Don't let Sirei dictate what you can do with the rest of yours.</summary>
+  </details>
+  <details class="shion-distant takumi-talk1 pov-open">
+    <summary>You're still charging up the missiles every day, right? </summary>
+    </details>
+  
+  <details class="shion-talk3  ">
+  <summary>Of course. </summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-talk2 pov-open">
+  <summary>Then Sirei has nothing to complain about. You're already doing your best. </summary>
+  </details>
+  <details class="shion-talk3 takumi-talk2 pov-open">
+    <summary>You shouldn't have to do it alone. </summary>
+    </details>
+  
+  <details class="shion-relieved2  ">
+  <summary>...Thank you, Takumi. </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-oof thoughts">
+  <summary>I didn't mean to go off like that. Now I'm a little embarrassed. </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-hey pov-open">
+  <summary>So, anything you can think of? Anything you've always wanted to do? </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-hey ">
+  <summary>I do have... a few things.</summary>
+  </details>
+  
+  <details class="shion-hmm takumi-talk2 pov-open">
+  <summary>Oh, yeah? Like what? </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-yeah pov-open">
+  <summary>Whatever you want to do, I can help!</summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-yeah ">
+  <summary>I've always wanted to have a sleepover. </summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-hehe pov-open">
+  <summary>Really? That's kind of cute. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-hehe ">
+  <summary>&quot;Cute&quot;?</summary>
+  </details>
+  
+  <details class="shion-talk takumi-wait pov-open">
+  <summary>I-I mean, it sounds fun! </summary>
+  </details>
+  <details class="shion-talk takumi-wait pov-open">
+    <summary>I haven't had a sleepover since I was in elementary school. They were a lot of fun though. </summary>
+    </details>
+  
+  <details class="shion-talk takumi-talk2 pov-open">
+  <summary>My mom would make us snacks and we'd play games and then stay up too late watching a movie. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-explain2 pov-open">
+  <summary>I bet Gaku would be able to arrange something. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-think pov-open">
+  <summary>We could make snacks ahead of time and then set up in the gym... I can tell Sirei it's a team bonding exercise. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-yeah pov-open">
+  <summary>Yeah! Let's have a sleepover. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-yeah ">
+  <summary>Really? It's alright?</summary>
+  </details>
+  
+  <details class="shion-huh takumi-yeah2 pov-open">
+  <summary>Of course! It'll be fun. And it'll be a great way for everyone to get to know you. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-hey pov-open">
+  <summary>But it'll take some preparation. I'll talk to everyone about it today. </summary>
+  </details>
+  
+  <details class="shion-huh takumi-huh pov-open">
+  <summary>In the meantime, is there anything else you'd want to do? Anything we could do today? </summary>
+  </details>
+  
+  <details class="shion-talk takumi-huh ">
+  <summary>Well... There is one thing. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-hey pov-open">
+  <summary>What is it? </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-hey ">
+  <summary>Would you... close your eyes for a minute? </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-huh3 pov-open">
+  <summary>Uh... That's a strange request. </summary>
+  </details>
+  
+  <details class="shion-talk2 takumi-yeah pov-open move-to-next">
+  <summary>But, sure! I told you I'd help out with anything I can. </summary>
+  </details>
+  
+  
+  </div></div></div>
+  <!-- end of current room-->
+  
+  
+  <!-- move to black-->
+  <div class="main-box black hidden next-view">
+
+  <div class="anchor">
+  <div class="name-box pov-element">Takumi Sumino</div>
+  <div class="name-box target-element hidden">???</div>
+  <div class="name-box black-name-box">&nbsp;</div>
+
+  
+  <div class="text-box">
+  
+  <details class="takumi-start thoughts takumi-start">
+  <summary>I closed my eyes, wondering why this is something Shion would ask me to do. </summary>
+  </details>
+  
+  <details class="  thoughts">
+  <summary>Maybe he's too self-conscious to look at me while he asks for what he really wants? Maybe it's something embarrassing. </summary>
+  </details>
+  
+  <details class="  thoughts">
+  <summary>Or maybe he'll disappear while I'm not looking. </summary>
+  </details>
+  
+  <details class="  thoughts">
+  <summary>No, he probably won't do that. Maybe he's preparing a surprise? </summary>
+  </details>
+  
+  <details class="  thoughts">
+  <summary>While I was deep in my own thoughts, I was barely conscious of a soft crackling noise getting louder. My chest started to feel warm, and oddly heavy. </summary>
+  </details>
+  
+  <details class="  thoughts">
+  <summary>Then, something warm and tingly brushed against my lips. The feeling was odd and unidentifiable, but something like static electricity. </summary>
+  </details>
+  
+  <details class="  thoughts">
+  <summary>I almost opened my eyes before remembering my promise. </summary>
+  </details>
+  
+  <details class=" takumi- pov-open">
+  <summary>Um? </summary>
+  </details>
+  
+  <details class="shion-  ">
+  <summary>...</summary>
+  </details>
+  
+  <details class=" takumi- thoughts">
+  <summary>The ghost boy doesn't say anything, but I think maybe the crackling noise is him. The noise gets quieter again. </summary>
+  </details>
+  
+  <details class="shion-  move-to-next">
+  <summary>Sorry. You can open your eyes again. </summary>
+  </details>
+  
+  
+  </div></div></div>
+  <!-- end of current room-->
+  
+  
+  <!-- move to defenseroom-->
+  <div class="main-box hidden next-view">
+    <div class="room defenseroom blur">
+    </div>
+  <!-- update date -->
+  <div class="clock afternoon"><p class="date"><span class="zero"></span><span class="two"></span><span class="five"></span></p></div>
+  
+    <!-- seed scene characters -->
+    <div class="character shion"></div>
+    <div class="takumi-box">
+      <div class="takumi-bg defenseroom">
+      <div class="takumi-insert takumi-huh-forced"></div>
+      </div>
+    </div>
+  
+    <!-- choice code goes here (if applicable)  -->
+  
+  
+  <div class="anchor">
+  <div class="name-box right pov-element">Takumi Sumino</div>
+  <div class="name-box target-element hidden">???</div>
+  
+  <div class="text-box">
+  
+  <details class="shion-talk2 takumi-huh takumi-start pov-open rotate">
+  <summary>What are you sorry for? </summary>
+  </details>
+  
+  <details class="shion-talk takumi-huh takumi-start ">
+  <summary>...Nothing. </summary>
+  </details>
+  
+  <details class="shion-talk takumi-talk-sweat pov-open">
+  <summary>Okay... Um, why did you want me to close my eyes? </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-talk-sweat ">
+  <summary>N-no reason. </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-think thoughts">
+  <summary>Is it just me, or does he look nervous?</summary>
+  </details>
+  
+  <details class="shion-hmm takumi-oof thoughts">
+  <summary>I don't know why he had me close my eyes, but... Maybe I shouldn't press. </summary>
+  </details>
+  
+  <details class="shion-hmm takumi-talk2 pov-open">
+  <summary>Do you want to come with me to talk to Gaku? </summary>
+  </details>
+  
+  <details class="shion-huh takumi-talk2 ">
+  <summary>Huh? </summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-talk2 ">
+  <summary>Are you sure you want me to come?</summary>
+  </details>
+  
+  <details class="shion-talk3 takumi-yeah pov-open">
+  <summary>Of course! If you leave it up to me, I'm sure I'll mess something up. This way, you can make sure it's everything you want it to be. </summary>
+  </details>
+  
+  <details class="shion-relieved2 takumi-yeah ">
+  <summary>I'm sure you wouldn't mess it up. I'd be happy with anything. </summary>
+  </details>
+  
+  <details class="shion-happy2 takumi-yeah ">
+  <summary>But thank you. I'll come along, if it's alright with you. </summary>
+  </details>
+  
+  <details class="shion-happy2 takumi-yeah pov-open move-to-next">
+  <summary>Of course it's alright with me. Let's go. </summary>
+  </details>
+  
+  
+  </div></div></div>
+  <!-- end of current room-->
+  
+  
+  <!-- move to black-->
+  <div class="main-box black hidden next-view">
+
+  
+  
+  <div class="anchor">
+  <div class="name-box black-name-box">&nbsp;</div>
+
+  <div class="text-box">
+  
+  <details class=" thoughts">
+  <summary>We headed up to the roof together to talk to Gaku. </summary>
+  </details>
+  
+  <details class=" thoughts">
+  <summary>Along the way, I wondered about all the other things the ghost boy hadn't gotten to experience, not only because he didn't have a proper physical body, but because of how he'd grown up. </summary>
+  </details>
+  
+  <details class=" thoughts">
+  <summary>There was probably lots of things he'd like to do that he doesn't know exist... If I asked the others, I bet we could come up with a good list. </summary>
+  </details>
+  
+  <details class=" thoughts">
+  <summary>We had time. Not all of the time in the world, but enough time for this. Enough time for him. </summary>
+  </details>
+  
+  <details class=" thoughts">
+  <summary>Today, we'd talk to Gaku. But tomorrow, maybe I'd ask the ghost boy how he felt about fireworks. </summary>
+  </details>
+  
+  <details class="last  ">
+  <summary>D07: Romance Route: Until Tomorrow </summary>
+  </details>
+
+</div></div></div>
 
 
 

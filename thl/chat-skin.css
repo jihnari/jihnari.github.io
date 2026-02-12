@@ -25,6 +25,12 @@
 - ** pensive & considering
 - add slight delay to scene changes? (probably impossible) 
 - if time: make .black .text-box a proper grid
+- .last still showing name? 
+- provide a reset button? (would just refresh the page) 
+- ****seed the rest of the images 
+- kurara is short when she's seeded in a new room instead of kyoshika
+- remove transition when character coming in or out? remove height? some weird sliding 
+- 
 
 ao3 errors: 
 - takumi skew
@@ -281,12 +287,17 @@ transition-duration:1s;
 
 
 /* keeps the last dialogue box from closing */
-.text-box details[open].last {display: inline-block;}
+.text-box details[open].last {
+  display: inline-block;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 :has(details[open] + details:not([open]).last) .name-box{
-  display:none;
+  display:none !important;
 }
 :has(details[open].last) .name-box{
-  display:none;
+  display:none !important;
 }
 
 
@@ -337,6 +348,14 @@ transition-duration:1s;
 } */
 .main-box:has(details[open].char-return) .character {
   display:inherit;
+}
+.main-box:has(details[open].takumi-bye) .takumi-box {
+  display:none;
+}
+/* idk */
+.main-box:has(details[open].char-bye) .character {
+  /* display:none; */
+  margin-left:50%;
 }
 .shown{
   display:inherit;
@@ -407,7 +426,8 @@ details.thoughts summary{
 /* "important" text */
 /* rename this? */
 .important{
-  color:#BC4D50 !important;
+  /* color:#BC4D50 !important; */
+  color:#ee3037 !important;
 }
 
 
@@ -535,6 +555,45 @@ details.thoughts summary{
 
 
 /* shion */
+.main-box:has(details[open] + details:not([open]).shion-distant) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-distant.png');
+}.main-box:has(details[open] + details:not([open]).shion-happy) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-happy.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-happy2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-happy2.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-hmm) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-hmm.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-huh) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-huh.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-relieved) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-relieved.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-relieved2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-relieved2.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-stress) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-stress.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-talk) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-talk.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-talk2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-talk2.png');
+}.main-box:has(details[open] + details:not([open]).shion-talk3) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-talk3.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-think) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-think.png');
+}
+.main-box:has(details[open] + details:not([open]).shion-think2) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-think2.png');
+}
+
+
 
 
 
@@ -917,6 +976,11 @@ details.thoughts summary{
   .roof{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Rooftop.png');
   }
+  .roof-fence{
+    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/Rooftop_Fence.png');
+    /* transform: scale(2.5) !important; */
+    top: 70px;
+  }
   .yugamu-room{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/yugamu-room.png');
   }
@@ -955,7 +1019,9 @@ details.thoughts summary{
     background-size: 27px 27px;
   }
   .location{
-    width:300px;
+    /* width:300px; */
+    min-width:300px;
+
     height:1.3em;
     font-size:1.7em;
     color:#BFD3E2;
@@ -1527,6 +1593,8 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think.png');
 }.takumi-neutral2-forced{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral2.png');
+}.takumi-neutral-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral.png');
 }
 
 .eito-hi-forced{
@@ -1998,14 +2066,18 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
  
   /* dont have to get super specific with hard choice*/
   /* remove choice menu after choice selected  */
-  /* .main-box:has(.hard-choice details.route1[open]) > .hard-choice, .main-box:has(.hard-choice details.route2[open]) > .hard-choice, .main-box:has(.hard-choice details.route3[open]) > .hard-choice, .main-box:has(.hard-choice details.ending1-1[open]) > .hard-choice{
-    display:none;
-  } */
-  /* hey do we need this 
-  cant we just.  */
   .main-box:has(.hard-choice details.choice-button[open]) > .hard-choice{
     display:none;
   }
+
+  /* *****standardize these for your own sanity**** */
+  /* use, in order: 
+  - move-to-next, next-view
+  - route#-next > route#-next-view/room
+  - route#-#-next
+  - should we call them eito/shion instead? hmmmm
+  - note: i dont think we need eito-move-to-next? do we? 
+  -  */
 
   /* display route text */
   .main-box:has(details.route1[open]) .route1-open,.main-box:has(details.route2[open]) .route2-open,.main-box:has(details.route3[open]) .route3-open, .main-box:has(details.ending1-1[open]) .ending1-1-open, .main-box:has(details.ending1-2[open]) .ending1-2-open, .main-box:has(details.ending2-1[open]) .ending2-1-open, .main-box:has(details.ending2-2[open]) .ending2-2-open{
@@ -2018,13 +2090,13 @@ no-repeat,  no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
 
  
   /* room changing for endings */
-  .main-box:has(details.ending1[open]), .main-box:has(details.ending2[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.move-ending1-2[open]), .main-box:has(details.move-ending1-2[open]){
+  .main-box:has(details.ending1[open]), .main-box:has(details.ending2[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.route3-next[open]), .main-box:has(details.route3-1-next[open]), .main-box:has(details.route3-2-next[open]), .main-box:has(details.move-ending1-2[open]), .main-box:has(details.move-ending1-2[open]){
     /* i think this is snagging on the savepoint telling it to be open */
     display:none !important; 
   } 
 
   /* added a > to route2 */
-  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) ~ .route2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.ending2[open]) > .ending2-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2, :has(details.move-ending1-2[open]) > .next-ending1-2{
+  :has(details.route1-next[open]) > .route1-next-room, :has(details.route2-next[open]) ~ .route2-next-room, :has(details.route3-next[open]) ~ .route3-next-room, :has(details.route3-1-next[open]) ~ .route3-1-next-room, :has(details.route3-2-next[open]) ~ .route3-2-next-room, :has(details.ending1[open]) > .ending1-room, :has(details.ending2[open]) > .ending2-room, :has(details.move-ending2-2[open]) ~ .next-ending2-2, :has(details.move-ending1-2[open]) > .next-ending1-2{
     display:flex;
   }
 
