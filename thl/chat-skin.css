@@ -6,39 +6,32 @@
 
 
   TODO:
-  high priority: 
-- **smallen the 5
-- fix choice orders code 
+  high priority:
+- ***switch shion's rooms around. will fix takumi png. 
+- char-bye doesnt work 
+- audio back on the table?? 
 - if time: make .black .text-box a proper grid
-- preload title screen (grab title screen and put on github? )
-- text-box not unselectable during .last
-- name-box disappears during .last. this is as intended, but i need the black-name-box to stay. 
-- play test all routes /edit 
 - consider photoshopping yugamu's room 
-- + test on ao3
-- + bug: kurara is short when she's seeded in a new room instead of kyoshika
-- + seed the rest of the images 
-- + yugamu's room: shift view 
-- + eito blush: too small 
-- + kako height 
-- + fix narration (fixed? needs testing) 
+- check on ao3 (some classes seem to be in the wrong order; black screen, name box, some other stuff. most are marked with "ao3") 
+- + play test/edit all routes (ive done what i can) 
+- + text-box not unselectable during .last  ? (its not, cant fix it, idk)
 
 
   lower priority:
 - fix shadow on location 
 - **clean up your code (in progress) 
 - - pick better names for classes? (maybe too late for that) 
-- text across the board should maybe be a bit bigger? 
+- + text across the board should maybe be a bit bigger? (no.) 
 - icons lower res?
 - redraw the 4 probably
 - transition text a little? fade in 
 - add slight delay to scene changes? (probably impossible) 
 - provide a reset button? (would just refresh the page) 
-- remove transition when character coming in or out? remove height? some weird sliding 
+- + remove transition when character coming in or out? remove height? some weird sliding (fixed it mostly) 
 - /attempt a max height, see if it breaks all the things (didnt work at all) 
-- new title screen 
-- bg music 
-- title screen: new button styling? 
+- +/ new title screen 
+- + bg music (ish)  
+- / title screen: new button styling? 
 
 
 
@@ -53,7 +46,7 @@ ao3 errors:
 
 potential todo: 
 - clair de lune?
-- - + get an mp3, put on github 
+- - + get an mp3, /put on github 
 - - got the song, got it to play, looks bad on ao3 and you cant auto play or trick users into clicking it. could make a new view that pops up during emotional scenes and says "click me..." 
 - could make a menu and include the audio there. make the area flash when smth emotional happens 
 - / have a separate interface for selecting characters to talk to? seems like work. (we're not doing that)
@@ -67,8 +60,8 @@ potential todo:
 
 
 PROBLEMS: 
-- main-box is too big, idk what happened. cap differently?  (i think i fixed this?) 
-- some weirdness after an overlay (text-box margin-right increases or smth) (i think i fixed this) 
+- + main-box is too big, idk what happened. cap differently?  (i think i fixed this?) 
+- + some weirdness after an overlay (text-box margin-right increases or smth) (i think i fixed this) 
 - sometimes the location box doesnt entirely disappear...? 
 
 
@@ -128,6 +121,17 @@ done:
 - + fix takumi skew for ao3 
 - + clean up day ++ screen (maybe draw day)
 - + .last still showing name? 
+- + preload title screen (grab title screen and put on github? )
+- + test on ao3
+- + bug: kurara is short when she's seeded in a new room instead of kyoshika
+- + seed the rest of the images 
+- + yugamu's room: shift view 
+- + eito blush: too small 
+- + kako height 
+- + fix narration (fixed? needs testing) 
+- + smallen the 5
+- + name-box disappears during .last. this is as intended, but i need the black-name-box to stay. (think i fixed this?) 
+- + fix choice orders code 
 
 
 
@@ -144,14 +148,6 @@ rooms: (if you're desperate) (i was desperate, thanks reblogablename)
 https://www.tumblr.com/reblogablename/783668993201471488/if-you-were-ever-curious-heres-every
  */
 
-
- /* audio notes: 
- <p align="center" class="video">
-    <iframe src="https://www.youtube.com/embed/sj6-LG5VpGk?autoplay=1&amp;t=1&amp;playlist=sj6-LG5VpGk&amp;loop=1" title="Stop the Pigeon Intro Opening"></iframe>
-  </p>
-
-
- */
 
  /* ao3 fixes */
  details{
@@ -185,6 +181,7 @@ summary {
   display:none !important; 
 }
 
+/* u dont need these anymore i am pretty sure. so at least thats one less. */
 :has(details.eito-move-to-next[open]) + .eito-next-view{
   display:flex;
 }
@@ -301,7 +298,7 @@ summary {
 }
 
 /* box starts CLOSED. when box OPENS, remove from existence */
-.text-box details[open] {display: none;}
+.main-box .text-box details[open] {display: none;}
 
 /* EXCEPTION: choice time(s)  */
 /* this got close but then the text persisted in a bad way  */
@@ -325,26 +322,21 @@ transition-duration:1s;
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
-:has(details[open] + details:not([open]).last) .name-box{
+details.last summary{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  cursor:default;
+}
+
+/* makes the names/etc go away (hopefully) */
+:has(details[open] + details:not([open]).last) .target-element, :has(details[open] + details:not([open]).last) .pov-element{
   display:none !important;
 }
-:has(details[open].last) .name-box{
-  display:none !important;
-}
-/* hackfix */
-:has(details[open] + details:not([open]).last) .black-name-box.name-box{
-  display:none !important;
-}
-:has(details[open].last) .black-name-box.name-box{
+:has(details[open].last) .target-element, :has(details[open].last) .pov-element{
   display:none !important;
 }
 
-
-:has(details[open].last) .text-box{
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
-}
 
 
 /* open and close pop-out; toggle name boxes */
@@ -361,37 +353,14 @@ transition-duration:1s;
   display:block;
 }
 
-/* this only disappears the namebox */
+/* this only disappears the (non pov character's) namebox */
 .main-box:has(details[open] + details:not([open]).pov-open) .target-element{
   display:none;
 }
 
-/* to unseed .character. do we need this? unclear. */
-/* .main-box:has(details:not([open]).alt-op) .character, .main-box:has(details:not([open]).alt-op)  .target-element{
-  display:none;
-} */
-
-
-
-/* .main-box:has(details:not([open]).force-show-takumi) .pov-element{
-  display:block;
-} */ 
-
-
-/* .main-box:has(details:not([open]).takumi-start) .target-element, .main-box:has(details:not([open]).takumi-only) .character {
-  display:none;
-} */
-/* .main-box:has(details:not([open]).takumi-only) .pov-element{
-  display:block;
-} */
-
 .main-box:has(details[open].takumi-start) .target-element {
   display:inherit;
 }
-/* this breaks things */
-/* .main-box:has(details[open].takumi-start) .pov-element {
-  display:inherit;
-} */
 .main-box:has(details[open].char-return) .character {
   display:inherit;
 }
@@ -399,10 +368,20 @@ transition-duration:1s;
   display:none;
 }
 /* idk */
-.main-box:has(details[open].char-bye) .character {
-  /* display:none; */
-  margin-left:50%;
+.main-box:has(details[open].char-bye-fr) .character {
+  display:none;
 }
+.main-box:has(details[open] + details:not([open]).char-bye) .character{
+  margin-left:-100%;
+  transition-duration: 2s;
+  transition-delay:600ms; 
+}
+.main-box:has(details[open].char-bye) .character{
+  margin-left:-100%;
+  transition-duration: 2s;
+  transition-delay:600ms;
+}
+
 .shown{
   display:inherit;
 }
@@ -437,15 +416,6 @@ transition-duration:1s;
   display:none;
 }
 
-/* are these being used anywhere...? ive forgotten my own code  */
-/* :has(details[open] + details:not([open]).pov-close) .pov-element{
-  display:none;
-  transition-duration: 250ms;
-}
-:has(details[open] + details:not([open]).pov-close) .target-element{
-  display:block;
-} */
-
 /* if pov-open: shift target character left. if pov-closed: return target character to center.(? not sure ive tested that second part) */
 .main-box:has(details[open] + details:not([open]).pov-open) .character{
   margin-left:5%;
@@ -463,11 +433,6 @@ display:none;
 details.thoughts summary{
   color:rgb(149, 236, 255) !important;
 }
-/* weird exception */
-/* should grab this at a different point but idk that point rn */
-/* :has(details[open].soft-choice-time) .name-box{
-  display:none;
-} */
 
 /* "important" text */
 /* rename this? */
@@ -480,15 +445,8 @@ details.thoughts summary{
 
 
 
-
-
-
-
-
-
 /* ALL CHARACTER PNG TOGGLES HERE  */
 /* eito */
-
 .main-box:has(details[open] + details:not([open]).eito-talk) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito.png');
 }
@@ -550,6 +508,8 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-blush2.png');
 }.main-box:has(details[open] + details:not([open]).eito-blush3) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-blush3.png');
+}.main-box:has(details[open] + details:not([open]).eito-kill) .character{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-kill.png');
 }
 
 
@@ -652,6 +612,7 @@ details.thoughts summary{
 
 
 /* the girls  */
+/* kyoshika */
 .main-box:has(details[open] + details:not([open]).kyoshika-talk) .character{
    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kyoshika/kyoshika-talk.png');
     top:-190px;
@@ -682,6 +643,7 @@ details.thoughts summary{
 }
 
 /* for all non-kyoshika you'll have to set margin offset here  */
+/* tsubasa */
 .main-box:has(details[open] + details:not([open]).tsubasa-worried) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-worried.png');
   top: -280px;
@@ -705,7 +667,7 @@ details.thoughts summary{
   top: -280px;
 }
 
-
+/* kurara */
 .main-box:has(details[open] + details:not([open]).kurara-pissed) .character{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-pissed.png');
   top: -310px;
@@ -890,55 +852,7 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-woah.png');
 } 
 
-
-/* load... all the images?  */
-/* this doesnt seem to work, unfortunately */
-.blorbo-preload{
-  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-considering.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side-talk.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed-side1.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed1.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-embarassed3.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain-sweat.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-explain.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hehe.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey2.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-huh3.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hurt.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad-quiet.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad-side.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-mad.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-no.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-nono.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-ohno.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-oof.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-oops.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-pensive.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-resolved.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-resolved2.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sleepy.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-sweat.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk-sweat.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk1.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk2.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-dark.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-hand.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think-stressed.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-think.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-unimpressed.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-wait.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-wait2.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-whoa2.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-woah.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yawn.png'),
-  url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-yeah.png');
-}
-
+/* ***we deleded the images but did we delete the references? woah lived, its counterpart died. */
 
 
 /* BOX TO HOLD ALL THE THINGS */
@@ -959,53 +873,90 @@ details.thoughts summary{
 
     overflow:hidden;
   }
+
+  /* main menu stuff */
   .fake-box{
     width:500px;
     max-width:70%;
-    /* margin:auto auto; */
     left:25%;
-    /* right:50%; */
 
     height:400px;
     max-height:70%; 
     top:10%;
     /* margin-top:0px; */
     padding:0;
-    /* background:black; */
 
     position:absolute;
     display:flex;
     flex-direction:row !important;
     font-family:Courier, monospace;  
-
   }
-  details[open].load-button summary:after{
+  details[open].return-button summary:after{
     content:"⇐ Return to Main Menu";
-
-
   }
-  details[open].load-button{
+  details[open].return-button{
     position:absolute;
     width:300px !important;
     top:50px;
     left:0;
     z-index:2;
+    display:block !important;
 
   }
-  .load-button summary:after{
-    content:"Load";
-  }
-  :has(details[open].load-button) .return-menu{
+  details[open].return-button + .return-menu{
     opacity:100%;
-    /* background:green; */
     display:flex;
   }
+
   .return-menu{
     /* opacity:30%; */
     display:none;
   }
-  :has(details[open].load-button) .main-menu{
+  :has(details[open].return-button) .main-menu{
     display:none;
+  }
+  :has(details[open].return-button) .main-menu-text{
+    font-size:0;
+  }
+
+  /* check on ao3 */
+  a:link{
+    color: rgb(205, 221, 254);
+  }
+  a:visited{
+    color: rgb(138, 155, 189);
+  }
+  .bgm-button[open] summary{display:none;}
+  .credits{
+    color:white;
+    background-color:#5E5E5E75;
+    padding:10px 10px 10px 40px;
+    border:1px solid white;
+    text-shadow:1px 1px black;
+    text-indent: -30px; 
+  }
+  .credits h1{
+    margin: 5px 0;
+    font-size: 2em;
+  }
+  .text-size-button summary:after{
+    content: "1.0";
+  }
+  details[open].text-size-button summary:after{
+    content: "1.2";
+  }
+  :has(details[open].text-size-button) .text-box{
+    font-size:1.2em;
+  }
+  :has(details[open].text-size-button) .choice-screen{
+    font-size:1.2em;
+  }
+  :has(details[open].text-size-button) .name-box{
+    font-size:1.2em;
+  }
+
+  :has(details[open].text-size-button) .menu-box .credits{
+    font-size:1.2em;
   }
 
 
@@ -1019,8 +970,6 @@ details.thoughts summary{
     background-size: auto 540px;
     position:absolute;
     z-index:-1;
-
-    /* background:black; */
   }
   /* when talking to a character, the background is zoomed out of focus */
   /* call this something else? focused or smth?  */
@@ -1028,8 +977,6 @@ details.thoughts summary{
     filter: blur(1px);
     -webkit-filter: blur(1px);
     transform:scale(3);
-
-    /* might want to left/right/bottom some things in the future. this zoom doesnt look good on every png.  */
   }
 
   .cafeteria{
@@ -1053,8 +1000,6 @@ details.thoughts summary{
   }
   .bars{
     background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/bg/bars.png');
-    /* width:10px; */
-    /* right:20%; */
 
     z-index:1;
   }
@@ -1097,10 +1042,6 @@ details.thoughts summary{
     background: black;
   }
 
-  /* could use some of those clouds also */
-
-
-
   
 /* title screen  */
   /* make untouchable *** */
@@ -1129,18 +1070,18 @@ details.thoughts summary{
     font-size:1.2em;
     background-color:#007c8773;
     text-shadow: 2px 2px black;
-
-    
   }
   .menu-box .choice-button:hover{
     font-weight:bold;
     text-shadow:none;
   }
-  .return-button{
-    position:absolute;
-    width:300px !important;
-    top:50px;
+  .menu-box .choice-button details[open].choice-button{
+    background:white;
+    color:black;
+    opacity: 1;
+    box-shadow: 0px 0px 1px 1px #B7E1EF;
   }
+
 
   
   .title-screen-title{
@@ -1168,7 +1109,6 @@ details.thoughts summary{
 
 
   /* LOCATION */
-  /* if you continue to use this, replace the icon  */
   .location::before{
     /* content:"📍"; */
     content:'';
@@ -1209,11 +1149,6 @@ details.thoughts summary{
     user-select: none;
     z-index:3;
   }
-  /* :has(details[open] + details:not([open]).location-close) .location{
-    transition:all;
-    opacity:0;
-    transition-duration: 2s;
-  } */
   /* fade out during next frame  */
   .main-box:has(details[open].location-close) .location{
     transition:all;
@@ -1324,21 +1259,14 @@ details.thoughts summary{
 
   /* day increment */
   .new-day{
-    /* position:absolute; */
-    /* margin-left:auto;
-    margin-right:auto; */
-    /* text-align:center; */
-    /* display:block; */
-    /* display:inline-block; */
     display: flex;
-    /* horizontal center (working) */
+    width:100%;
+
+    /* horizontal center */
     align-items: center;
 
     /* vertical center  */
     justify-content: center;
-    width:100%;
-    
-
   }
   .new-day-day{
     /* display:inline-block; */
@@ -1419,6 +1347,7 @@ details.thoughts summary{
   }
 
   .text-box{
+    font-size:1em;
     color:#BFD3E2;
     padding:5px 1px;
     height:80px;
@@ -1456,22 +1385,7 @@ details.thoughts summary{
     -ms-user-select: none; 
     user-select: none; 
   }
-  /* the only purpose of this is for the grid in the bg */
-  /* should be able to roll this into the main class?  update: done */
-  .ttext-box::before{
-    content:"";
 
-    /* vertical (grid)  */
-    background: linear-gradient(to right,#3F5F6F 7px,#456778 1px); 
-    background-size: 8px 100%;
-
-    width:100%;
-    height:100%;
-    position:absolute;
-    opacity:.5;
-    top:0;
-    z-index:-1;
-  }
   /* top bar, white with tick marks */
   .text-box::before{
     content:"";
@@ -1542,12 +1456,6 @@ details.thoughts summary{
       /* tick marks */
     repeat-x, no-repeat;
 
-        /* background-size:
-        3px 3px,
-          2px 2.5px,
-          8px 5px; */
-
-
 
       margin-top:-4px;
   }
@@ -1555,20 +1463,11 @@ details.thoughts summary{
 
   /* text box "next" arrow */
   .text-box::after{
-    content:"";
-    /* border: solid #5E7683;
-    border-width: 0 2px 2px 0;
-    padding: 4px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    box-shadow: 1px 1px 0px 0px white; 
-    margin-left: 5px; */
-    
+    content:"";    
     display: inline-block;
     position:absolute;
     right:25px;
     bottom:10px;
-
 
     background-image: url("https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/icon/thl-arrow.png");
     background-repeat: no-repeat;
@@ -1688,25 +1587,10 @@ details.thoughts summary{
   :has(details[open] + details:not([open]).narration) .name-box, :has(details[open] + details:not([open]).narration) .character, :has(details[open] + details:not([open]).narration) .takumi-box{
     display:none;
   }
-    /* details.narration summary{
-      color:rgb(149, 236, 255) !important;
-    } */
-
-
 
 
   /* CHARACTER */
-  /* specifically the character that pov is talking to  */
-  /* problem: the setup only works for eito. he's too tall. it leaves everyone else falling out of the scene.  */
-  /* ***THOUGHT
-  attach name-box content to character somehow? 
-  .eito .name-box {content=eito;}
-  or something...? 
-
-  could rearrange some stuff and instead of a different class for each expression, it's 
-  .eito .smile{background=eitosmile.png}
-  .takumi .smile{background=takumismile.png}
-  */
+  /* specifically the character that pov is talking to. */
   .character{
     background-repeat: no-repeat;
     background-size: 680px auto;
@@ -1773,6 +1657,12 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral2.png');
 }.takumi-neutral-forced{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-neutral.png');
+}.takumi-talk2-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-talk2.png');
+}.takumi-hey2-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey2.png');
+}.takumi-hey-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi/takumi-hey.png');
 }
 
 .eito-hi-forced{
@@ -1781,67 +1671,34 @@ details.thoughts summary{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-smile.png');
 }.eito-think-talk-forced{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-think-talk.png');
+}.eito-scary-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/eito/eito-scary.png');
 }
 
 .yugamu-dark-tongue2-forced{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/yugamu/yugamu-dark-tongue2.png');
 }
 
+.shion-talk2-forced{
+  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/shion/shion-talk2.png');
+}
 
 .kurara-argue-forced{
   background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/kurara/kurara-argue.png');
   top: -310px;
   margin-left:5%; 
 }
-/* .tsubasa{
-  background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/tsubasa/tsubasa-worried.png');
-  top: -280px;
-} */
 
 
   /* POV CHARACTER */
-  /* should i rename these to be more generic? pov-character and all that  */
-  /* #B7E1EF; < old color? better color? */
-  /* .takumi-box-old{
-    height:390px;
-    width:420px;
-    background-size:300px 400px;
-    transform: perspective(15px) rotatey(-1deg) skew(-20deg);
-    
-    border:solid white 3px;
-    border-top:solid white 6px;
-    border-bottom:solid white 6px;
-    box-shadow: 0px 0px 7px 3px #54B5BE;
-
-    background:rgb(156, 157, 186);
-    
-    position:absolute;
-    right:-130px;
-    top:60px;
-    overflow:hidden;
-    z-index:1;
-  } */
+  /* this shouldve been renamed to be more generic but its too late now. */
 
 
-  /* CLEAN THIS UP LATER  */
   /* BOX CODE */
   .takumi-box, .takumi-box-inner {
-    /* box-shadow: 4px -6px 10px -5px #54B5BE; */
-    /* border:black 1px solid; */
-     /* #B7E1EF; */
-
-
-    /* background:rgb(156, 157, 186); */
-    
     margin-left:300px;
     position:absolute;
-    /* right:-130px; */
-    /* right:-230px; */
-
-    /* top:60px; */
-
     overflow:hidden;
-
     z-index:1;
   }
   .takumi-box-inner{    
@@ -1860,36 +1717,13 @@ details.thoughts summary{
     width:420px;
     /* position: relative; */
     position:absolute;
-    background-size:300px 400px;}
-
-  .takumi-box{
-    /* height:390px;
-    width:420px;
     background-size:300px 400px;
-    transform: rotatey(-1deg) skew(-20deg);
-    
-    border:solid white 3px;
-    border-top:solid white 6px;
-    border-bottom:solid white 6px;
-    box-shadow: 0px 0px 7px 3px #54B5BE;
-
-
-    background:rgb(156, 157, 186);
-    
-
-    position:absolute;
-    right:-130px;
-    top:60px;
-
-    overflow:hidden; */
-    /* border:solid white 3px;
-    border-top:solid white 6px; */
+  }
+  .takumi-box{
     box-shadow: 4px -6px 10px -5px #54B5BE;
     
     right:-320px;
     top:55px;
-
-
     border-top:solid white 3px;
 
     transform: rotate(-15deg);
@@ -1902,48 +1736,11 @@ details.thoughts summary{
 
     z-index:1;
   }
-  
-
-
-
-
-  /* can this be... less classes */
-  /* in fact i think it needs to be more classes :/  */
-  /* this class needs to exist solely to unskew the images (both bg and takumi)  */
-  /* potentially: can we use "afters" */
-  /* .takumi-bg-old{
-    height:700px;
-    width:1000px;
-    background-size:auto;
-
-    transform:  rotatey(1deg) skew(20deg) perspective(none);
-    margin-left:-110px;
-  } */
   .takumi-bg-filter{
-    /* having a default png here means nothing can override it i think. might be order based  */
-    /* background-color:#5E7683; */
     height:700px;
     width:1000px;
     background-size:auto;
   }
-
-  .takumi-insert-old{
-    background-image: url('https://raw.githubusercontent.com/jihnari/misc/main/100-line/img/char/takumi.png');
-    background-repeat: no-repeat;
-
-    height:1000px;
-    background-size: auto 1150px;
-    margin-top:-170px;
-
-    /* toggle these back if u remove the takumi-bg */
-    /* margin-left:-100px; */
-    /* transform:  rotatey(1deg) skew(20deg) perspective(none); */
-    /* transform: perspective(none);
-    transform: rotatey(1deg);
-    transform: skew(20deg); */
-  }
-
-  
   .takumi-bg{
     /* having a default png here means nothing can override it. might be order based  */
     /* background-color:#5E7683; */
@@ -1970,8 +1767,7 @@ details.thoughts summary{
   /* i think we need to get choice code relatively functional before we can clean anything. */
 
 
-  /* CHOICE SCREEN STUFF */
-  /* ideally would like a soft-choice and a hard-choice to use for toggles, and choice-screen is just what it looks like  */
+  /* CHOICE SCREEN */
   .choice-screen{
     /* this replaces overlay  */
     background-color:rgb(69, 103, 120, 0.6);
@@ -1993,8 +1789,6 @@ details.thoughts summary{
     -ms-user-select: none; 
     user-select: none;
   }
-
-  /* rename to button? */
   .choice-button{
     /* this is darker actually  */
     background-color:rgba(63, 95, 111, .8);
@@ -2031,67 +1825,28 @@ details.thoughts summary{
   - present choice screen overlay
   - user makes soft-choiceN (dialogue)
   - choice screen set to: hidden
-  - dialogueN set to: display open? hm. hm. hmm. 
+  - dialogueN set to: display block
   */
-
-
-  /* .result1, .result2, .result3{
-    display:none;
-  } */
-
 
    .main-box:has(details.soft-choice-time[open]) > .soft-choice, .main-box:has(details.hard-choice-time[open]) > .hard-choice{
     display:flex; 
    }
 
-
-  /* can i make this more modular? have a maximum amount of choices and look for the next sibling to open?  */
-  /* just added >s, hoping that grabs ONLY the next instance. */
-  /* this is for hard choices  */
-  /* with the removal of init-view logic, this currently isnt working.  */
-  /* :has(details.choice1[open]) > .result1{
-    display:flex;
-  }
-  :has(details.choice2[open]) > .result2{
-    display:flex;
-  } */
-
-
-  /* what was this supposed to do...?  */
-  /* scared to delete it. does it disapear the item after chosen? */
-  /* this is currently doing NOTHING. ok. cool.  */
-  /* .choice-button details:not([open]) ~ details{
-  display:none;
-  } */
-  /* details.choice-button:not([open]) ~ details{
-    display:none;
-  } */
-
-  /* moved from above. delete after stuff is working?   */
-  /* hack, fix later */
-/* unfortunately this is working fine and idk why its labeled a hack fix. it'll probably live forever now. such is the life span of hack fixes (eternity) */
-/* i dont think this gets triggered, seeing as the choice menu lives outside of the text-box */
-/* .text-box details:not([open]) +details.choice-button{
-  display:block;
-} */
-
-
-  /* causes current viet to disapear after a hard choice has been made; this is not going to work for 90% of the fic. ***fix later. all you really have to do is rename this to "go away" and then when it opens, kill the view. this may exist already.*/
-  /* .main-box:has(.hard-choice details.choice-button[open]){
-    display:none; 
-  } */
-
-
+   /* nonsense fun easter egg (if branch3 read, show dialogue3 specific text */
+   .main-box:has(details.branch3[open]) .dialogue3-read{
+    display:inline;
+   }
+   
 
 
   /* open corresponding dialogue for selected choice*/
   .main-box:has(details.branch1[open]) .dialogue1, .main-box:has(details.branch2[open]) .dialogue2, .main-box:has(details.branch3[open]) .dialogue3, .main-box:has(details.branch4[open]) .dialogue4{
     display:block;
   }
-  /* TESTING *** */ 
+
+  
   /* rotating text out */
-  /* this works? but the mutex is still broken. so. */
-  .main-box:has(details.dialogue1[open]) .dialogue1, .main-box:has(details.dialogue2[open]) .dialogue2, .main-box:has(details.dialogue3[open]) .dialogue3, .main-box:has(details.dialogue4[open]) .dialogue4, .main-box:has(details.dialogue-final[open]) .dialogue-final {
+  .main-box:has(details.dialogue1[open]) .dialogue1, .main-box:has(details.dialogue2[open]) .dialogue2, .main-box:has(details.dialogue3[open]) .dialogue3, .main-box:has(details.dialogue4[open]) .dialogue4, .main-box:has(details.dialogue-final[open]) .dialogue-final, .main-box:has(details.branch3[open]) .dialogue3-unread {
     display:none !important;
   }
 
@@ -2099,54 +1854,6 @@ details.thoughts summary{
   .main-box:has(details.branch1[open]) .branch1, .main-box:has(details.branch2[open]) .branch2, .main-box:has(details.branch3[open]) .branch3, .main-box:has(details.branch4[open]) .branch4{ 
     display:none;
   }
-
-    /* brief thought about making an overlay for each choice-button to make it grayed out and unselectable. could return to later.*/
-    :has(details.branch1[open]) .branch1::after{
-      /* make inactive */
-      /* content:"testing123";
-      background:gray;
-      opacity: 0.5;
-      width:100%;
-      height:100%;
-      position:absolute; */
-    }
-
-
-
-  /* :///// */
-  /* toggles the menu */
-  /* removed the importants, doing my best  */
-  /* later, add a class specifier here. ".main-box:has" so that it only grabs the current context. not doing rn bc i think i can make this code better.  */
-  /* oh also you could chain these lol save space  */
-  /* UPDATE: you cannot. this is entirely dependant on rule order. this is also probably why it breaks in fun and exciting ways.  */
-
-  /* ***this logic ONLY works if the user chooses the boxes 1-4 in order. fix later. */
-  /* i think if these were hyper specific, the code would atually work */
-  /* it does but at what cost */
-  /* .main-box:has(details.branch1[open]) > .soft-choice{
-    display:none;
-  }
-  .main-box:has(details.choice-unlock1[open]) > .soft-choice{
-    display:flex;
-  } 
-  .main-box:has(details.branch2[open]) > .soft-choice{
-    display:none;
-  }     
-  .main-box:has(details.choice-unlock2[open]) > .soft-choice{
-    display:flex;
-  }   
-  .main-box:has(details.branch3[open]) > .soft-choice{
-    display:none;
-  }
-  .main-box:has(details.choice-unlock3[open]) > .soft-choice{
-    display:flex;
-  }
-  .main-box:has(details.branch4[open]) > .soft-choice{
-    display:none;
-  }
-  .main-box:has(details.choice-unlock4[open]) > .soft-choice{
-    display:flex;
-  }  */
 
   /* i hate myself and also css */
   /* 1 */
@@ -2158,48 +1865,49 @@ details.thoughts summary{
   } 
 
   /* 12 13 14 23 24 34*/
-  .main-box:has(details.branch1[open] + details.branch2[open]) > .soft-choice{
+  .main-box:has(details.branch1[open] ~ details.branch2[open]) > .soft-choice{
     display:none;
   }
-  .main-box:has(details.branch1[open] + details.branch3[open]) > .soft-choice{
+  .main-box:has(details.branch1[open] ~ details.branch3[open]) > .soft-choice{
     display:none;
   }  
-  .main-box:has(details.branch1[open] + details.branch4[open]) > .soft-choice{
+  .main-box:has(details.branch1[open] ~ details.branch4[open]) > .soft-choice{
     display:none;
   }
-  .main-box:has(details.branch2[open] + details.branch3[open]) > .soft-choice{
+  .main-box:has(details.branch2[open] ~ details.branch3[open]) > .soft-choice{
     display:none;
   }  
-  .main-box:has(details.branch2[open] + details.branch4[open]) > .soft-choice{
+  .main-box:has(details.branch2[open] ~ details.branch4[open]) > .soft-choice{
     display:none;
   }  
-  .main-box:has(details.branch3[open] + details.branch4[open]) > .soft-choice{
+  .main-box:has(details.branch3[open] ~ details.branch4[open]) > .soft-choice{
     display:none;
   }
   /* 123 124 134 234*/
-  .main-box:has(details.branch1[open] + details.branch2[open] + details.branch3[open]) > .soft-choice{
+  .main-box:has(details.branch1[open] ~ details.branch2[open] ~ details.branch3[open]) > .soft-choice{
     display:none;
   }
-  .main-box:has(details.branch1[open] + details.branch2[open] + details.branch4[open]) > .soft-choice{
+  .main-box:has(details.branch1[open] ~ details.branch2[open] ~ details.branch4[open]) > .soft-choice{
     display:none;
   }
-  .main-box:has(details.branch1[open] + details.branch3[open] + details.branch4[open]) > .soft-choice{
+  .main-box:has(details.branch1[open] ~ details.branch3[open] ~ details.branch4[open]) > .soft-choice{
     display:none;
   }
-  .main-box:has(details.branch2[open] + details.branch3[open] + details.branch4[open]) > .soft-choice{
+  .main-box:has(details.branch2[open] ~ details.branch3[open] ~ details.branch4[open]) > .soft-choice{
     display:none;
   }
   /* 124 is still broken maybe? specifically 124. 24 is also broken. 241 
   broken: 
   124
-  24
-  42
+  24 
   241 
+
+  42
   31
    */
 
   /* 1234 */
-  .main-box:has(details.branch1[open] + details.branch2[open] + details.branch3[open] + details.branch4[open]) > .soft-choice{
+  .main-box:has(details.branch1[open] ~ details.branch2[open] ~ details.branch3[open] ~ details.branch4[open]) > .soft-choice{
     display:none;
   }
 
@@ -2223,6 +1931,8 @@ details.thoughts summary{
   .main-box:has(details.choice-unlock3[open] ~ details.choice-unlock4[open]) > .soft-choice{
     display:flex;
   } 
+
+
 
   /* 123 124 134 234*/
   .main-box:has(details.choice-unlock1[open] ~ details.choice-unlock2[open] ~ details.choice-unlock3[open]) > .soft-choice{
@@ -2303,7 +2013,7 @@ details.thoughts summary{
 
 
 
-  /* final toggle, youve unlocked the mutex */
+  /* final toggle; youve unlocked the mutex */
   /* not sure these work, but something above does (the ~) */
   /* display final unlocked dialogue */
   .main-box:has(details.choice-unlock1[open]):has(details.choice-unlock2[open]):has(details.choice-unlock3[open]):has(details.choice-unlock4[open]) .dialogue-final {
@@ -2314,35 +2024,8 @@ details.thoughts summary{
     display:none;
   } 
 
-
-
-  /* notes: 
-  - test-choice is a div. in that div is also the class hidden. hidden is display:none. 
-  - test-choice-time is (in) a details class that triggers when opened 
-  - when opened, test-choice becomes displayed (display:block) 
-  - transition ignores display none and display hidden. doesn't ignore height or width. 
-  - active is ONLY active when mouse during active click
-  - :active CAN be used to target things inside the active element, but each individual element needs it's own transition delay set up
-  - :active CANNOT be used to target something that's not sibling selectable. possibly the structure has to come after the after (and not in another parent?) in order to be caught. edit: nope that didn't work. 
-  - im back to thinking this isnt going to work 
-  - opacity works on everything in the div 
-  - im back i think it can work 
-  - THOUGHT:
-  - initial trigger choice-time on details open, displays choice menu
-  - next trigger on choice-menu:active, opacity 0s choice-menu
-  - next trigger on [end dialogue, display choice menu again]:active, displays choice-menu
-  - each item deletes itself until list is exhausted 
-  - unsure how to get to next dialogue line easily, could use a bunch of details toggles at the end of each dialogue branch, check all open, display next dialogue 
-  - active seems to apply on half press, details[open] on full press. this is creating problems. if the structure is told to die on the half press, the full press never activates the next structure. 
-  - max height sort of does something but doesnt delay properly (and suffers from half press)
-  - top/bottom is similar, doesnt delay properly (and suffers from half press)
-  - thought: create a new structure, overlay(2) that sits on top of a perma menu and makes things unclickab nvm same issue, how do i tell it to die? i dont. 
- */
-
-
-
  
-  /* dont have to get super specific with hard choice*/
+  /* dont have to get specific with hard choice*/
   /* remove choice menu after choice selected  */
   .main-box:has(.hard-choice details.choice-button[open]) > .hard-choice{
     display:none;
@@ -2368,7 +2051,7 @@ details.thoughts summary{
 
  
   /* room changing for endings */
-  .main-box:has(details.ending1[open]), .main-box:has(details.ending2[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.route3-next[open]), .main-box:has(details.route3-1-next[open]), .main-box:has(details.route3-2-next[open]), .main-box:has(details.move-ending1-2[open]), .main-box:has(details.move-ending1-2[open]),.main-box:has(details.move-to-start[open]){
+  .main-box:has(details.ending1[open]), .main-box:has(details.ending2[open]), .main-box:has(details.route1-next[open]), .main-box:has(details.route2-next[open]), .main-box:has(details.route3-next[open]), .main-box:has(details.route3-1-next[open]), .main-box:has(details.route3-2-next[open]), .main-box:has(details.move-ending1-2[open]), .main-box:has(details.move-ending1-2[open]),.main-box:has(details.move-to-start[open]), .main-box:has(details.move-ending2-2[open]){
     /* i think this is snagging on the savepoint telling it to be open */
     display:none !important; 
   } 
